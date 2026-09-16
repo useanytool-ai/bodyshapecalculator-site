@@ -1,0 +1,338 @@
+---
+layout: base.njk
+title: Waist-to-Hip Ratio Calculator – Check Your WHR
+description: Calculate your waist-to-hip ratio (WHR) using waist and hip measurements and check it against the WHO's abdominal obesity thresholds for men and women.
+---
+
+<style id="whrc-css">
+.whrc-wrap *,.whrc-wrap *::before,.whrc-wrap *::after{box-sizing:border-box;margin:0;padding:0}
+.whrc-wrap{--whrc-bg:#0d0d0d;--whrc-card:#1e1e1e;--whrc-gold:#c9a84c;--whrc-gold-l:#e8c97a;--whrc-cream:#f5efe0;--whrc-muted:#8a8a8a;--whrc-border:#2a2a2a;--whrc-text:#f0e8d8;--whrc-serif:"Playfair Display",Georgia,"Times New Roman",serif;--whrc-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--whrc-sans);background:var(--whrc-bg);color:var(--whrc-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
+.whrc-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.whrc-wrap a{color:var(--whrc-gold-l);border-bottom:1px solid rgba(232,201,122,.35);text-decoration:none}
+.whrc-wrap a:hover{border-bottom-color:var(--whrc-gold-l)}
+.whrc-wrap :focus-visible{outline:2px solid var(--whrc-gold);outline-offset:3px;border-radius:6px}
+.whrc-container{max-width:680px;margin:0 auto;padding:56px 24px 20px;position:relative;z-index:1}
+.whrc-header{text-align:center;margin-bottom:36px}
+.whrc-eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--whrc-gold);margin-bottom:14px;font-weight:500}
+.whrc-h1{font-family:var(--whrc-serif);font-size:clamp(28px,6vw,46px);font-weight:900;line-height:1.05;color:var(--whrc-cream);margin-bottom:14px}
+.whrc-subtitle{color:var(--whrc-muted);font-size:15px;font-weight:400;max-width:460px;margin:0 auto}
+.whrc-toggles{display:flex;gap:10px;justify-content:center;margin-bottom:28px;flex-wrap:wrap}
+.whrc-toggle{display:flex;align-items:center;background:#161616;border:1px solid var(--whrc-border);border-radius:100px;padding:4px}
+.whrc-toggle button{padding:8px 20px;border:none;border-radius:100px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:background .2s,color .2s;color:var(--whrc-muted);background:transparent;letter-spacing:.3px}
+.whrc-toggle button.whrc-active{background:var(--whrc-gold);color:#000}
+.whrc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.whrc-field{background:var(--whrc-card);border:1px solid var(--whrc-border);border-radius:16px;padding:18px 18px 14px;transition:border-color .2s}
+.whrc-field:focus-within{border-color:var(--whrc-gold)}
+.whrc-field label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--whrc-gold);font-weight:500;margin-bottom:10px}
+.whrc-input-wrap{position:relative}
+.whrc-wrap input[type=number]{width:100%;background:transparent;border:none;border-bottom:1px solid var(--whrc-border);padding:6px 36px 6px 0;font-size:22px;font-family:var(--whrc-serif);color:var(--whrc-cream);outline:none;transition:border-color .2s;-moz-appearance:textfield}
+.whrc-wrap input[type=number]::-webkit-outer-spin-button,.whrc-wrap input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.whrc-wrap input[type=number]:focus{border-bottom-color:var(--whrc-gold)}
+.whrc-wrap input::placeholder{color:#444;font-size:18px}
+.whrc-unit-lbl{position:absolute;right:0;bottom:8px;font-size:12px;color:var(--whrc-muted)}
+.whrc-error{background:rgba(220,60,60,.12);border:1px solid rgba(220,60,60,.3);border-radius:10px;padding:12px 16px;font-size:13px;color:#f08080;margin-bottom:16px;display:none}
+.whrc-error.whrc-show{display:block}
+.whrc-btn{width:100%;padding:18px;background:var(--whrc-gold);color:#000;border:none;border-radius:14px;font-family:var(--whrc-serif);font-size:18px;font-weight:700;cursor:pointer;letter-spacing:.5px;transition:background .2s,transform .2s,box-shadow .2s;margin-bottom:36px}
+.whrc-btn:hover{background:var(--whrc-gold-l);transform:translateY(-1px);box-shadow:0 8px 32px rgba(201,168,76,.25)}
+.whrc-results{display:none}
+.whrc-results.whrc-show{display:block;animation:whrcUp .45s ease both}
+@keyframes whrcUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.whrc-result-card{background:var(--whrc-card);border:1px solid var(--whrc-border);border-radius:18px;padding:28px;text-align:center;margin-bottom:20px}
+.whrc-result-lbl{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--whrc-muted);margin-bottom:10px}
+.whrc-result-val{font-family:var(--whrc-serif);font-size:clamp(44px,10vw,64px);font-weight:900;color:var(--whrc-gold);line-height:1;margin-bottom:10px}
+.whrc-result-risk{display:inline-block;padding:5px 16px;border-radius:100px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+.whrc-risk-low{background:rgba(111,207,151,.15);color:#6fcf97}
+.whrc-risk-mod{background:rgba(242,201,76,.15);color:#f2c94c}
+.whrc-risk-high{background:rgba(235,87,87,.15);color:#eb5757}
+.whrc-gauge-track{position:relative;height:8px;background:linear-gradient(90deg,#6fcf97,#f2c94c 55%,#eb5757);border-radius:100px;margin:16px 0 8px}
+.whrc-gauge-dot{position:absolute;top:50%;width:16px;height:16px;background:#fff;border:3px solid var(--whrc-bg);border-radius:50%;transform:translate(-50%,-50%);transition:left .6s cubic-bezier(.23,1,.32,1);box-shadow:0 0 0 2px var(--whrc-gold)}
+.whrc-gauge-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--whrc-muted);letter-spacing:.5px}
+.whrc-result-note{font-size:13.5px;color:var(--whrc-muted);margin-top:14px;text-align:left}
+.whrc-reset{width:100%;padding:13px;background:transparent;border:1px solid var(--whrc-border);border-radius:12px;color:var(--whrc-muted);font-family:inherit;font-size:14px;cursor:pointer;transition:border-color .2s,color .2s;margin-bottom:8px}
+.whrc-reset:hover{border-color:var(--whrc-muted);color:var(--whrc-text)}
+.whrc-art{max-width:780px;margin:0 auto;padding:20px 24px 64px;position:relative;z-index:1}
+.whrc-sec{padding-top:40px}
+.whrc-art h2{font-family:var(--whrc-serif);font-size:clamp(22px,4vw,30px);font-weight:900;color:var(--whrc-cream);line-height:1.2;margin-bottom:8px}
+.whrc-art h2::after{content:"";display:block;width:52px;height:2px;background:var(--whrc-gold);margin:14px 0 20px}
+.whrc-art h3{font-family:var(--whrc-serif);font-size:18px;font-weight:700;color:var(--whrc-gold-l);margin:22px 0 8px}
+.whrc-art p{color:#bdb6a8;font-size:15.5px;margin-bottom:14px}
+.whrc-art strong{color:var(--whrc-cream);font-weight:600}
+.whrc-art ul{list-style:none;margin:0 0 16px}
+.whrc-art li{color:#bdb6a8;font-size:15px;padding:6px 0 6px 22px;position:relative}
+.whrc-art li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--whrc-gold);opacity:.7}
+.whrc-note{background:var(--whrc-card);border-left:3px solid var(--whrc-gold);border-radius:0 12px 12px 0;padding:16px 20px;margin:18px 0}
+.whrc-note p:last-child{margin-bottom:0}
+.whrc-tbl-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--whrc-border);border-radius:14px}
+.whrc-art table{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
+.whrc-art th{background:rgba(201,168,76,.08);color:var(--whrc-gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-align:left;padding:12px 16px}
+.whrc-art td{padding:12px 16px;color:#bdb6a8;border-top:1px solid var(--whrc-border)}
+.whrc-art td:first-child{color:var(--whrc-cream);font-weight:500}
+.whrc-faq{border:1px solid var(--whrc-border);border-radius:12px;background:var(--whrc-card);margin-bottom:10px;overflow:hidden}
+.whrc-faq summary{padding:16px 20px;cursor:pointer;color:var(--whrc-cream);font-weight:500;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.whrc-faq summary::-webkit-details-marker{display:none}
+.whrc-faq summary::after{content:"+";color:var(--whrc-gold);font-size:20px;line-height:1;flex-shrink:0}
+.whrc-faq[open] summary::after{content:"–"}
+.whrc-faq[open] summary{color:var(--whrc-gold)}
+.whrc-faq-body{padding:0 20px 18px}
+.whrc-faq-body p:last-child{margin-bottom:0}
+.whrc-related{display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(201,168,76,.02));border:1px solid rgba(201,168,76,.2);border-radius:16px;padding:18px 20px;margin-top:8px}
+.whrc-related-icon{font-size:22px;flex-shrink:0}
+.whrc-related p{margin:0;font-size:14px;color:var(--whrc-muted)}
+.whrc-disc{font-size:13px;color:#777;border-top:1px solid var(--whrc-border);padding-top:20px;margin-top:36px}
+.whrc-sources{font-size:13px;color:var(--whrc-muted);margin-top:24px;padding-left:18px}
+.whrc-sources li{margin-bottom:6px}
+@media (max-width:640px){
+.whrc-container{padding:40px 18px 12px}
+.whrc-art{padding:12px 18px 48px}
+.whrc-grid{grid-template-columns:1fr}
+}
+</style>
+
+<div class="whrc-wrap" id="whrc-app">
+  <div class="whrc-container">
+    <header class="whrc-header">
+      <p class="whrc-eyebrow">Health Calculator</p>
+      <h1 class="whrc-h1">Waist-to-Hip Ratio Calculator</h1>
+      <p class="whrc-subtitle">Two measurements, one number the WHO uses to flag abdominal-fat-related health risk — with separate thresholds for men and women.</p>
+    </header>
+
+    <div class="whrc-toggles">
+      <div class="whrc-toggle" role="group" aria-label="Sex">
+        <button type="button" class="whrc-active" data-act="gender" data-v="female" aria-pressed="true">Female</button>
+        <button type="button" data-act="gender" data-v="male" aria-pressed="false">Male</button>
+      </div>
+      <div class="whrc-toggle" role="group" aria-label="Unit">
+        <button type="button" class="whrc-active" data-act="unit" data-v="cm" aria-pressed="true">Centimeters</button>
+        <button type="button" data-act="unit" data-v="in" aria-pressed="false">Inches</button>
+      </div>
+    </div>
+
+    <div class="whrc-grid">
+      <div class="whrc-field">
+        <label for="whrc-waist">Waist</label>
+        <div class="whrc-input-wrap">
+          <input type="number" id="whrc-waist" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="whrc-unit-lbl whrc-u">cm</span>
+        </div>
+      </div>
+      <div class="whrc-field">
+        <label for="whrc-hip">Hip</label>
+        <div class="whrc-input-wrap">
+          <input type="number" id="whrc-hip" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="whrc-unit-lbl whrc-u">cm</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="whrc-error" id="whrc-error" role="alert">Enter both measurements as numbers greater than zero.</p>
+    <button type="button" class="whrc-btn" data-act="calc">Calculate My Ratio</button>
+
+    <section class="whrc-results" id="whrc-results" aria-live="polite" role="status">
+      <div class="whrc-result-card">
+        <p class="whrc-result-lbl">Your Waist-to-Hip Ratio</p>
+        <p class="whrc-result-val" id="whrc-val">—</p>
+        <span class="whrc-result-risk" id="whrc-risk">—</span>
+        <div class="whrc-gauge-track">
+          <div class="whrc-gauge-dot" id="whrc-dot" style="left:0%"></div>
+        </div>
+        <div class="whrc-gauge-labels"><span>0.60</span><span id="whrc-gauge-mid">0.85</span><span>1.10</span></div>
+        <p class="whrc-result-note" id="whrc-note"></p>
+      </div>
+      <button type="button" class="whrc-reset" data-act="reset">← Calculate Again</button>
+    </section>
+  </div>
+
+  <div class="whrc-art">
+
+    <section class="whrc-sec" id="whrc-what">
+      <h2>What Is Waist-to-Hip Ratio?</h2>
+      <p>Waist-to-hip ratio (WHR) is your waist measurement divided by your hip measurement — a 30-inch waist and 40-inch hips gives a WHR of 0.75. Unlike BMI, which only looks at weight relative to height, WHR captures <em>where</em> your body stores fat, and that distinction turns out to matter a lot for health risk.</p>
+      <p>The World Health Organization defines a WHR above 0.85 for women, or above 0.90 for men, as abdominal obesity — a pattern linked to elevated risk of hypertension, cardiovascular disease and type 2 diabetes. Curious how your shape connects to this number? Our full <a href="/">body type calculator</a> breaks your measurements down into one of seven categories, each with its own typical WHR range covered further down this page.</p>
+    </section>
+
+    <section class="whrc-sec" id="whrc-measure">
+      <h2>How to Measure Waist and Hip Correctly</h2>
+      <p>WHR is only as accurate as the two numbers behind it. Use a soft fabric tape, not a rigid one, and measure directly against skin or thin clothing.</p>
+      <h3>Waist</h3>
+      <p>The WHO's own protocol measures at the midpoint between the bottom of your lowest rib and the top of your hip bone (iliac crest) — not at the navel and not at your narrowest point, which can sit slightly higher. Exhale gently and keep the tape level and snug without pulling it tight or sucking in your stomach.</p>
+      <h3>Hip</h3>
+      <p>Stand with feet together and measure around the widest part of your buttocks, keeping the tape level all the way around. Check in a mirror that it doesn't dip lower at the back without you noticing.</p>
+      <div class="whrc-note">
+        <p><strong>Measure twice.</strong> Small measurement errors can noticeably change your WHR, especially when your result sits close to a category boundary — a half-inch slip on either number is enough to matter there. If your two attempts disagree by more than half an inch, take a third measurement and use the middle value.</p>
+      </div>
+    </section>
+
+    <section class="whrc-sec" id="whrc-risk">
+      <h2>WHR Risk Categories by Sex</h2>
+      <p>The WHO's published standard is a single line for each sex: above 0.85 for women, or above 0.90 for men, is classified as abdominal obesity. There's no separate official "moderate" tier in between — a result sits either below or at/above that line, which is why the calculator above asks which threshold applies to you.</p>
+      <div class="whrc-tbl-wrap">
+        <table>
+          <thead><tr><th scope="col">Sex</th><th scope="col">WHO Threshold</th></tr></thead>
+          <tbody>
+            <tr><td>Women</td><td>0.85</td></tr>
+            <tr><td>Men</td><td>0.90</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>This is population-level guidance, not an individual diagnosis. Two people with identical WHR can carry very different overall risk once age, activity level, family history and other factors are added in.</p>
+    </section>
+
+    <section class="whrc-sec" id="whrc-research">
+      <h2>What the Research Says</h2>
+      <p>The World Health Organization's abdominal obesity cutoffs — above 0.85 for women, above 0.90 for men — come from its 2008 expert consultation report on waist circumference and waist-to-hip ratio, and remain the most widely cited benchmark for this measure.</p>
+      <p>The INTERHEART study, led by Salim Yusuf and colleagues and published in <em>The Lancet</em> in 2004, tracked heart attack risk across more than 50 countries and found WHR outperformed BMI as a predictor of myocardial infarction — largely because BMI can't distinguish someone carrying a lot of abdominal fat from someone carrying the same weight elsewhere on the body.</p>
+    </section>
+
+    <section class="whrc-sec" id="whrc-shapes">
+      <h2>How Does Body Shape Relate to WHR?</h2>
+      <p>Body shape and WHR are related because both are calculated from waist and hip measurements, but they answer different questions: body-shape classification describes your proportions for styling purposes, while WHR is a specific health-research metric with its own WHO-defined threshold. A shape category should not be used to infer whether a WHR result is healthy or unhealthy — an inverted triangle, for example, can post a WHR above the WHO line purely because of naturally narrow hips, with none of the abdominal-fat pattern that line is meant to flag in an apple shape. If you want the shape side of this, our <a href="/hourglass-body-shape/">hourglass body shape</a>, <a href="/pear-body-shape/">pear body shape</a>, <a href="/apple-body-shape/">apple body shape</a> and <a href="/inverted-triangle-body-shape/">inverted triangle body shape</a> guides cover that separately from the health context on this page.</p>
+    </section>
+
+    <section class="whrc-sec" id="whrc-fertility">
+      <h2>WHR and Fertility</h2>
+      <p>Beyond cardiovascular risk, WHR has also been studied as a fertility marker, with different optimal values for men and women. Research on women undergoing fertility treatment has found that those with a WHR above 0.80 had significantly lower pregnancy rates than those with a WHR between 0.70 and 0.79 — a gap that held even after controlling for BMI, suggesting fat distribution itself, not just body size, plays a role in conception. For men, studies have linked a WHR around 0.90 with better fertility markers, better general health, and a lower reported incidence of prostate and testicular cancer, compared to men with notably higher or lower ratios.</p>
+      <p>These are population-level associations from research studies, not individual predictions — plenty of people outside these ranges conceive without difficulty, and plenty within them experience fertility challenges for unrelated reasons. If fertility is a specific concern, this number is a data point worth mentioning to a doctor, not a self-diagnosis tool.</p>
+    </section>
+
+    <section class="whrc-sec" id="whrc-vs">
+      <h2>WHR vs Waist-to-Height Ratio vs BMI — Which Should You Trust?</h2>
+      <p>None of the three tells the whole story alone, and each has a specific blind spot worth knowing:</p>
+      <ul>
+        <li><strong>BMI</strong> only compares weight to height. It can't tell the difference between muscle and fat, or between fat carried at the waist and fat carried at the hips — two people with the same BMI can have very different risk profiles.</li>
+        <li><strong>WHR</strong> captures fat distribution, which BMI misses entirely, but it's skewed by hip-bone width — a naturally narrow-hipped frame can show an elevated WHR without the abdominal-fat pattern that actually drives the risk.</li>
+        <li><strong>Waist-to-height ratio (WHtR)</strong> avoids the hip-width issue since it only uses waist and height, and several studies suggest it flags risk earlier than BMI. It doesn't capture the hip side of the picture at all, though, so it's a different lens rather than a strictly better one.</li>
+      </ul>
+      <p>Using WHR and WHtR together generally gives a fuller picture than either alone. Our <a href="/waist-to-height-ratio-calculator/">waist to height ratio calculator</a> uses the same waist measurement you've already got, plus your height.</p>
+    </section>
+
+    <section class="whrc-sec" id="whrc-faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="whrc-faq"><summary>What is a healthy waist-to-hip ratio?</summary><div class="whrc-faq-body">
+        <p>Under 0.85 for women and under 0.90 for men is below the WHO's threshold for abdominal obesity. Lower generally reflects less abdominal fat relative to hip size, though "healthy" depends on more than one number.</p>
+      </div></details>
+
+      <details class="whrc-faq"><summary>Does waist-to-hip ratio work the same way for men and women?</summary><div class="whrc-faq-body">
+        <p>The calculation is identical — waist divided by hip — but the risk thresholds differ, because typical fat distribution and hip structure differ by sex. That's why this calculator asks which set of thresholds to apply before showing a risk category.</p>
+      </div></details>
+
+      <details class="whrc-faq"><summary>Is WHR more accurate than BMI?</summary><div class="whrc-faq-body">
+        <p>For predicting cardiovascular risk specifically, several large studies — including the INTERHEART study across more than 50 countries — found WHR outperformed BMI, because it accounts for fat distribution rather than just overall weight relative to height. BMI still has value as a quick, simple screening number; the two measure different things and work best together rather than as substitutes for each other.</p>
+      </div></details>
+
+      <details class="whrc-faq"><summary>Can you lower your WHR through exercise or diet?</summary><div class="whrc-faq-body">
+        <p>Abdominal fat specifically tends to respond to overall fat loss through diet and consistent exercise, including both cardio and strength training, though there's no way to target-reduce fat from one area alone. Your hip measurement — driven mostly by bone structure and muscle rather than fat — changes far less, so most movement in WHR over time comes from the waist side of the equation.</p>
+      </div></details>
+
+      <details class="whrc-faq"><summary>My WHR result and my body shape result don't seem to match — why?</summary><div class="whrc-faq-body">
+        <p>They're measuring related but different things. Body shape compares bust, waist and hips together; WHR only looks at waist and hip. A top hourglass and a true hourglass can post very similar WHR numbers despite being different shapes, because the bust measurement — which separates them — isn't part of the WHR calculation at all.</p>
+      </div></details>
+
+      <details class="whrc-faq"><summary>How accurate is an online WHR calculator compared to a clinical measurement?</summary><div class="whrc-faq-body">
+        <p>The math itself is simple and exact — the only source of error is how carefully you measure. A clinician measuring you in person removes some of the inconsistency that comes with self-measuring (tape too loose, wrong landmark, inconsistent breathing), but the formula is identical either way. If your result sits right on a risk-category boundary, it's worth re-measuring carefully before drawing conclusions from it.</p>
+      </div></details>
+    </section>
+
+    <p>WHR is a useful, well-studied number, but it's one input among several — not a verdict on its own. If your result falls in the higher-risk range, or you're unsure what it means for you specifically, that's a conversation worth having with a doctor rather than a plan to build from a calculator result alone.</p>
+
+    <div class="whrc-related">
+      <span class="whrc-related-icon">📐</span>
+      <p>Want the fuller picture beyond just waist and hip? Our <a href="https://bodyshapecalculator.net/">body type calculator</a> uses bust, waist, high hip and hip together for a complete shape classification.</p>
+    </div>
+
+    <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--whrc-gold);font-weight:500;margin-top:32px;margin-bottom:0">Sources</p>
+    <ul class="whrc-sources">
+      <li>World Health Organization. <em>Waist Circumference and Waist-Hip Ratio: Report of a WHO Expert Consultation</em>, 2008 — WHO abdominal obesity thresholds and measurement protocol.</li>
+      <li>World Health Organization. <em>WHO STEPS Surveillance Manual</em> — waist and hip measurement procedure.</li>
+      <li>Yusuf S, Hawken S, Ôunpuu S, et al. "Effect of potentially modifiable risk factors associated with myocardial infarction in 52 countries (the INTERHEART study): case-control study." <em>The Lancet</em>, 2004;364(9438):937–952.</li>
+    </ul>
+
+    <p class="whrc-disc">This calculator is for educational purposes only. It does not diagnose any medical condition and isn't a substitute for advice from a qualified healthcare professional.</p>
+
+  </div>
+</div>
+
+<script id="whrc-js">
+(function(){
+"use strict";
+var root=document.getElementById("whrc-app");
+if(!root||root.dataset.whrcInit)return;root.dataset.whrcInit="1";
+var $=function(i){return document.getElementById(i)};
+var el={
+ waist:$("whrc-waist"),hip:$("whrc-hip"),err:$("whrc-error"),res:$("whrc-results"),
+ val:$("whrc-val"),risk:$("whrc-risk"),dot:$("whrc-dot"),note:$("whrc-note"),
+ gaugeMid:$("whrc-gauge-mid")
+};
+var units=root.querySelectorAll(".whrc-u");
+var gender="female",unit="cm";
+var gBtns=root.querySelectorAll('[data-act="gender"]'),uBtns=root.querySelectorAll('[data-act="unit"]');
+
+function setToggle(v,btns,cb){
+ for(var i=0;i<btns.length;i++){
+  var on=btns[i].dataset.v===v;
+  btns[i].classList.toggle("whrc-active",on);
+  btns[i].setAttribute("aria-pressed",on?"true":"false");
+ }
+ cb(v);
+}
+function changeUnit(v){
+ if(v===unit)return;
+ var factor=v==="in"?(1/2.54):2.54;
+ var inputs=[el.waist,el.hip];
+ for(var i=0;i<inputs.length;i++){
+  var val=parseFloat(inputs[i].value);
+  if(val>0)inputs[i].value=Math.round(val*factor*10000)/10000;
+ }
+ unit=v;
+ setToggle(v,uBtns,function(vv){for(var j=0;j<units.length;j++)units[j].textContent=vv});
+}
+
+function calculate(){
+ var w=parseFloat(el.waist.value),h=parseFloat(el.hip.value);
+ if(!(w>0)||!(h>0)){el.err.classList.add("whrc-show");return}
+ el.err.classList.remove("whrc-show");
+ var whr=w/h;
+ el.val.textContent=whr.toFixed(2);
+
+ var threshold=gender==="male"?0.90:0.85;
+ var riskLabel,riskClass,note;
+ if(whr<threshold){
+  riskLabel="Below WHO Threshold";riskClass="whrc-risk-low";
+  note="Your ratio is below the WHO's "+threshold.toFixed(2)+" threshold for abdominal obesity in "+(gender==="male"?"men":"women")+". This reflects fat distribution only \u2014 it isn't a full health assessment on its own.";
+ }else{
+  riskLabel="Above WHO Threshold";riskClass="whrc-risk-high";
+  note="Your ratio is at or above the WHO's "+threshold.toFixed(2)+" threshold for abdominal obesity in "+(gender==="male"?"men":"women")+". If you have a naturally narrow hip frame, this can run high without the same fat-distribution pattern \u2014 waist-to-height ratio is a useful second check. Either way, a doctor is the right person to interpret this for your specific situation.";
+ }
+ el.risk.textContent=riskLabel;
+ el.risk.className="whrc-result-risk "+riskClass;
+ el.note.textContent=note;
+ el.gaugeMid.textContent=threshold.toFixed(2);
+
+ var pos=Math.min(Math.max((whr-0.6)/(1.1-0.6),0),1)*100;
+ el.dot.style.left=pos+"%";
+
+ el.res.classList.add("whrc-show");
+ requestAnimationFrame(function(){el.res.scrollIntoView({behavior:"smooth",block:"nearest"})});
+}
+
+function reset(){
+ el.res.classList.remove("whrc-show");
+ el.err.classList.remove("whrc-show");
+ el.waist.value=el.hip.value="";
+ el.waist.focus();
+}
+
+root.addEventListener("click",function(e){
+ var b=e.target.closest("[data-act]");
+ if(!b)return;
+ var a=b.dataset.act;
+ if(a==="calc")calculate();
+ else if(a==="reset")reset();
+ else if(a==="gender"){setToggle(b.dataset.v,gBtns,function(v){gender=v});if(el.res.classList.contains("whrc-show"))calculate();}
+ else if(a==="unit"){changeUnit(b.dataset.v);if(el.res.classList.contains("whrc-show"))calculate();}
+});
+root.addEventListener("keydown",function(e){
+ if(e.key==="Enter"&&e.target.tagName==="INPUT"){e.preventDefault();calculate()}
+});
+})();
+</script>

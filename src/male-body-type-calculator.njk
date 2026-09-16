@@ -1,0 +1,845 @@
+---
+layout: base.njk
+title: Male Body Type Calculator – Find Your Body Shape
+description: Use our free male body type calculator to find your body shape from chest, waist and hip measurements. Get an instant result and styling tips.
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://bodyshapecalculator.net/#website",
+      "url": "https://bodyshapecalculator.net/",
+      "name": "Body Shape Calculator",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://bodyshapecalculator.net/male-body-type-calculator/#webpage",
+      "url": "https://bodyshapecalculator.net/male-body-type-calculator/",
+      "name": "Male Body Type Calculator – Find Your Body Shape",
+      "description": "Use our free male body type calculator to find your body shape from chest, waist and hip measurements. Get an instant result and styling tips.",
+      "isPartOf": {
+        "@id": "https://bodyshapecalculator.net/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://bodyshapecalculator.net/male-body-type-calculator/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://bodyshapecalculator.net/male-body-type-calculator/#calculator"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://bodyshapecalculator.net/male-body-type-calculator/#calculator",
+      "name": "Male Body Type Calculator",
+      "url": "https://bodyshapecalculator.net/male-body-type-calculator/",
+      "description": "Free male body type calculator that uses chest, waist and hip measurements to identify five male body shapes: trapezoid, inverted triangle, rectangle, triangle and oval.",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Web",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "Male body type calculation",
+        "Chest, waist and hip measurement analysis",
+        "Five male body shape classifications",
+        "Waist-to-hip ratio calculation",
+        "Body proportion analysis",
+        "Styling recommendations by body shape"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://bodyshapecalculator.net/male-body-type-calculator/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bodyshapecalculator.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Male Body Type Calculator", "item": "https://bodyshapecalculator.net/male-body-type-calculator/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bodyshapecalculator.net/male-body-type-calculator/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What are the 5 male body types?", "acceptedAnswer": { "@type": "Answer", "text": "The five male body types are trapezoid, inverted triangle, rectangle, triangle and oval. They are classified by comparing chest, waist and hip measurements." } },
+        { "@type": "Question", "name": "What's the difference between trapezoid and inverted triangle?", "acceptedAnswer": { "@type": "Answer", "text": "Both have a chest at least 3 inches wider than the hips. In a trapezoid, the waist tapers in by 7 inches or more from the chest. In an inverted triangle, the waist tapers less than 7 inches from the chest." } },
+        { "@type": "Question", "name": "Is oval the same as a dad bod?", "acceptedAnswer": { "@type": "Answer", "text": "They overlap but are not identical terms. Dad bod is a casual description, while oval is a measurement-based body shape category where the chest and hips are relatively close in size and the waist does not taper significantly." } },
+        { "@type": "Question", "name": "Can your body shape change with training?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Building muscle in the shoulders, back and chest can change your chest-to-hip proportions over time. Waist size can also change with changes in overall body composition, while hip width is influenced more by bone structure." } },
+        { "@type": "Question", "name": "How is this different from the ectomorph/mesomorph/endomorph system?", "acceptedAnswer": { "@type": "Answer", "text": "Body shape is based on current chest, waist and hip proportions, while ectomorph, mesomorph and endomorph are broader somatotype categories. They describe different aspects of body build and are not interchangeable." } },
+        { "@type": "Question", "name": "How often should I re-measure?", "acceptedAnswer": { "@type": "Answer", "text": "For most people, measuring every six months is sufficient, or after a significant change in training, weight or body composition." } }
+      ]
+    }
+  ]
+}
+</script>
+<style id="mbc-css">
+.mbc-wrap *,.mbc-wrap *::before,.mbc-wrap *::after{box-sizing:border-box;margin:0;padding:0}
+.mbc-wrap{--mbc-bg:#0d0d0d;--mbc-surface:#161616;--mbc-card:#1e1e1e;--mbc-gold:#c9a84c;--mbc-gold-l:#e8c97a;--mbc-cream:#f5efe0;--mbc-muted:#8a8a8a;--mbc-border:#2a2a2a;--mbc-text:#f0e8d8;--mbc-serif:"Playfair Display",Georgia,"Times New Roman",serif;--mbc-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--mbc-sans);background:var(--mbc-bg);color:var(--mbc-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
+.mbc-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.mbc-wrap::after{content:"";position:absolute;bottom:-15%;right:-15%;width:45%;height:45%;background:radial-gradient(circle,rgba(201,168,76,.05) 0,transparent 70%);pointer-events:none;z-index:0}
+.mbc-wrap a{color:var(--mbc-gold-l);border-bottom:1px solid rgba(232,201,122,.35);text-decoration:none}
+.mbc-wrap a:hover{border-bottom-color:var(--mbc-gold-l)}
+.mbc-wrap :focus-visible{outline:2px solid var(--mbc-gold);outline-offset:3px;border-radius:6px}
+.mbc-nav{background:rgba(13,13,13,.92);border-bottom:1px solid #222;padding:0 24px;position:relative;z-index:10}
+.mbc-nav-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;gap:6px;height:52px;overflow-x:auto;scrollbar-width:none}
+.mbc-nav-inner::-webkit-scrollbar{display:none}
+.mbc-nav-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#555;white-space:nowrap;padding-right:10px;border-right:1px solid var(--mbc-border);margin-right:6px;font-weight:500;flex-shrink:0}
+.mbc-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;white-space:nowrap;transition:border-color .2s,color .2s,background .2s;flex-shrink:0;border:1px solid transparent;letter-spacing:.3px;text-decoration:none}
+.mbc-pill.mbc-current{background:rgba(201,168,76,.15);border-color:rgba(201,168,76,.4);color:var(--mbc-gold);border-bottom:none}
+.mbc-pill.mbc-current .mbc-dot{background:var(--mbc-gold)}
+.mbc-pill.mbc-linked{background:#1a1a1a;border-color:var(--mbc-border);color:#999;border-bottom:none}
+.mbc-pill.mbc-linked:hover{border-color:var(--mbc-gold);color:var(--mbc-gold-l);background:rgba(201,168,76,.07)}
+.mbc-dot{width:6px;height:6px;border-radius:50%;background:#555;flex-shrink:0}
+.mbc-container{max-width:780px;margin:0 auto;padding:56px 24px 20px;position:relative;z-index:1}
+.mbc-header{text-align:center;margin-bottom:36px}
+.mbc-eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--mbc-gold);margin-bottom:14px;font-weight:500}
+.mbc-h1{font-family:var(--mbc-serif);font-size:clamp(30px,6vw,50px);font-weight:900;line-height:1.05;color:var(--mbc-cream);margin-bottom:14px}
+.mbc-h1 span{color:var(--mbc-gold);font-style:italic}
+.mbc-subtitle{color:var(--mbc-muted);font-size:15px;font-weight:400;max-width:480px;margin:0 auto}
+.mbc-unit-toggle{display:flex;align-items:center;justify-content:center;margin:0 auto 32px;background:var(--mbc-surface);border:1px solid var(--mbc-border);border-radius:100px;padding:4px;width:fit-content}
+.mbc-unit-toggle button{padding:8px 22px;border:none;border-radius:100px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:background .2s,color .2s;color:var(--mbc-muted);background:transparent;letter-spacing:.5px}
+.mbc-unit-toggle button.mbc-active{background:var(--mbc-gold);color:#000}
+.mbc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px}
+.mbc-progress{display:flex;gap:7px;justify-content:center;margin-bottom:18px}
+.mbc-progress-dot{width:8px;height:8px;border-radius:50%;background:var(--mbc-border);transition:background .25s,transform .25s}
+.mbc-progress-dot.mbc-filled{background:var(--mbc-gold);transform:scale(1.15)}
+.mbc-field{background:var(--mbc-card);border:1px solid var(--mbc-border);border-radius:16px;padding:18px 18px 14px;transition:border-color .2s}
+.mbc-field:focus-within{border-color:var(--mbc-gold)}
+.mbc-field label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mbc-gold);font-weight:500;margin-bottom:10px}
+.mbc-field-hint{font-size:11px;color:var(--mbc-muted);margin-top:4px}
+.mbc-input-wrap{position:relative}
+.mbc-wrap input[type=number]{width:100%;background:transparent;border:none;border-bottom:1px solid var(--mbc-border);padding:6px 30px 6px 0;font-size:20px;font-family:var(--mbc-serif);color:var(--mbc-cream);outline:none;transition:border-color .2s;-moz-appearance:textfield}
+.mbc-wrap input[type=number]::-webkit-outer-spin-button,.mbc-wrap input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.mbc-wrap input[type=number]:focus{border-bottom-color:var(--mbc-gold)}
+.mbc-wrap input::placeholder{color:#444;font-size:16px}
+.mbc-unit-lbl{position:absolute;right:0;bottom:8px;font-size:11px;color:var(--mbc-muted)}
+.mbc-age-row{display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+.mbc-age-field{background:var(--mbc-card);border:1px solid var(--mbc-border);border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:12px;flex:1;min-width:150px;transition:border-color .2s}
+.mbc-age-field:focus-within{border-color:var(--mbc-gold)}
+.mbc-age-field label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mbc-gold);font-weight:500;white-space:nowrap}
+.mbc-age-field input[type=number]{font-size:20px;padding:4px 0;width:50px;flex:1;min-width:0}
+.mbc-age-unit{font-size:12px;color:var(--mbc-muted);white-space:nowrap}
+.mbc-wt-field{flex-direction:column;align-items:flex-start;gap:8px}
+.mbc-wt-top{display:flex;align-items:center;gap:12px;width:100%}
+.mbc-wt-bot{display:flex;align-items:center;gap:8px;width:100%}
+.mbc-wt-toggle{display:inline-flex;background:var(--mbc-surface);border:1px solid var(--mbc-border);border-radius:100px;padding:3px}
+.mbc-wt-toggle button{padding:4px 12px;border:none;border-radius:100px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;transition:background .2s,color .2s;color:var(--mbc-muted);background:transparent}
+.mbc-wt-toggle button.mbc-active{background:var(--mbc-gold);color:#000}
+.mbc-error{background:rgba(220,60,60,.12);border:1px solid rgba(220,60,60,.3);border-radius:10px;padding:12px 16px;font-size:13px;color:#f08080;margin-bottom:16px;display:none}
+.mbc-error.mbc-show{display:block}
+.mbc-btn{width:100%;padding:18px;background:var(--mbc-gold);color:#000;border:none;border-radius:14px;font-family:var(--mbc-serif);font-size:18px;font-weight:700;cursor:pointer;letter-spacing:.5px;transition:background .2s,transform .2s,box-shadow .2s;margin-bottom:36px}
+.mbc-btn:hover{background:var(--mbc-gold-l);transform:translateY(-1px);box-shadow:0 8px 32px rgba(201,168,76,.25)}
+.mbc-results{display:none}
+.mbc-results.mbc-show{display:block;animation:mbcUp .45s ease both}
+@keyframes mbcUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.mbc-result-head{text-align:center;margin-bottom:20px}
+.mbc-result-lbl{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--mbc-muted);margin-bottom:10px}
+.mbc-result-type{font-family:var(--mbc-serif);font-size:clamp(34px,7vw,56px);font-weight:900;color:var(--mbc-gold);line-height:1;margin-bottom:8px}
+.mbc-result-desc{color:var(--mbc-muted);font-size:15px;max-width:460px;margin:0 auto}
+.mbc-share-row{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.mbc-share-btn{flex:1;min-width:150px;padding:11px 14px;background:transparent;border:1px solid rgba(201,168,76,.4);border-radius:10px;color:var(--mbc-gold-l);font-family:inherit;font-size:12.5px;font-weight:500;cursor:pointer;transition:background .2s,border-color .2s;letter-spacing:.3px}
+.mbc-share-btn:hover{background:rgba(201,168,76,.1);border-color:var(--mbc-gold)}
+.mbc-mbar{background:var(--mbc-card);border:1px solid var(--mbc-border);border-radius:16px;padding:20px;margin-bottom:20px;display:flex}
+.mbc-mitem{flex:1;text-align:center;padding:6px;border-right:1px solid var(--mbc-border)}
+.mbc-mitem:last-child{border-right:none}
+.mbc-mval{font-family:var(--mbc-serif);font-size:20px;color:var(--mbc-cream);font-weight:700}
+.mbc-mkey{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mbc-muted);margin-top:4px}
+.mbc-sil-row{display:flex;gap:10px;margin-bottom:20px;justify-content:center;flex-wrap:wrap}
+.mbc-sil-card{background:var(--mbc-card);border:1px solid var(--mbc-border);border-radius:14px;padding:14px 10px;text-align:center;width:100px;transition:border-color .3s,background .3s}
+.mbc-sil-card.mbc-active{border-color:var(--mbc-gold);background:rgba(201,168,76,.08)}
+.mbc-sil-svg{width:46px;height:74px;margin:0 auto 8px;display:block}
+.mbc-sil-name{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--mbc-muted);font-weight:500}
+.mbc-sil-card.mbc-active .mbc-sil-name{color:var(--mbc-gold)}
+.mbc-stats-card,.mbc-ratios{background:var(--mbc-card);border:1px solid var(--mbc-border);border-radius:16px;padding:22px;margin-bottom:20px}
+.mbc-stats-title,.mbc-ratios-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mbc-gold);font-weight:500;margin-bottom:18px}
+.mbc-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px}
+.mbc-stat-item{text-align:center}
+.mbc-stat-item[hidden]{display:none}
+.mbc-stat-val{font-family:var(--mbc-serif);font-size:24px;font-weight:700;color:var(--mbc-cream);line-height:1}
+.mbc-bmi-normal{color:#6fcf97}.mbc-bmi-under{color:#56ccf2}.mbc-bmi-over{color:#f2c94c}.mbc-bmi-obese{color:#eb5757}
+.mbc-stat-key{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mbc-muted);margin-top:5px}
+.mbc-stat-sub{font-size:11px;color:var(--mbc-muted);margin-top:2px}
+.mbc-rrow{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.mbc-rrow:last-child{margin-bottom:0}
+.mbc-rlbl{font-size:13px;color:var(--mbc-muted);width:110px;flex-shrink:0}
+.mbc-rbar-bg{flex:1;height:6px;background:var(--mbc-border);border-radius:100px;overflow:hidden}
+.mbc-rbar-fill{height:100%;width:0;background:var(--mbc-gold);border-radius:100px;transition:width .8s cubic-bezier(.23,1,.32,1)}
+.mbc-rval{font-size:13px;color:var(--mbc-cream);width:40px;text-align:right;font-weight:500}
+.mbc-traits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.mbc-trait{background:var(--mbc-card);border:1px solid var(--mbc-border);border-radius:14px;padding:16px}
+.mbc-trait-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mbc-gold);font-weight:500;margin-bottom:7px}
+.mbc-trait-text{font-size:14px;color:var(--mbc-muted)}
+.mbc-insight{background:linear-gradient(135deg,rgba(201,168,76,.07),rgba(201,168,76,.02));border:1px solid rgba(201,168,76,.22);border-radius:14px;padding:18px 20px;margin-bottom:20px;display:none}
+.mbc-insight.mbc-show{display:block}
+.mbc-insight-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.mbc-badge{background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.35);border-radius:100px;padding:3px 12px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mbc-gold);font-weight:500}
+.mbc-insight-title{font-family:var(--mbc-serif);font-size:15px;color:var(--mbc-cream);font-weight:700}
+.mbc-insight-body{font-size:13px;color:var(--mbc-muted)}
+.mbc-insight-body strong{color:var(--mbc-cream);font-weight:500}
+.mbc-divider{border:none;border-top:1px solid var(--mbc-border);margin:28px 0}
+.mbc-related-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#555;font-weight:500;margin-bottom:12px}
+.mbc-related-card{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(201,168,76,.02));border:1px solid rgba(201,168,76,.2);border-radius:16px;padding:20px 22px;transition:border-color .25s,transform .25s,box-shadow .25s;margin-bottom:12px;text-decoration:none}
+.mbc-related-card:hover{border-color:rgba(201,168,76,.5);transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,168,76,.1)}
+.mbc-related-icon{width:46px;height:46px;border-radius:12px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.mbc-related-body{flex:1;min-width:0}
+.mbc-related-ey{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mbc-gold);font-weight:500;margin-bottom:3px}
+.mbc-related-name{font-family:var(--mbc-serif);font-size:17px;font-weight:700;color:var(--mbc-cream);margin-bottom:3px}
+.mbc-related-desc{font-size:13px;color:var(--mbc-muted);border-bottom:none}
+.mbc-related-arr{font-size:18px;color:var(--mbc-gold);opacity:.7;flex-shrink:0;transition:transform .2s,opacity .2s}
+.mbc-related-card:hover .mbc-related-arr{transform:translateX(4px);opacity:1}
+.mbc-reset{width:100%;padding:13px;background:transparent;border:1px solid var(--mbc-border);border-radius:12px;color:var(--mbc-muted);font-family:inherit;font-size:14px;cursor:pointer;transition:border-color .2s,color .2s;margin-top:6px}
+.mbc-reset:hover{border-color:var(--mbc-muted);color:var(--mbc-text)}
+.mbc-art{max-width:780px;margin:0 auto;padding:20px 24px 64px;position:relative;z-index:1}
+.mbc-sec{padding-top:40px}
+.mbc-art h2{font-family:var(--mbc-serif);font-size:clamp(22px,4vw,30px);font-weight:900;color:var(--mbc-cream);line-height:1.2;margin-bottom:8px}
+.mbc-art h2::after{content:"";display:block;width:52px;height:2px;background:var(--mbc-gold);margin:14px 0 20px}
+.mbc-art h3{font-family:var(--mbc-serif);font-size:18px;font-weight:700;color:var(--mbc-gold-l);margin:22px 0 8px}
+.mbc-art p{color:#bdb6a8;font-size:15.5px;margin-bottom:14px}
+.mbc-art strong{color:var(--mbc-cream);font-weight:600}
+.mbc-art ul{list-style:none;margin:0 0 16px}
+.mbc-art li{color:#bdb6a8;font-size:15px;padding:6px 0 6px 22px;position:relative}
+.mbc-art li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--mbc-gold);opacity:.7}
+.mbc-note{background:var(--mbc-card);border-left:3px solid var(--mbc-gold);border-radius:0 12px 12px 0;padding:16px 20px;margin:18px 0}
+.mbc-note p:last-child{margin-bottom:0}
+.mbc-tbl-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--mbc-border);border-radius:14px}
+.mbc-art table{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
+.mbc-art th{background:rgba(201,168,76,.08);color:var(--mbc-gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-align:left;padding:12px 16px}
+.mbc-art td{padding:12px 16px;color:#bdb6a8;border-top:1px solid var(--mbc-border)}
+.mbc-art td:first-child{color:var(--mbc-cream);font-weight:500;white-space:nowrap}
+.mbc-faq{border:1px solid var(--mbc-border);border-radius:12px;background:var(--mbc-card);margin-bottom:10px;overflow:hidden}
+.mbc-faq summary{padding:16px 20px;cursor:pointer;color:var(--mbc-cream);font-weight:500;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.mbc-faq summary::-webkit-details-marker{display:none}
+.mbc-faq summary::after{content:"+";color:var(--mbc-gold);font-size:20px;line-height:1;flex-shrink:0}
+.mbc-faq[open] summary::after{content:"–"}
+.mbc-faq[open] summary{color:var(--mbc-gold)}
+.mbc-faq-body{padding:0 20px 18px}
+.mbc-faq-body p:last-child{margin-bottom:0}
+.mbc-disc{font-size:13px;color:#777;border-top:1px solid var(--mbc-border);padding-top:20px;margin-top:44px}
+@media (max-width:640px){
+.mbc-container{padding:40px 18px 12px}
+.mbc-art{padding:12px 18px 56px}
+.mbc-grid,.mbc-traits{grid-template-columns:1fr}
+.mbc-stats-grid{grid-template-columns:1fr 1fr}
+.mbc-mbar{flex-wrap:wrap;gap:8px}
+.mbc-mitem{flex:1 1 45%;border-right:none}
+.mbc-rlbl{width:92px;font-size:12px}
+.mbc-related-card{gap:14px;padding:16px}
+.mbc-share-row{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+.mbc-wrap *,.mbc-wrap *::before,.mbc-wrap *::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+
+<div class="mbc-wrap" id="mbc-app">
+
+  <div class="mbc-container">
+
+    <header class="mbc-header">
+      <p class="mbc-eyebrow">Proportional Analysis</p>
+      <h1 class="mbc-h1">Body Type Calculator <span>for Men</span></h1>
+      <p class="mbc-subtitle">Enter your measurements to find your body shape. Built for male proportions using chest, waist and hips.</p>
+    </header>
+
+    <div class="mbc-unit-toggle" role="group" aria-label="Measurement unit">
+      <button type="button" class="mbc-active" data-act="unit" data-v="cm" aria-pressed="true">Centimeters</button>
+      <button type="button" data-act="unit" data-v="in" aria-pressed="false">Inches</button>
+    </div>
+
+    <div class="mbc-progress" id="mbc-progress" aria-hidden="true">
+      <span class="mbc-progress-dot" data-for="mbc-chest"></span>
+      <span class="mbc-progress-dot" data-for="mbc-waist"></span>
+      <span class="mbc-progress-dot" data-for="mbc-hips"></span>
+    </div>
+
+    <div class="mbc-grid">
+      <div class="mbc-field">
+        <label for="mbc-chest">Chest</label>
+        <div class="mbc-input-wrap">
+          <input type="number" id="mbc-chest" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="mbc-unit-lbl mbc-u">cm</span>
+        </div>
+        <p class="mbc-field-hint">Fullest part, under the arms</p>
+      </div>
+      <div class="mbc-field">
+        <label for="mbc-waist">Waist</label>
+        <div class="mbc-input-wrap">
+          <input type="number" id="mbc-waist" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="mbc-unit-lbl mbc-u">cm</span>
+        </div>
+        <p class="mbc-field-hint">Narrowest point, at the navel</p>
+      </div>
+      <div class="mbc-field">
+        <label for="mbc-hips">Hips</label>
+        <div class="mbc-input-wrap">
+          <input type="number" id="mbc-hips" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="mbc-unit-lbl mbc-u">cm</span>
+        </div>
+        <p class="mbc-field-hint">Widest part over the seat</p>
+      </div>
+    </div>
+
+    <div class="mbc-age-row">
+      <div class="mbc-age-field">
+        <label for="mbc-age">Age</label>
+        <input type="number" id="mbc-age" inputmode="numeric" placeholder="—" min="10" max="100" step="1">
+        <span class="mbc-age-unit">yrs</span>
+      </div>
+      <div class="mbc-age-field">
+        <label for="mbc-height">Height</label>
+        <input type="number" id="mbc-height" inputmode="decimal" placeholder="—" min="0" step="0.1">
+        <span class="mbc-age-unit mbc-u">cm</span>
+      </div>
+      <div class="mbc-age-field mbc-wt-field">
+        <div class="mbc-wt-top">
+          <label for="mbc-weight">Weight</label>
+          <div class="mbc-wt-toggle" role="group" aria-label="Weight unit">
+            <button type="button" class="mbc-active" data-act="wunit" data-v="kg" aria-pressed="true">kg</button>
+            <button type="button" data-act="wunit" data-v="lb" aria-pressed="false">lb</button>
+          </div>
+        </div>
+        <div class="mbc-wt-bot">
+          <input type="number" id="mbc-weight" inputmode="decimal" placeholder="—" min="0" step="0.1">
+          <span class="mbc-age-unit" id="mbc-wu">kg</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="mbc-error" id="mbc-error" role="alert">Add all three measurements as numbers greater than zero.</p>
+    <button type="button" class="mbc-btn" data-act="calc">Calculate My Body Type</button>
+
+    <section class="mbc-results" id="mbc-results" aria-live="polite">
+
+      <div class="mbc-result-head">
+        <p class="mbc-result-lbl">Your body type is</p>
+        <p class="mbc-result-type" id="mbc-r-type">—</p>
+        <p class="mbc-result-desc" id="mbc-r-desc"></p>
+      </div>
+
+      <div class="mbc-share-row">
+        <button type="button" class="mbc-share-btn" id="mbc-copy-btn" data-act="share">Copy result link</button>
+        <button type="button" class="mbc-share-btn" data-act="download">Download result image</button>
+      </div>
+
+      <div class="mbc-mbar">
+        <div class="mbc-mitem"><div class="mbc-mval" id="mbc-r-ch">—</div><div class="mbc-mkey">Chest</div></div>
+        <div class="mbc-mitem"><div class="mbc-mval" id="mbc-r-wa">—</div><div class="mbc-mkey">Waist</div></div>
+        <div class="mbc-mitem"><div class="mbc-mval" id="mbc-r-hi">—</div><div class="mbc-mkey">Hips</div></div>
+      </div>
+
+      <div class="mbc-sil-row" id="mbc-sil-row">
+        <div class="mbc-sil-card" data-k="trapezoid"><svg class="mbc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M6 8h38l-6 20q-13 6-26 0z" fill="#c9a84c" opacity=".8"/><rect x="19" y="0" width="12" height="10" rx="4" fill="#c9a84c" opacity=".6"/><path d="M14 28q11 6 22 0l6 40H8Z" fill="#c9a84c" opacity=".8"/></svg><div class="mbc-sil-name">Trapezoid</div></div>
+        <div class="mbc-sil-card" data-k="inverted_triangle"><svg class="mbc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M5 8h40l-4 22H9z" fill="#c9a84c" opacity=".8"/><rect x="19" y="0" width="12" height="10" rx="4" fill="#c9a84c" opacity=".6"/><path d="M9 30h32l3 38H6Z" fill="#c9a84c" opacity=".8"/></svg><div class="mbc-sil-name">Inv. Triangle</div></div>
+        <div class="mbc-sil-card" data-k="rectangle"><svg class="mbc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M10 8h30l-2 22H12z" fill="#c9a84c" opacity=".8"/><rect x="19" y="0" width="12" height="10" rx="4" fill="#c9a84c" opacity=".6"/><path d="M12 30h26l2 38H10Z" fill="#c9a84c" opacity=".8"/></svg><div class="mbc-sil-name">Rectangle</div></div>
+        <div class="mbc-sil-card" data-k="triangle"><svg class="mbc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M14 8h22l-2 20H16z" fill="#c9a84c" opacity=".8"/><rect x="19" y="0" width="12" height="10" rx="4" fill="#c9a84c" opacity=".6"/><path d="M16 28h18l8 40H8Z" fill="#c9a84c" opacity=".8"/></svg><div class="mbc-sil-name">Triangle</div></div>
+        <div class="mbc-sil-card" data-k="oval"><svg class="mbc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M11 8h28l-3 18H14z" fill="#c9a84c" opacity=".8"/><rect x="19" y="0" width="12" height="10" rx="4" fill="#c9a84c" opacity=".6"/><path d="M14 26Q40 32 36 52Q30 68 14 60Q6 40 14 26Z" fill="#c9a84c" opacity=".8"/></svg><div class="mbc-sil-name">Oval</div></div>
+      </div>
+
+      <div class="mbc-stats-card">
+        <p class="mbc-stats-title">Body Stats</p>
+        <div class="mbc-stats-grid">
+          <div class="mbc-stat-item" id="mbc-si-ht" hidden><div class="mbc-stat-val" id="mbc-v-ht">—</div><div class="mbc-stat-key">Height</div><div class="mbc-stat-sub" id="mbc-s-ht"></div></div>
+          <div class="mbc-stat-item" id="mbc-si-wt" hidden><div class="mbc-stat-val" id="mbc-v-wt">—</div><div class="mbc-stat-key">Weight</div><div class="mbc-stat-sub" id="mbc-s-wt"></div></div>
+          <div class="mbc-stat-item" id="mbc-si-bmi" hidden><div class="mbc-stat-val" id="mbc-v-bmi">—</div><div class="mbc-stat-key">BMI</div><div class="mbc-stat-sub" id="mbc-s-bmi"></div></div>
+          <div class="mbc-stat-item"><div class="mbc-stat-val" id="mbc-v-whr">—</div><div class="mbc-stat-key">WHR</div><div class="mbc-stat-sub" id="mbc-s-whr"></div></div>
+        </div>
+      </div>
+
+      <div class="mbc-ratios">
+        <p class="mbc-ratios-title">Proportional Ratios</p>
+        <div class="mbc-rrow"><span class="mbc-rlbl">Chest–Waist</span><div class="mbc-rbar-bg"><div class="mbc-rbar-fill" id="mbc-bar-cw"></div></div><span class="mbc-rval" id="mbc-val-cw">—</span></div>
+        <div class="mbc-rrow"><span class="mbc-rlbl">Chest–Hip</span><div class="mbc-rbar-bg"><div class="mbc-rbar-fill" id="mbc-bar-ch"></div></div><span class="mbc-rval" id="mbc-val-ch">—</span></div>
+        <div class="mbc-rrow"><span class="mbc-rlbl">Waist–Hip</span><div class="mbc-rbar-bg"><div class="mbc-rbar-fill" id="mbc-bar-wh"></div></div><span class="mbc-rval" id="mbc-val-wh">—</span></div>
+      </div>
+
+      <div class="mbc-traits" id="mbc-traits">
+        <div class="mbc-trait"><div class="mbc-trait-title"></div><div class="mbc-trait-text"></div></div>
+        <div class="mbc-trait"><div class="mbc-trait-title"></div><div class="mbc-trait-text"></div></div>
+        <div class="mbc-trait"><div class="mbc-trait-title"></div><div class="mbc-trait-text"></div></div>
+        <div class="mbc-trait"><div class="mbc-trait-title"></div><div class="mbc-trait-text"></div></div>
+      </div>
+
+      <div class="mbc-insight" id="mbc-insight">
+        <div class="mbc-insight-head">
+          <span class="mbc-badge" id="mbc-badge">—</span>
+          <span class="mbc-insight-title" id="mbc-ins-title">Age &amp; Body Context</span>
+        </div>
+        <p class="mbc-insight-body" id="mbc-ins-body"></p>
+      </div>
+
+      <hr class="mbc-divider">
+
+      <p class="mbc-related-lbl">Related Tools</p>
+      <a class="mbc-related-card" href="/waist-to-hip-ratio-calculator/">
+        <span class="mbc-related-icon">📏</span>
+        <span class="mbc-related-body">
+          <span class="mbc-related-ey">Try Next</span>
+          <span class="mbc-related-name">Waist to Hip Ratio Calculator</span>
+          <span class="mbc-related-desc">Check your WHR against the WHO's male threshold using the same waist and hip numbers.</span>
+        </span>
+        <span class="mbc-related-arr">→</span>
+      </a>
+
+      <button type="button" class="mbc-reset" data-act="reset">← Calculate Again</button>
+    </section>
+  </div>
+
+  <div class="mbc-art">
+
+  <div style="text-align:center;margin:0 0 8px;">
+    <img src="/assets/images/Body_Type_Calculator_for_Men.webp" alt="Body type calculator for men - ectomorph, mesomorph, endomorph body types" style="max-width:420px;width:100%;border-radius:16px;border:1px solid #2a2a2a;" loading="lazy">
+  </div>
+
+  <section class="mbc-sec" id="mbc-what">
+    <h2>What Is a Male Body Type Calculator and How Does It Work?</h2>
+    <p>A male body type calculator compares your chest, waist and hip circumferences to classify your build into one of five recognised shapes. It's the same underlying logic used in our <a href="/">body type calculator</a> for women — comparing the width of your upper body against your hips, then checking how much your waist tapers between them — just calibrated around male proportions.</p>
+    <p>Chest and hips are compared first to see which is wider and by how much, then the waist is checked against the chest to see how defined it is. That places you into one of five shapes: trapezoid, inverted triangle, rectangle, triangle or oval.</p>
+    <div class="mbc-note">
+      <p><strong>This is a styling and self-awareness tool, not a health screening device.</strong> It's a starting point for understanding your proportions and dressing for them — not a medical classification.</p>
+    </div>
+  </section>
+
+  <section class="mbc-sec" id="mbc-measure">
+    <h2>How to Measure Chest, Waist and Hips</h2>
+    <p>Use a soft fabric tape, stand naturally with arms relaxed, and breathe normally rather than puffing your chest out or pulling your stomach in.</p>
+
+    <h3>Chest</h3>
+    <p>Wrap the tape around the fullest part of your chest, under the arms and across the shoulder blades. Keep it level front to back and snug without compressing anything.</p>
+
+    <h3>Waist</h3>
+    <p>Measure at your natural waist — roughly at the navel, the narrowest point of your torso for most men. Exhale gently and don't suck in; you want your resting measurement.</p>
+
+    <h3>Hips</h3>
+    <p>Stand with feet together and measure around the widest part of your seat, keeping the tape level all the way around.</p>
+  </section>
+
+  <section class="mbc-sec" id="mbc-shapes">
+    <h2>The 5 Male Body Shapes Explained (With Formulas)</h2>
+    <p>Male shape classification typically uses five categories built around one core comparison: how much wider your chest is than your hips, and how much your waist tapers in between.</p>
+
+    <div class="mbc-tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Shape</th><th scope="col">Defining formula (inches)</th></tr></thead>
+        <tbody>
+          <tr><td>Trapezoid</td><td>Chest ≥ 3 in wider than hips; chest−waist ≥ 7 in</td></tr>
+          <tr><td>Inverted Triangle</td><td>Chest ≥ 3 in wider than hips; chest−waist &lt; 7 in</td></tr>
+          <tr><td>Triangle</td><td>Hips ≥ 3 in wider than chest</td></tr>
+          <tr><td>Oval</td><td>Chest &amp; hips within 3 in of each other; waist within 2 in of — or larger than — both</td></tr>
+          <tr><td>Rectangle</td><td>Catch-all: chest and hips close, waist moderately smaller than both</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Trapezoid — Broad Chest, Tapered Waist</h3>
+    <p>Widely considered the classic athletic male build: chest and shoulders clearly wider than the hips, with a waist that tapers in noticeably between them — at least 7 inches smaller than the chest. This is the V-shape most strength-training advice is implicitly aimed at. If this is your result, your proportions already read as athletic; the styling goal is simply not to hide that taper under boxy fabric.</p>
+
+    <h3>Inverted Triangle — Broad Chest, Straight Waist</h3>
+    <p>Similar chest-to-hip spread as a trapezoid, but without the same waist taper — chest−waist comes in under 7 inches. The silhouette is broad and boxy through the torso rather than V-shaped. This is common in bigger, huskier builds and in men who carry muscle through the trunk without a sharply defined waist.</p>
+
+    <h3>Triangle — Narrower Chest, Wider Hips</h3>
+    <p>Hips at least 3 inches wider than the chest — narrower shoulders with fullness sitting in the hips and thighs. Less commonly discussed than the female pear shape, but the same styling logic applies: the goal is adding visual width up top to balance the frame.</p>
+
+    <h3>Oval — Fuller Midsection</h3>
+    <p>Chest and hips are close in size, but the waist doesn't taper — it sits close to, or even exceeds, both. This is the shape colloquially called a "dad bod" or "beer belly" build. Like the female apple shape, <strong>oval isn't a fitness judgment</strong> — it describes where a frame carries fullness, and it can show up at a wide range of overall sizes.</p>
+
+    <h3>Rectangle — Straight Up and Down</h3>
+    <p>Chest, waist and hips are all fairly close, with the waist somewhat smaller than the chest but not dramatically so. A lean, uniform silhouette without pronounced taper in either direction — common in naturally slim, narrow-framed builds.</p>
+  </section>
+
+  <section class="mbc-sec" id="mbc-style">
+    <h2>How to Dress for Your Male Body Type</h2>
+    <p>The general principle across all five shapes: fit matters more than any single style choice, and the goal is proportion, not disguise.</p>
+
+    <h3>Dressing for a Trapezoid Build</h3>
+    <p>Show the taper rather than hiding it — fitted (not skin-tight) shirts, tailored blazers that follow the waist, and flat-front trousers all work with your proportions instead of against them.</p>
+
+    <h3>Dressing for an Inverted Triangle Build</h3>
+    <p>A single-breasted jacket with minimal shoulder padding keeps the upper body from reading as boxier than it needs to. Straight or slightly relaxed trousers balance a broad torso better than skinny cuts, which exaggerate the width up top.</p>
+
+    <h3>Dressing for a Triangle Build</h3>
+    <p>Structured jackets and shirts with some texture or pattern on top add visual width to the shoulders. Slim, tapered trousers in darker tones keep the lower half from adding further width.</p>
+
+    <h3>Dressing for an Oval Build</h3>
+    <p>Vertical lines — pinstripes, open jackets worn as a layer, shirts with a defined placket — elongate the torso. Avoid tucking in tightly fitted shirts across the midsection; a slightly longer, straighter cut skims rather than clings. Flat-front trousers sit better than pleated ones, which add bulk exactly where you don't want it.</p>
+
+    <h3>Dressing for a Rectangle Build</h3>
+    <p>Layering — a jacket over a shirt, texture on texture — adds the visual dimension a straight frame doesn't naturally have. Structured shoulders and a slightly fitted waist on jackets create the impression of a more defined silhouette.</p>
+
+    <h3>What to Wear for Formal Occasions by Body Shape</h3>
+    <div class="mbc-tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Shape</th><th scope="col">Formal go-to</th></tr></thead>
+        <tbody>
+          <tr><td>Trapezoid</td><td>A well-tailored two-piece suit that follows the natural taper — this build carries a fitted cut better than almost any other</td></tr>
+          <tr><td>Inverted Triangle</td><td>Single-breasted suit, minimal shoulder structure, straight-leg trousers</td></tr>
+          <tr><td>Triangle</td><td>Structured-shoulder blazer with a patterned or textured tie to draw the eye upward</td></tr>
+          <tr><td>Oval</td><td>Single-breasted, single vent, dark solid colours with a vertical stripe if patterned</td></tr>
+          <tr><td>Rectangle</td><td>Double-breasted or structured-shoulder suit to add shape a straight build doesn't provide on its own</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mbc-sec" id="mbc-measure2">
+    <h2>Common Male Body Shape Measurements by Size</h2>
+    <p>The formulas hold at every size — it's the relationship between the numbers that defines the shape, not their absolute size:</p>
+    <div class="mbc-tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Shape</th><th scope="col">Chest</th><th scope="col">Waist</th><th scope="col">Hips</th></tr></thead>
+        <tbody>
+          <tr><td>Trapezoid</td><td>42 in</td><td>34 in</td><td>38 in</td></tr>
+          <tr><td>Inverted Triangle</td><td>42 in</td><td>37 in</td><td>38 in</td></tr>
+          <tr><td>Triangle</td><td>38 in</td><td>36 in</td><td>42 in</td></tr>
+          <tr><td>Oval</td><td>40 in</td><td>42 in</td><td>39 in</td></tr>
+          <tr><td>Rectangle</td><td>40 in</td><td>37 in</td><td>40 in</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mbc-sec" id="mbc-whr">
+    <h2>Body Shape and Waist-to-Hip Ratio</h2>
+    <p>Since this calculator already collects your waist and hip measurements, it's a short step to your waist-to-hip ratio (WHR) — shown above alongside your shape result. The WHO's threshold for men is 0.90; above that line is classified as abdominal obesity and linked to higher cardiovascular risk. An oval build tends to run highest on this measure, for the same reason an apple shape does for women — the waist is the fullest point rather than the hips. Run the numbers on their own on our dedicated <a href="/waist-to-hip-ratio-calculator/">waist to hip ratio calculator</a> for the full risk breakdown and sourcing.</p>
+  </section>
+
+  <section class="mbc-sec" id="mbc-somatotype">
+    <h2>Body Shape vs Somatotype — What's the Difference?</h2>
+    <p>Body shape (the trapezoid/inverted-triangle/rectangle/triangle/oval system above) and somatotype (ectomorph/mesomorph/endomorph) are two different, complementary frameworks — one measurement-based, one built around frame and metabolism rather than a tape measure. They're not interchangeable: a mesomorph, for instance, usually measures as a trapezoid or inverted triangle, but the somatotype label describes how your body tends to respond to training and diet, not your current proportions. Our <a href="/">body type calculator</a> covers the somatotype system in more depth if you want both angles.</p>
+  </section>
+
+  <section class="mbc-sec" id="mbc-faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="mbc-faq"><summary>What are the 5 male body types?</summary><div class="mbc-faq-body">
+      <p>Trapezoid, inverted triangle, rectangle, triangle and oval — based on comparing chest, waist and hip measurements. Trapezoid and inverted triangle both have a chest wider than the hips; the difference is how much the waist tapers in between.</p>
+    </div></details>
+
+    <details class="mbc-faq"><summary>What's the difference between trapezoid and inverted triangle?</summary><div class="mbc-faq-body">
+      <p>Both have a chest at least 3 inches wider than the hips. In a trapezoid, the waist tapers in by 7 inches or more from the chest — a visible V-shape. In an inverted triangle, the waist doesn't taper as much, giving a broader, boxier torso without the same waist definition.</p>
+    </div></details>
+
+    <details class="mbc-faq"><summary>Is oval the same as a "dad bod"?</summary><div class="mbc-faq-body">
+      <p>They overlap but aren't identical terms. "Dad bod" is a casual, informal description; oval is the measurement-based category it usually falls into — chest and hips fairly close in size, with a waist that doesn't taper between them. Like any shape, it isn't tied to a specific fitness level or body size.</p>
+    </div></details>
+
+    <details class="mbc-faq"><summary>Can your body shape change with training?</summary><div class="mbc-faq-body">
+      <p>Yes, more so than the female shape system in some ways — building shoulder, back and chest muscle can genuinely widen your chest-to-hip gap over time and shift a rectangle toward an inverted triangle or trapezoid. Waist size responds to overall body composition rather than targeted exercise. Hip width, driven mostly by bone structure, changes the least.</p>
+    </div></details>
+
+    <details class="mbc-faq"><summary>How is this different from the ectomorph/mesomorph/endomorph system?</summary><div class="mbc-faq-body">
+      <p>Somatotype describes your general frame and how your body tends to respond to training and diet — it's a broader, less precise classification. Body shape, measured here, is a direct comparison of your current chest, waist and hip numbers. They're related but answer different questions; see the section above for more detail.</p>
+    </div></details>
+
+    <details class="mbc-faq"><summary>How often should I re-measure?</summary><div class="mbc-faq-body">
+      <p>Every six months is enough for most people, or after a significant change in training, weight or age-related shifts. Measuring more often mostly captures normal daily fluctuation rather than a real change in proportion.</p>
+    </div></details>
+  </section>
+
+  <p class="mbc-disc">This calculator is an educational and styling tool. It does not diagnose any medical condition and its results are not a substitute for advice from a qualified healthcare professional. If you have concerns about your weight, waist-to-hip ratio or general health, speak to a doctor.</p>
+
+  </div>
+</div>
+
+<script id="mbc-js">
+(function(){
+"use strict";
+var root=document.getElementById("mbc-app");
+if(!root||root.dataset.mbcInit)return;root.dataset.mbcInit="1";
+
+var $=function(i){return document.getElementById(i)};
+var el={
+ chest:$("mbc-chest"),waist:$("mbc-waist"),hips:$("mbc-hips"),
+ age:$("mbc-age"),ht:$("mbc-height"),wt:$("mbc-weight"),wu:$("mbc-wu"),
+ err:$("mbc-error"),res:$("mbc-results"),
+ type:$("mbc-r-type"),desc:$("mbc-r-desc"),
+ rch:$("mbc-r-ch"),rwa:$("mbc-r-wa"),rhi:$("mbc-r-hi"),
+ siHt:$("mbc-si-ht"),vHt:$("mbc-v-ht"),sHt:$("mbc-s-ht"),
+ siWt:$("mbc-si-wt"),vWt:$("mbc-v-wt"),sWt:$("mbc-s-wt"),
+ siBmi:$("mbc-si-bmi"),vBmi:$("mbc-v-bmi"),sBmi:$("mbc-s-bmi"),
+ vWhr:$("mbc-v-whr"),sWhr:$("mbc-s-whr"),
+ insight:$("mbc-insight"),badge:$("mbc-badge"),insT:$("mbc-ins-title"),insB:$("mbc-ins-body")
+};
+var units=root.querySelectorAll(".mbc-u");
+var sils=root.querySelectorAll(".mbc-sil-card");
+var traits=root.querySelectorAll(".mbc-trait");
+var bars=[$("mbc-bar-cw"),$("mbc-bar-ch"),$("mbc-bar-wh")];
+var vals=[$("mbc-val-cw"),$("mbc-val-ch"),$("mbc-val-wh")];
+var caps=[1.5,1.4,1.3];
+var unit="cm",wUnit="kg",activeSil=null,lastKey=null;
+
+var T={
+trapezoid:{n:"Trapezoid",d:"Your chest is clearly wider than your hips, with a waist that tapers in noticeably between them \u2014 the classic athletic V-shape.",t:[["Defining Feature","Chest at least 3 inches wider than hips; waist at least 7 inches smaller than the chest."],["Style Tips","Fitted shirts and tailored blazers that follow your natural taper work best."],["What Suits You","Flat-front trousers, structured jackets, and anything that shows rather than hides the V-shape."],["Formula Note","Chest\u2212hips \u2265 3 in AND chest\u2212waist \u2265 7 in."]]},
+inverted_triangle:{n:"Inverted Triangle",d:"Your chest is wider than your hips, but without the same waist taper \u2014 a broad, boxier build through the torso.",t:[["Defining Feature","Chest at least 3 inches wider than hips; waist less than 7 inches smaller than the chest."],["Style Tips","Single-breasted jackets with minimal shoulder padding avoid adding extra width up top."],["What Suits You","Straight or relaxed-fit trousers balance a broad torso better than slim cuts."],["Formula Note","Chest\u2212hips \u2265 3 in AND chest\u2212waist < 7 in."]]},
+triangle:{n:"Triangle",d:"Your hips are wider than your chest, giving a narrower-shouldered silhouette with fullness sitting lower.",t:[["Defining Feature","Hips at least 3 inches wider than the chest."],["Style Tips","Structured shoulders and patterned or textured tops add visual width up top."],["What Suits You","Slim, tapered trousers in darker tones keep the lower half from adding further width."],["Formula Note","Hips\u2212chest \u2265 3 in."]]},
+oval:{n:"Oval",d:"Your chest and hips are close in size, but your waist doesn't taper between them \u2014 fullness sits through the midsection.",t:[["Defining Feature","Chest and hips within 3 inches of each other; waist within 2 inches of \u2014 or larger than \u2014 both."],["Style Tips","Vertical lines and open layering elongate the torso without clinging at the middle."],["What Suits You","Flat-front trousers and a slightly longer, straighter shirt cut that skims rather than tucks tight."],["Formula Note","Chest\u2212hips < 3 in AND waist \u2265 (chest\u22122 in) AND waist \u2265 (hips\u22122 in)."]]},
+rectangle:{n:"Rectangle",d:"Your chest, waist and hips are all fairly similar \u2014 a lean, straight silhouette without pronounced taper.",t:[["Defining Feature","Chest and hips within 3 inches of each other; waist moderately smaller than both, but not dramatically."],["Style Tips","Layering and structured shoulders add the visual dimension a straight frame doesn't naturally have."],["What Suits You","Double-breasted jackets and textured fabrics create shape where the proportions don't."],["Formula Note","Catch-all: applied when none of the other conditions are met."]]}
+};
+
+function detect(c,w,h){
+ var f=unit==="cm"?0.393701:1,C=c*f,W=w*f,H=h*f;
+ var ch=C-H,hc=H-C,cw=C-W;
+ if(ch>=3&&cw>=7)return "trapezoid";
+ if(ch>=3)return "inverted_triangle";
+ if(hc>=3)return "triangle";
+ if(Math.abs(ch)<3&&W>=C-2&&W>=H-2)return "oval";
+ return "rectangle";
+}
+
+function insight(a,name){
+ if(!a||a<10||a>100)return null;
+ if(a<20)return["Teen \u00b7 Under 20","Still Developing","At <strong>"+a+"</strong>, your frame is still filling out \u2014 shoulder and chest development in particular continues well into the early twenties. Your <strong>"+name+"</strong> shape may still change. Movement and balanced nutrition tend to matter more at this stage than any particular build goal."];
+ if(a<30)return["Twenties \u00b7 20\u201329","Peak Building Years","In your <strong>20s</strong>, testosterone and recovery capacity are typically at their highest, which is why muscle tends to respond quickly to training at this age \u2014 often why a <strong>"+name+"</strong> frame shifts most noticeably during this decade."];
+ if(a<40)return["Thirties \u00b7 30\u201339","Metabolism Starts to Shift","Through your <strong>30s</strong>, testosterone begins a gradual decline and metabolism slows subtly. A <strong>"+name+"</strong> shape stays fairly stable for most men, though waist measurements often start to shift first. Strength training is often highlighted as particularly useful for maintaining muscle through this stage."];
+ if(a<50)return["Forties \u00b7 40\u201349","Midsection Changes Become Visible","Your <strong>40s</strong> often bring a more noticeable shift in fat storage toward the abdomen as testosterone continues to decline, which can soften a <strong>"+name+"</strong> silhouette toward oval. Core strength, protein intake and sleep are commonly emphasised during this stage."];
+ if(a<60)return["Fifties \u00b7 50\u201359","Muscle Maintenance Takes More Effort","In your <strong>50s</strong>, muscle mass naturally declines faster without deliberate effort to maintain it, and a <strong>"+name+"</strong> classification may shift as a result. Resistance training and adequate protein are often considered the two most relevant levers at this stage."];
+ return ["Sixty+ \u00b7 60 & over","Functional Strength Focus","At <strong>"+a+"</strong>, body composition shifts naturally \u2014 but not inevitably. Your <strong>"+name+"</strong> classification is a snapshot of today. Functional strength and cardiovascular health are generally considered far more relevant than any silhouette category."];
+}
+
+var fmt=function(n){return String(Math.round(n*10)/10)};
+function cmToFeetIn(cm){
+ var totalIn=Math.round(cm/2.54),ft=Math.floor(totalIn/12),inch=totalIn%12;
+ return ft+"'"+inch+'"';
+}
+
+function calculate(){
+ var c=parseFloat(el.chest.value),w=parseFloat(el.waist.value),h=parseFloat(el.hips.value),
+     age=parseInt(el.age.value,10),ht=parseFloat(el.ht.value),wt=parseFloat(el.wt.value);
+
+ if(!(c>0)||!(w>0)||!(h>0)){
+  el.err.classList.add("mbc-show");
+  (c>0?(w>0?el.hips:el.waist):el.chest).focus();
+  return;
+ }
+ el.err.classList.remove("mbc-show");
+
+ var key=detect(c,w,h),t=T[key];
+ lastKey=key;
+ el.type.textContent=t.n;
+ el.desc.textContent=t.d;
+ el.rch.textContent=fmt(c)+" "+unit;
+ el.rwa.textContent=fmt(w)+" "+unit;
+ el.rhi.textContent=fmt(h)+" "+unit;
+
+ if(activeSil)activeSil.classList.remove("mbc-active");
+ for(var i=0;i<sils.length;i++){if(sils[i].dataset.k===key){activeSil=sils[i];sils[i].classList.add("mbc-active");break}}
+
+ var r=[c/w,c/h,w/h];
+ for(var j=0;j<3;j++)vals[j].textContent=r[j].toFixed(2);
+
+ var whr=r[2],whrRisk=whr>0.90?"Above WHO threshold":"Below WHO threshold";
+ el.vWhr.textContent=whr.toFixed(2);
+ el.vWhr.style.color=whr>0.90?"#eb5757":"#6fcf97";
+ el.sWhr.textContent=whrRisk;
+
+ var hasHt=ht>0,hasWt=wt>0,htCm=0,wtKg=0;
+ if(hasHt){
+  htCm=unit==="cm"?ht:ht*2.54;
+  el.vHt.textContent=fmt(ht)+" "+unit;
+  el.sHt.textContent=unit==="cm"?cmToFeetIn(htCm):Math.round(htCm)+" cm";
+ }
+ el.siHt.hidden=!hasHt;
+ if(hasWt){
+  wtKg=wUnit==="kg"?wt:wt*0.453592;
+  el.vWt.textContent=fmt(wt)+" "+wUnit;
+  el.sWt.textContent=wUnit==="kg"?(wt*2.20462).toFixed(1)+" lb":wtKg.toFixed(1)+" kg";
+ }
+ el.siWt.hidden=!hasWt;
+ if(hasHt&&hasWt){
+  var m=htCm/100,bmi=wtKg/(m*m),cls,cat;
+  var ageKnown=age>0&&age<=100;
+  if(ageKnown&&age<20){cls="";cat="Adult BMI ranges don't apply under 20"}
+  else if(bmi<18.5){cls="mbc-bmi-under";cat="Underweight"}
+  else if(bmi<25){cls="mbc-bmi-normal";cat="Normal"}
+  else if(bmi<30){cls="mbc-bmi-over";cat="Overweight"}
+  else{cls="mbc-bmi-obese";cat="Obese"}
+  el.vBmi.textContent=bmi.toFixed(1);
+  el.vBmi.className="mbc-stat-val "+cls;
+  el.sBmi.textContent=cat;
+  el.siBmi.hidden=false;
+ }else el.siBmi.hidden=true;
+
+ for(var k=0;k<4;k++){
+  traits[k].firstElementChild.textContent=t.t[k][0];
+  traits[k].lastElementChild.textContent=t.t[k][1];
+ }
+
+ var ins=insight(age,t.n.toLowerCase());
+ if(ins){el.badge.textContent=ins[0];el.insT.textContent=ins[1];el.insB.innerHTML=ins[2];el.insight.classList.add("mbc-show")}
+ else el.insight.classList.remove("mbc-show");
+
+ el.res.classList.add("mbc-show");
+ requestAnimationFrame(function(){
+  for(var i=0;i<3;i++)bars[i].style.width=Math.min(r[i]/caps[i]*100,100)+"%";
+  el.res.scrollIntoView({behavior:"smooth",block:"nearest"});
+ });
+}
+
+function reset(){
+ el.res.classList.remove("mbc-show");
+ el.insight.classList.remove("mbc-show");
+ el.err.classList.remove("mbc-show");
+ if(activeSil){activeSil.classList.remove("mbc-active");activeSil=null}
+ el.chest.value=el.waist.value=el.hips.value=el.age.value=el.ht.value=el.wt.value="";
+ for(var i=0;i<3;i++)bars[i].style.width="0%";
+ if(typeof updateProgress==="function")updateProgress();
+ el.chest.focus();
+}
+
+function setUnit(v,btns,cb){
+ for(var i=0;i<btns.length;i++){
+  var on=btns[i].dataset.v===v;
+  btns[i].classList.toggle("mbc-active",on);
+  btns[i].setAttribute("aria-pressed",on?"true":"false");
+ }
+ cb(v);
+}
+var uBtns=root.querySelectorAll('[data-act="unit"]'),wBtns=root.querySelectorAll('[data-act="wunit"]');
+
+function changeUnit(v){
+ if(v===unit)return;
+ var factor=v==="in"?(1/2.54):2.54;
+ var inputs=[el.chest,el.waist,el.hips,el.ht];
+ for(var i=0;i<inputs.length;i++){
+  var val=parseFloat(inputs[i].value);
+  if(val>0)inputs[i].value=Math.round(val*factor*100)/100;
+ }
+ unit=v;
+ setUnit(v,uBtns,function(vv){for(var j=0;j<units.length;j++)units[j].textContent=vv});
+}
+function changeWUnit(v){
+ if(v===wUnit)return;
+ var factor=v==="lb"?2.20462:(1/2.20462);
+ var val=parseFloat(el.wt.value);
+ if(val>0)el.wt.value=Math.round(val*factor*100)/100;
+ wUnit=v;
+ setUnit(v,wBtns,function(vv){el.wu.textContent=vv});
+}
+
+function flashCopyBtn(ok){
+ var b=$("mbc-copy-btn"); if(!b)return;
+ var orig="Copy result link";
+ b.textContent=ok?"Copied!":"Couldn't copy \u2014 try again";
+ setTimeout(function(){b.textContent=orig;},1800);
+}
+function shareLink(){
+ var p=new URLSearchParams();
+ p.set("chest",el.chest.value);p.set("waist",el.waist.value);p.set("hips",el.hips.value);
+ p.set("unit",unit);
+ if(el.age.value)p.set("age",el.age.value);
+ if(el.ht.value)p.set("ht",el.ht.value);
+ if(el.wt.value){p.set("wt",el.wt.value);p.set("wunit",wUnit);}
+ var url=location.origin+location.pathname+"?"+p.toString()+"#mbc-app";
+ if(navigator.clipboard&&navigator.clipboard.writeText){
+  navigator.clipboard.writeText(url).then(function(){flashCopyBtn(true)},function(){flashCopyBtn(false)});
+ }else{
+  try{
+   var ta=document.createElement("textarea");ta.value=url;ta.style.position="fixed";ta.style.opacity="0";
+   document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);
+   flashCopyBtn(true);
+  }catch(e){flashCopyBtn(false)}
+ }
+}
+
+function wrapText(ctx,text,x,y,maxW,lh){
+ var words=text.split(" "),line="",yy=y;
+ for(var i=0;i<words.length;i++){
+  var test=line+words[i]+" ";
+  if(ctx.measureText(test).width>maxW&&line){ctx.fillText(line,x,yy);line=words[i]+" ";yy+=lh;}
+  else line=test;
+ }
+ ctx.fillText(line,x,yy);
+ return yy+lh;
+}
+function downloadImage(){
+ var t=T[lastKey]; if(!t)return;
+ var c=document.createElement("canvas"); c.width=800;c.height=900;
+ var ctx=c.getContext("2d");
+ var grad=ctx.createLinearGradient(0,0,0,900);
+ grad.addColorStop(0,"#0d0d0d");grad.addColorStop(1,"#161616");
+ ctx.fillStyle=grad;ctx.fillRect(0,0,800,900);
+ ctx.strokeStyle="#c9a84c";ctx.lineWidth=2;ctx.strokeRect(20,20,760,860);
+ ctx.textAlign="center";
+ ctx.fillStyle="#8a8a8a";ctx.font="14px Georgia, serif";
+ ctx.fillText("YOUR BODY TYPE RESULT",400,110);
+ ctx.fillStyle="#c9a84c";ctx.font="bold 56px Georgia, serif";
+ ctx.fillText(t.n,400,185);
+ ctx.fillStyle="#bdb6a8";ctx.font="16px Georgia, sans-serif";
+ var afterDesc=wrapText(ctx,t.d,400,235,640,24);
+
+ var mY=Math.max(afterDesc+30,330);
+ ctx.strokeStyle="#2a2a2a";ctx.beginPath();ctx.moveTo(60,mY);ctx.lineTo(740,mY);ctx.stroke();
+ var mLabels=["Chest","Waist","Hips"];
+ var mValues=[el.rch.textContent,el.rwa.textContent,el.rhi.textContent];
+ for(var i=0;i<3;i++){
+  var x=180+i*220;
+  ctx.fillStyle="#f0e8d8";ctx.font="bold 22px Georgia, serif";ctx.fillText(mValues[i],x,mY+50);
+  ctx.fillStyle="#8a8a8a";ctx.font="11px sans-serif";ctx.fillText(mLabels[i].toUpperCase(),x,mY+72);
+ }
+
+ var ry=mY+120;
+ ctx.textAlign="left";
+ ctx.fillStyle="#c9a84c";ctx.font="bold 13px sans-serif";
+ ctx.fillText("PROPORTIONAL RATIOS",60,ry);
+ var rLabels=["Chest\u2013Waist","Chest\u2013Hip","Waist\u2013Hip (WHR)"];
+ var rValues=[vals[0].textContent,vals[1].textContent,el.vWhr.textContent];
+ for(var j=0;j<rValues.length;j++){
+  var yy=ry+34+j*30;
+  ctx.textAlign="left";ctx.fillStyle="#8a8a8a";ctx.font="14px sans-serif";ctx.fillText(rLabels[j],60,yy);
+  ctx.textAlign="right";ctx.fillStyle="#f0e8d8";ctx.font="bold 14px Georgia, serif";ctx.fillText(rValues[j],740,yy);
+ }
+
+ ctx.textAlign="center";ctx.fillStyle="#555";ctx.font="12px sans-serif";
+ ctx.fillText(location.hostname||"Body Type Calculator for Men",400,860);
+
+ var url=c.toDataURL("image/png");
+ var a=document.createElement("a");a.href=url;a.download="male-body-type-result.png";
+ document.body.appendChild(a);a.click();document.body.removeChild(a);
+}
+
+root.addEventListener("click",function(e){
+ var b=e.target.closest("[data-act]");
+ if(!b)return;
+ var a=b.dataset.act;
+ if(a==="calc")calculate();
+ else if(a==="reset")reset();
+ else if(a==="share")shareLink();
+ else if(a==="download")downloadImage();
+ else if(a==="unit")changeUnit(b.dataset.v);
+ else if(a==="wunit")changeWUnit(b.dataset.v);
+});
+var requiredOrder=[el.chest,el.waist,el.hips];
+root.addEventListener("keydown",function(e){
+ if(e.key==="Enter"&&e.target.tagName==="INPUT"){
+  e.preventDefault();
+  var idx=requiredOrder.indexOf(e.target);
+  if(idx>-1){
+   var next=null;
+   for(var i=idx+1;i<requiredOrder.length;i++){if(!requiredOrder[i].value){next=requiredOrder[i];break}}
+   if(next){next.focus();return}
+  }
+  calculate();
+ }
+});
+var progressDots=root.querySelectorAll(".mbc-progress-dot");
+function updateProgress(){
+ for(var i=0;i<requiredOrder.length;i++){
+  progressDots[i].classList.toggle("mbc-filled",!!requiredOrder[i].value);
+ }
+}
+requiredOrder.forEach(function(inp){inp.addEventListener("input",updateProgress)});
+
+(function prefillFromUrl(){
+ try{
+  var qs=new URLSearchParams(location.search);
+  if(!qs.has("chest"))return;
+  if(qs.get("unit")==="in")setUnit("in",uBtns,function(v){unit=v;for(var i=0;i<units.length;i++)units[i].textContent=v});
+  el.chest.value=qs.get("chest")||"";el.waist.value=qs.get("waist")||"";el.hips.value=qs.get("hips")||"";
+  if(qs.get("age"))el.age.value=qs.get("age");
+  if(qs.get("ht"))el.ht.value=qs.get("ht");
+  if(qs.get("wt")){el.wt.value=qs.get("wt"); if(qs.get("wunit")==="lb")setUnit("lb",wBtns,function(v){wUnit=v;el.wu.textContent=v});}
+  calculate();
+ }catch(e){}
+})();
+})();
+</script>

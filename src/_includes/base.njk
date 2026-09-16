@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="https://bodyshapecalculator.net{{ page.url }}">
+  <link rel="icon" type="image/jpeg" href="/assets/images/body_shape_calculator_faveicon.jpg">
+  <link rel="apple-touch-icon" href="/assets/images/body_shape_calculator_faveicon.jpg">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/" class="site-logo">Body<span>Shape</span>Calculator</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Body Type Calculator</a>
+        <a href="/male-body-type-calculator/" {% if page.url == "/male-body-type-calculator/" %}class="active"{% endif %}>For Men</a>
+        <a href="/waist-to-hip-ratio-calculator/" {% if page.url == "/waist-to-hip-ratio-calculator/" %}class="active"{% endif %}>WHR</a>
+        <a href="/waist-to-height-ratio-calculator/" {% if page.url == "/waist-to-height-ratio-calculator/" %}class="active"{% endif %}>WHtR</a>
+        <a href="/body-frame-size-calculator/" {% if page.url == "/body-frame-size-calculator/" %}class="active"{% endif %}>Frame Size</a>
+      </nav>
+    </div>
+  </header>
+
+  {{ content | safe }}
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-col">
+        <p class="site-footer-heading">Tools</p>
+        <a href="/">Body Type Calculator</a>
+        <a href="/male-body-type-calculator/">Body Type Calculator for Men</a>
+        <a href="/waist-to-hip-ratio-calculator/">Waist to Hip Ratio Calculator</a>
+        <a href="/waist-to-height-ratio-calculator/">Waist to Height Ratio Calculator</a>
+        <a href="/body-frame-size-calculator/">Body Frame Size Calculator</a>
+      </div>
+      <div class="site-footer-col">
+        <p class="site-footer-heading">Shape Guides</p>
+        <a href="/hourglass-body-shape/">Hourglass Body Shape</a>
+        <a href="/pear-body-shape/">Pear Body Shape</a>
+        <a href="/apple-body-shape/">Apple Body Shape</a>
+        <a href="/inverted-triangle-body-shape/">Inverted Triangle Body Shape</a>
+        <a href="/body-measurements/">Body Measurements</a>
+      </div>
+      <div class="site-footer-col">
+        <p class="site-footer-heading">Company</p>
+        <a href="/about-us/">About Us</a>
+        <a href="/contact-us/">Contact Us</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-and-conditions/">Terms and Conditions</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 BodyShapeCalculator.net. All rights reserved.</p>
+      <p class="site-footer-note">Our calculators are for educational and informational purposes only and are not a substitute for professional medical advice.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

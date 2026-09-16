@@ -1,0 +1,114 @@
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+/* ============ SITE HEADER ============ */
+.site-header {
+  background: #0d0d0d;
+  border-bottom: 1px solid #2a2a2a;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 24px;
+}
+.site-logo {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 19px;
+  font-weight: 900;
+  color: #f5efe0;
+  text-decoration: none;
+  border-bottom: none !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-logo span { color: #c9a84c; }
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.site-nav::-webkit-scrollbar { display: none; }
+.site-nav a {
+  color: #999;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: none !important;
+  white-space: nowrap;
+  padding: 7px 13px;
+  border-radius: 100px;
+  transition: color .2s, background .2s;
+}
+.site-nav a:hover { color: #e8c97a; background: rgba(201,168,76,.08); }
+.site-nav a.active { color: #c9a84c; background: rgba(201,168,76,.14); }
+
+/* ============ SITE FOOTER ============ */
+.site-footer {
+  background: #121212;
+  border-top: 1px solid #2a2a2a;
+  padding: 48px 24px 0;
+}
+.site-footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-bottom: 36px;
+}
+.site-footer-heading {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c9a84c;
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+.site-footer-col { display: flex; flex-direction: column; gap: 10px; }
+.site-footer-col a {
+  color: #9a9a9a;
+  font-size: 13.5px;
+  text-decoration: none;
+  border-bottom: none !important;
+  line-height: 1.4;
+}
+.site-footer-col a:hover { color: #e8c97a; }
+.site-footer-bottom {
+  max-width: 1080px;
+  margin: 0 auto;
+  border-top: 1px solid #232323;
+  padding: 20px 0 28px;
+  text-align: center;
+}
+.site-footer-bottom p {
+  color: #6a6a6a;
+  font-size: 12px;
+  margin: 0 0 6px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+.site-footer-bottom p:last-child { margin-bottom: 0; }
+
+@media (max-width: 720px) {
+  .site-header-inner { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px 18px; }
+  .site-nav { width: 100%; }
+  .site-footer-inner { grid-template-columns: 1fr 1fr; padding: 0 18px 30px; }
+  .site-footer { padding: 36px 0 0; }
+}
+@media (max-width: 480px) {
+  .site-footer-inner { grid-template-columns: 1fr; }
+}

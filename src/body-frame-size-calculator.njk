@@ -1,0 +1,405 @@
+---
+layout: base.njk
+title: Body Frame Size Calculator – Small, Medium or Large
+description: Use our body frame size calculator to find your small, medium, or large frame using height and wrist circumference. Get BMI results in US or metric units.
+---
+
+<style id="bfs-css">
+.bfs-wrap *,.bfs-wrap *::before,.bfs-wrap *::after{box-sizing:border-box;margin:0;padding:0}
+.bfs-wrap{--bfs-bg:#0d0d0d;--bfs-card:#1e1e1e;--bfs-gold:#c9a84c;--bfs-gold-l:#e8c97a;--bfs-cream:#f5efe0;--bfs-muted:#8a8a8a;--bfs-border:#2a2a2a;--bfs-text:#f0e8d8;--bfs-serif:"Playfair Display",Georgia,"Times New Roman",serif;--bfs-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--bfs-sans);background:var(--bfs-bg);color:var(--bfs-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
+.bfs-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.bfs-wrap a{color:var(--bfs-gold-l);border-bottom:1px solid rgba(232,201,122,.35);text-decoration:none}
+.bfs-wrap a:hover{border-bottom-color:var(--bfs-gold-l)}
+.bfs-wrap :focus-visible{outline:2px solid var(--bfs-gold);outline-offset:3px;border-radius:6px}
+.bfs-container{max-width:680px;margin:0 auto;padding:56px 24px 20px;position:relative;z-index:1}
+.bfs-header{text-align:center;margin-bottom:32px}
+.bfs-eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--bfs-gold);margin-bottom:14px;font-weight:500}
+.bfs-h1{font-family:var(--bfs-serif);font-size:clamp(28px,6vw,46px);font-weight:900;line-height:1.05;color:var(--bfs-cream);margin-bottom:14px}
+.bfs-subtitle{color:var(--bfs-muted);font-size:15px;font-weight:400;max-width:500px;margin:0 auto}
+.bfs-toggle{display:flex;align-items:center;justify-content:center;margin:0 auto 24px;background:#161616;border:1px solid var(--bfs-border);border-radius:100px;padding:4px;width:fit-content}
+.bfs-toggle button{padding:8px 20px;border:none;border-radius:100px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:background .2s,color .2s;color:var(--bfs-muted);background:transparent;letter-spacing:.3px}
+.bfs-toggle button.bfs-active{background:var(--bfs-gold);color:#000}
+.bfs-toggles-row{display:flex;gap:10px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.bfs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.bfs-field{background:var(--bfs-card);border:1px solid var(--bfs-border);border-radius:16px;padding:18px 18px 14px;transition:border-color .2s}
+.bfs-field:focus-within{border-color:var(--bfs-gold)}
+.bfs-field label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--bfs-gold);font-weight:500;margin-bottom:10px}
+.bfs-field-hint{font-size:11px;color:var(--bfs-muted);margin-top:4px}
+.bfs-input-wrap{position:relative}
+.bfs-wrap input[type=number]{width:100%;background:transparent;border:none;border-bottom:1px solid var(--bfs-border);padding:6px 36px 6px 0;font-size:20px;font-family:var(--bfs-serif);color:var(--bfs-cream);outline:none;transition:border-color .2s;-moz-appearance:textfield}
+.bfs-wrap input[type=number]::-webkit-outer-spin-button,.bfs-wrap input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.bfs-wrap input[type=number]:focus{border-bottom-color:var(--bfs-gold)}
+.bfs-wrap input::placeholder{color:#444;font-size:16px}
+.bfs-unit-lbl{position:absolute;right:0;bottom:8px;font-size:11px;color:var(--bfs-muted)}
+.bfs-optional-field{grid-column:1/-1}
+.bfs-optional-badge{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--bfs-muted);background:rgba(255,255,255,.06);padding:2px 8px;border-radius:100px;margin-left:8px;font-weight:400}
+.bfs-error{background:rgba(220,60,60,.12);border:1px solid rgba(220,60,60,.3);border-radius:10px;padding:12px 16px;font-size:13px;color:#f08080;margin-bottom:16px;display:none}
+.bfs-error.bfs-show{display:block}
+.bfs-btn{width:100%;padding:18px;background:var(--bfs-gold);color:#000;border:none;border-radius:14px;font-family:var(--bfs-serif);font-size:18px;font-weight:700;cursor:pointer;letter-spacing:.5px;transition:background .2s,transform .2s,box-shadow .2s;margin-bottom:36px}
+.bfs-btn:hover{background:var(--bfs-gold-l);transform:translateY(-1px);box-shadow:0 8px 32px rgba(201,168,76,.25)}
+.bfs-results{display:none}
+.bfs-results.bfs-show{display:block;animation:bfsUp .45s ease both}
+@keyframes bfsUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.bfs-result-card{background:var(--bfs-card);border:1px solid var(--bfs-border);border-radius:18px;padding:26px;text-align:center;margin-bottom:16px}
+.bfs-result-lbl{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--bfs-muted);margin-bottom:10px}
+.bfs-result-val{font-family:var(--bfs-serif);font-size:clamp(30px,7vw,46px);font-weight:900;color:var(--bfs-gold);line-height:1;margin-bottom:6px}
+.bfs-result-sub{font-size:13.5px;color:var(--bfs-muted);margin-top:10px;text-align:left}
+.bfs-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.bfs-stat-item[hidden]{display:none}
+.bfs-reset{width:100%;padding:13px;background:transparent;border:1px solid var(--bfs-border);border-radius:12px;color:var(--bfs-muted);font-family:inherit;font-size:14px;cursor:pointer;transition:border-color .2s,color .2s;margin-bottom:8px}
+.bfs-reset:hover{border-color:var(--bfs-muted);color:var(--bfs-text)}
+.bfs-art{max-width:780px;margin:0 auto;padding:20px 24px 64px;position:relative;z-index:1}
+.bfs-sec{padding-top:40px}
+.bfs-art h2{font-family:var(--bfs-serif);font-size:clamp(22px,4vw,30px);font-weight:900;color:var(--bfs-cream);line-height:1.2;margin-bottom:8px}
+.bfs-art h2::after{content:"";display:block;width:52px;height:2px;background:var(--bfs-gold);margin:14px 0 20px}
+.bfs-art h3{font-family:var(--bfs-serif);font-size:18px;font-weight:700;color:var(--bfs-gold-l);margin:22px 0 8px}
+.bfs-art p{color:#bdb6a8;font-size:15.5px;margin-bottom:14px}
+.bfs-art strong{color:var(--bfs-cream);font-weight:600}
+.bfs-art ul{list-style:none;margin:0 0 16px}
+.bfs-art li{color:#bdb6a8;font-size:15px;padding:6px 0 6px 22px;position:relative}
+.bfs-art li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--bfs-gold);opacity:.7}
+.bfs-note{background:var(--bfs-card);border-left:3px solid var(--bfs-gold);border-radius:0 12px 12px 0;padding:16px 20px;margin:18px 0}
+.bfs-note p:last-child{margin-bottom:0}
+.bfs-tbl-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--bfs-border);border-radius:14px}
+.bfs-art table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}
+.bfs-art th{background:rgba(201,168,76,.08);color:var(--bfs-gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-align:left;padding:12px 16px}
+.bfs-art td{padding:12px 16px;color:#bdb6a8;border-top:1px solid var(--bfs-border)}
+.bfs-art td:first-child{color:var(--bfs-cream);font-weight:500}
+.bfs-faq{border:1px solid var(--bfs-border);border-radius:12px;background:var(--bfs-card);margin-bottom:10px;overflow:hidden}
+.bfs-faq summary{padding:16px 20px;cursor:pointer;color:var(--bfs-cream);font-weight:500;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.bfs-faq summary::-webkit-details-marker{display:none}
+.bfs-faq summary::after{content:"+";color:var(--bfs-gold);font-size:20px;line-height:1;flex-shrink:0}
+.bfs-faq[open] summary::after{content:"–"}
+.bfs-faq[open] summary{color:var(--bfs-gold)}
+.bfs-faq-body{padding:0 20px 18px}
+.bfs-faq-body p:last-child{margin-bottom:0}
+.bfs-related{display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(201,168,76,.02));border:1px solid rgba(201,168,76,.2);border-radius:16px;padding:18px 20px;margin-top:8px}
+.bfs-related-icon{font-size:22px;flex-shrink:0}
+.bfs-related p{margin:0;font-size:14px;color:var(--bfs-muted)}
+.bfs-disc{font-size:13px;color:#777;border-top:1px solid var(--bfs-border);padding-top:20px;margin-top:36px}
+@media (max-width:640px){
+.bfs-container{padding:40px 18px 12px}
+.bfs-art{padding:12px 18px 48px}
+.bfs-grid,.bfs-stats-grid{grid-template-columns:1fr}
+}
+</style>
+
+<div class="bfs-wrap" id="bfs-app">
+  <div class="bfs-container">
+    <header class="bfs-header">
+      <p class="bfs-eyebrow">Body Measurement Tool</p>
+      <h1 class="bfs-h1">Body Frame Size Calculator</h1>
+      <p class="bfs-subtitle">Searching for a body shape calculator that uses just height and weight? Here's what those two numbers can actually tell you — plus your frame size if you add one more measurement.</p>
+    </header>
+
+    <div class="bfs-toggles-row">
+      <div class="bfs-toggle" role="group" aria-label="Sex">
+        <button type="button" class="bfs-active" data-act="sex" data-v="female" aria-pressed="true">Female</button>
+        <button type="button" data-act="sex" data-v="male" aria-pressed="false">Male</button>
+      </div>
+      <div class="bfs-toggle" role="group" aria-label="Unit">
+        <button type="button" class="bfs-active" data-act="unit" data-v="cm" aria-pressed="true">cm / kg</button>
+        <button type="button" data-act="unit" data-v="in" aria-pressed="false">in / lb</button>
+      </div>
+    </div>
+
+    <div class="bfs-grid">
+      <div class="bfs-field">
+        <label for="bfs-height">Height</label>
+        <div class="bfs-input-wrap">
+          <input type="number" id="bfs-height" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="bfs-unit-lbl bfs-u-h">cm</span>
+        </div>
+      </div>
+      <div class="bfs-field">
+        <label for="bfs-weight">Weight</label>
+        <div class="bfs-input-wrap">
+          <input type="number" id="bfs-weight" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="bfs-unit-lbl bfs-u-w">kg</span>
+        </div>
+      </div>
+      <div class="bfs-field bfs-optional-field">
+        <label for="bfs-wrist">Wrist Circumference<span class="bfs-optional-badge">Optional — adds frame size</span></label>
+        <div class="bfs-input-wrap">
+          <input type="number" id="bfs-wrist" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="bfs-unit-lbl bfs-u-h">cm</span>
+        </div>
+        <p class="bfs-field-hint">Measured just below the wrist bone, at the narrowest point</p>
+      </div>
+    </div>
+
+    <p class="bfs-error" id="bfs-error" role="alert">Enter your height and weight as numbers greater than zero.</p>
+    <button type="button" class="bfs-btn" data-act="calc">Calculate</button>
+
+    <section class="bfs-results" id="bfs-results" aria-live="polite" role="status">
+
+      <div class="bfs-result-card">
+        <p class="bfs-result-lbl">Body Mass Index</p>
+        <p class="bfs-result-val" id="bfs-bmi-val">—</p>
+        <p class="bfs-result-sub" id="bfs-bmi-note"></p>
+      </div>
+
+      <div class="bfs-result-card" id="bfs-frame-card" hidden>
+        <p class="bfs-result-lbl">Frame Size</p>
+        <p class="bfs-result-val" id="bfs-frame-val">—</p>
+        <p class="bfs-result-sub" id="bfs-frame-note"></p>
+      </div>
+
+      <div class="bfs-note" id="bfs-noframe-note">
+        <p><strong>Add your wrist measurement above</strong> to also get a frame size result (small / medium / large) — the genuine skeletal-build signal that height and weight alone can't provide.</p>
+      </div>
+
+      <button type="button" class="bfs-reset" data-act="reset">← Calculate Again</button>
+    </section>
+  </div>
+
+  <div class="bfs-art">
+
+    <section class="bfs-sec" id="bfs-why">
+      <h2>Why Height and Weight Alone Can't Determine Body Shape</h2>
+      <p>If you searched for a body shape calculator that only asks for height and weight, here's the honest answer: hourglass, pear, apple, rectangle and inverted triangle are all defined by the <em>relationship</em> between your bust, waist and hip measurements — not by your overall size. Two people with identical height and weight can have completely different shapes, and two people with the same shape can be very different sizes. Height and weight simply don't contain that information.</p>
+      <p>What height and weight <em>can</em> tell you is your BMI — a general size-to-height ratio — and, with one more number, your body frame size. Want the actual shape result? Our full <a href="/">body type calculator</a> uses bust, waist, high hip and hip specifically because that's the only combination that can answer it.</p>
+    </section>
+
+    <section class="bfs-sec" id="bfs-what">
+      <h2>What Body Frame Size Actually Measures</h2>
+      <p>Body frame size describes your skeletal build — small, medium, or large — based on the ratio between your height and your wrist circumference. Wrist size is a useful proxy for bone structure specifically because the wrist carries very little muscle or fat; it's mostly bone, so its width mostly reflects your underlying frame rather than your current fitness or weight.</p>
+      <p>This is a genuinely different question from body shape. Frame size doesn't change with weight loss or muscle gain, and it doesn't distinguish hourglass from pear — it tells you whether your skeleton runs narrow, average, or broad for your height, which is useful context for reading BMI and ideal-weight charts accurately.</p>
+    </section>
+
+    <section class="bfs-sec" id="bfs-measure">
+      <h2>How to Measure Your Wrist</h2>
+      <p>Wrap a flexible tape measure around your wrist just below the wrist bone (the bony bump where your hand meets your forearm) — the narrowest point of the wrist. Keep the tape snug against the skin but not compressing it. Measure in the morning before any swelling sets in, and take the reading twice to confirm consistency.</p>
+    </section>
+
+    <section class="bfs-sec" id="bfs-categories">
+      <h2>Frame Size Categories Explained</h2>
+      <p>The method used here — height divided by wrist circumference — traces back to the Metropolitan Life Insurance Company's 1983 height and weight tables, and remains the most commonly used version of this calculation:</p>
+      <div class="bfs-tbl-wrap">
+        <table>
+          <thead><tr><th scope="col">Frame</th><th scope="col">Women (height ÷ wrist)</th><th scope="col">Men (height ÷ wrist)</th></tr></thead>
+          <tbody>
+            <tr><td>Small</td><td>Above 11.0</td><td>Above 10.4</td></tr>
+            <tr><td>Medium</td><td>10.1 – 11.0</td><td>9.6 – 10.4</td></tr>
+            <tr><td>Large</td><td>Below 10.1</td><td>Below 9.6</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>A smaller ratio means a comparatively thicker wrist for your height, which is why the numbers run in the opposite direction you might expect — small ratio, large frame. Different calculators online use very slightly different boundary numbers (some use 10.9 instead of 11.0 for women, for instance); the categories and general logic are consistent even where the exact decimal varies by source.</p>
+    </section>
+
+    <section class="bfs-sec" id="bfs-weight">
+      <h2>Frame Size and Ideal Weight</h2>
+      <p>Frame size matters most as context for weight charts. Classic ideal-body-weight formulas are typically built around a medium frame, then adjusted by roughly 10% in each direction — subtracting for a small frame, adding for a large one — since a broader skeleton simply carries more structural weight before body fat is even part of the picture. If a standard BMI or ideal-weight chart has always felt like it was aimed at someone else's body, a frame-size mismatch is often why.</p>
+    </section>
+
+    <section class="bfs-sec" id="bfs-bmi">
+      <h2>What About BMI?</h2>
+      <p>BMI — weight divided by height squared — is the one genuine size metric height and weight can produce on their own, which is why it's included in the result above. It has real limitations: it can't tell muscle from fat, and it says nothing about where on your body that weight sits. For that second question, our <a href="/waist-to-hip-ratio-calculator/">waist to hip ratio calculator</a> and <a href="/waist-to-height-ratio-calculator/">waist to height ratio calculator</a> both add the missing piece using one extra measurement each.</p>
+    </section>
+
+    <section class="bfs-sec" id="bfs-faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <details class="bfs-faq"><summary>Can you tell body shape from height and weight alone?</summary><div class="bfs-faq-body">
+        <p>No — body shape (hourglass, pear, apple, and so on) is defined by the relationship between bust, waist and hip measurements, which height and weight don't capture at all. Height and weight can tell you your BMI and, with a wrist measurement added, your frame size — but not your shape category.</p>
+      </div></details>
+
+      <details class="bfs-faq"><summary>What's the difference between body frame size and body shape?</summary><div class="bfs-faq-body">
+        <p>Frame size describes your skeletal build — small, medium or large — and stays fairly constant throughout adulthood regardless of weight changes. Body shape describes the proportional relationship between your bust, waist and hips, and can shift with weight change, pregnancy, training or age. They're independent measurements answering different questions.</p>
+      </div></details>
+
+      <details class="bfs-faq"><summary>Does frame size change if I lose or gain weight?</summary><div class="bfs-faq-body">
+        <p>No. Frame size is driven by bone structure, which doesn't meaningfully change in adulthood regardless of weight change, muscle gain, or training. That stability is exactly why it's used as a fixed reference point for adjusting weight charts rather than something to track over time.</p>
+      </div></details>
+
+      <details class="bfs-faq"><summary>Is the wrist method accurate?</summary><div class="bfs-faq-body">
+        <p>It's a widely used, easy-to-measure proxy rather than a lab-grade skeletal assessment. Elbow breadth is sometimes used as an alternative or cross-check, but wrist circumference is the version most commonly cited because it only takes one simple measurement to get a reasonable estimate.</p>
+      </div></details>
+
+      <details class="bfs-faq"><summary>I don't have a tape measure for my wrist — can I still use this?</summary><div class="bfs-faq-body">
+        <p>Yes — enter just your height and weight for a BMI result. You'll only get the frame-size half of the result once a wrist measurement is added, but the BMI figure works on its own.</p>
+      </div></details>
+    </section>
+
+    <p>If you came here looking for "hourglass or pear," frame size isn't quite that — but it answers the question height and weight were actually capable of answering, honestly, rather than forcing a shape label those two numbers were never going to support.</p>
+
+    <div class="bfs-related">
+      <span class="bfs-related-icon">📐</span>
+      <p>For your actual shape result — hourglass, pear, apple and more — try the full <a href="/">body type calculator</a>.</p>
+    </div>
+
+    <p class="bfs-disc">This calculator is for educational and informational purposes only. It does not diagnose any medical condition and isn't a substitute for advice from a qualified healthcare professional.</p>
+
+  </div>
+</div>
+
+<script id="bfs-js">
+(function(){
+"use strict";
+var root=document.getElementById("bfs-app");
+if(!root||root.dataset.bfsInit)return;root.dataset.bfsInit="1";
+var $=function(i){return document.getElementById(i)};
+var el={
+ height:$("bfs-height"),weight:$("bfs-weight"),wrist:$("bfs-wrist"),
+ err:$("bfs-error"),res:$("bfs-results"),
+ bmiVal:$("bfs-bmi-val"),bmiNote:$("bfs-bmi-note"),
+ frameCard:$("bfs-frame-card"),frameVal:$("bfs-frame-val"),frameNote:$("bfs-frame-note"),
+ noFrameNote:$("bfs-noframe-note")
+};
+var unitsH=root.querySelectorAll(".bfs-u-h"),unitsW=root.querySelectorAll(".bfs-u-w");
+var sBtns=root.querySelectorAll('[data-act="sex"]'),uBtns=root.querySelectorAll('[data-act="unit"]');
+var sex="female",unit="cm";
+
+function setToggle(v,btns,cb){
+ for(var i=0;i<btns.length;i++){
+  var on=btns[i].dataset.v===v;
+  btns[i].classList.toggle("bfs-active",on);
+  btns[i].setAttribute("aria-pressed",on?"true":"false");
+ }
+ cb(v);
+}
+function changeUnit(v){
+ if(v===unit)return;
+ var lenFactor=v==="in"?(1/2.54):2.54;
+ var wtFactor=v==="in"?(1/0.453592):0.453592;
+ var lenInputs=[el.height,el.wrist];
+ for(var i=0;i<lenInputs.length;i++){
+  var val=parseFloat(lenInputs[i].value);
+  if(val>0)lenInputs[i].value=Math.round(val*lenFactor*100)/100;
+ }
+ var wVal=parseFloat(el.weight.value);
+ if(wVal>0)el.weight.value=Math.round(wVal*wtFactor*100)/100;
+ unit=v;
+ setToggle(v,uBtns,function(vv){
+  for(var j=0;j<unitsH.length;j++)unitsH[j].textContent=vv;
+  for(var k=0;k<unitsW.length;k++)unitsW[k].textContent=vv==="cm"?"kg":"lb";
+ });
+}
+
+function calculate(){
+ var h=parseFloat(el.height.value),w=parseFloat(el.weight.value),wr=parseFloat(el.wrist.value);
+ if(!(h>0)||!(w>0)){
+  el.err.classList.add("bfs-show");
+  (h>0?el.weight:el.height).focus();
+  return;
+ }
+ el.err.classList.remove("bfs-show");
+
+ var hCm=unit==="cm"?h:h*2.54;
+ var wKg=unit==="cm"?w:w*0.453592;
+ var m=hCm/100,bmi=wKg/(m*m),cls,cat;
+ if(bmi<18.5){cat="Underweight"}
+ else if(bmi<25){cat="Normal weight range"}
+ else if(bmi<30){cat="Overweight"}
+ else{cat="Obese"}
+ el.bmiVal.textContent=bmi.toFixed(1);
+ el.bmiNote.textContent=cat+" — BMI reflects overall size relative to height, not shape or frame.";
+
+ if(wr>0){
+  var wrCm=unit==="cm"?wr:wr*2.54;
+  var ratio=hCm/wrCm;
+  var frame,note;
+  if(sex==="male"){
+   if(ratio>10.4){frame="Small Frame";note="Height-to-wrist ratio of "+ratio.toFixed(1)+" — above 10.4 for men. Classic ideal-weight charts are often adjusted about 10% lower for a small frame."}
+   else if(ratio>=9.6){frame="Medium Frame";note="Height-to-wrist ratio of "+ratio.toFixed(1)+" — the average range for men (9.6\u201310.4). Standard weight charts apply without adjustment."}
+   else{frame="Large Frame";note="Height-to-wrist ratio of "+ratio.toFixed(1)+" — below 9.6 for men. Classic ideal-weight charts are often adjusted about 10% higher for a large frame."}
+  }else{
+   if(ratio>11.0){frame="Small Frame";note="Height-to-wrist ratio of "+ratio.toFixed(1)+" — above 11.0 for women. Classic ideal-weight charts are often adjusted about 10% lower for a small frame."}
+   else if(ratio>=10.1){frame="Medium Frame";note="Height-to-wrist ratio of "+ratio.toFixed(1)+" — the average range for women (10.1\u201311.0). Standard weight charts apply without adjustment."}
+   else{frame="Large Frame";note="Height-to-wrist ratio of "+ratio.toFixed(1)+" — below 10.1 for women. Classic ideal-weight charts are often adjusted about 10% higher for a large frame."}
+  }
+  el.frameVal.textContent=frame;
+  el.frameNote.textContent=note;
+  el.frameCard.hidden=false;
+  el.noFrameNote.hidden=true;
+ }else{
+  el.frameCard.hidden=true;
+  el.noFrameNote.hidden=false;
+ }
+
+ el.res.classList.add("bfs-show");
+ requestAnimationFrame(function(){el.res.scrollIntoView({behavior:"smooth",block:"nearest"})});
+}
+
+function reset(){
+ el.res.classList.remove("bfs-show");
+ el.err.classList.remove("bfs-show");
+ el.height.value=el.weight.value=el.wrist.value="";
+ el.height.focus();
+}
+
+root.addEventListener("click",function(e){
+ var b=e.target.closest("[data-act]");
+ if(!b)return;
+ var a=b.dataset.act;
+ if(a==="calc")calculate();
+ else if(a==="reset")reset();
+ else if(a==="sex")setToggle(b.dataset.v,sBtns,function(v){sex=v});
+ else if(a==="unit")changeUnit(b.dataset.v);
+});
+root.addEventListener("keydown",function(e){
+ if(e.key==="Enter"&&e.target.tagName==="INPUT"){e.preventDefault();calculate()}
+});
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://bodyshapecalculator.net/body-frame-size-calculator/#webpage",
+      "url": "https://bodyshapecalculator.net/body-frame-size-calculator/",
+      "name": "Body Frame Size Calculator – Small, Medium or Large",
+      "description": "Use our body frame size calculator to find your small, medium, or large frame using height and wrist circumference. Get BMI results in US or metric units.",
+      "isPartOf": { "@id": "https://bodyshapecalculator.net/#website" },
+      "breadcrumb": { "@id": "https://bodyshapecalculator.net/body-frame-size-calculator/#breadcrumb" },
+      "mainEntity": { "@id": "https://bodyshapecalculator.net/body-frame-size-calculator/#calculator" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://bodyshapecalculator.net/body-frame-size-calculator/#calculator",
+      "name": "Body Frame Size Calculator",
+      "url": "https://bodyshapecalculator.net/body-frame-size-calculator/",
+      "description": "Calculate your BMI and estimate your body frame size as small, medium, or large using height and wrist circumference.",
+      "applicationCategory": "HealthApplication",
+      "applicationSubCategory": "Body Measurement Calculator",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires a modern web browser with JavaScript enabled.",
+      "inLanguage": "en-US",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "BMI calculation",
+        "Body frame size calculation",
+        "Height and wrist circumference method",
+        "Female and male frame size categories",
+        "Metric cm/kg units",
+        "US customary in/lb units",
+        "Small, medium, and large frame results"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://bodyshapecalculator.net/body-frame-size-calculator/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Body Shape Calculator", "item": "https://bodyshapecalculator.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Body Frame Size Calculator", "item": "https://bodyshapecalculator.net/body-frame-size-calculator/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bodyshapecalculator.net/body-frame-size-calculator/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Can you tell body shape from height and weight alone?", "acceptedAnswer": { "@type": "Answer", "text": "No. Body shape such as hourglass, pear, apple, or rectangle is determined by the relationship between body measurements such as the bust, waist, and hips. Height and weight alone cannot determine body shape. They can be used to calculate BMI and, with wrist circumference, estimate body frame size." } },
+        { "@type": "Question", "name": "What's the difference between body frame size and body shape?", "acceptedAnswer": { "@type": "Answer", "text": "Body frame size describes your underlying skeletal build as small, medium, or large. Body shape describes the proportions between areas such as the bust, waist, and hips. Frame size and body shape are different measurements that answer different questions." } },
+        { "@type": "Question", "name": "Does frame size change if I lose or gain weight?", "acceptedAnswer": { "@type": "Answer", "text": "Body frame size is primarily related to bone structure and generally does not meaningfully change in adulthood because of weight loss, weight gain, or muscle gain." } },
+        { "@type": "Question", "name": "Is the wrist method accurate for determining frame size?", "acceptedAnswer": { "@type": "Answer", "text": "The wrist method is a commonly used estimate of body frame size based on the relationship between height and wrist circumference. It is a practical proxy for skeletal build rather than a clinical or laboratory-grade skeletal assessment." } },
+        { "@type": "Question", "name": "Can I use the calculator without measuring my wrist?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can enter your height and weight to calculate BMI. A wrist measurement is needed to estimate your body frame size as small, medium, or large." } }
+      ]
+    }
+  ]
+}
+</script>

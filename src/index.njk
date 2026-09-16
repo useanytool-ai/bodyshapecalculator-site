@@ -1,0 +1,1133 @@
+---
+layout: base.njk
+title: Body Type Calculator – Find Your Body Shape
+description: Use this free body type calculator to find your female body shape using bust, waist, high hip and hip measurements. Discover your proportions, body type, waist-to-hip ratio and styling guidance.
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://bodyshapecalculator.net/#webpage",
+      "url": "https://bodyshapecalculator.net/",
+      "name": "Body Type Calculator – Find Your Body Shape",
+      "headline": "Body Type Calculator — Find Your Exact Body Shape in Seconds",
+      "description": "Use this free body type calculator to find your female body shape using bust, waist, high hip and hip measurements. Discover your proportions, body type, waist-to-hip ratio and styling guidance.",
+      "isPartOf": {
+        "@id": "https://bodyshapecalculator.net/#website"
+      },
+      "mainEntity": {
+        "@id": "https://bodyshapecalculator.net/#calculator"
+      },
+      "breadcrumb": {
+        "@id": "https://bodyshapecalculator.net/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "about": [
+        { "@type": "Thing", "name": "Body type" },
+        { "@type": "Thing", "name": "Body shape" },
+        { "@type": "Thing", "name": "Body measurements" },
+        { "@type": "Thing", "name": "Waist-to-hip ratio" },
+        { "@type": "Thing", "name": "Personal styling" }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://bodyshapecalculator.net/#website",
+      "url": "https://bodyshapecalculator.net/",
+      "name": "Body Shape Calculator",
+      "description": "Free body shape and body type calculators with measurement and styling guidance.",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://bodyshapecalculator.net/#calculator",
+      "name": "Body Type Calculator",
+      "url": "https://bodyshapecalculator.net/",
+      "applicationCategory": "LifestyleApplication",
+      "applicationSubCategory": "Body Shape Calculator",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript-enabled web browser",
+      "description": "Free online body type calculator that analyzes bust, waist, high hip and hip measurements to identify seven female body shapes including hourglass, top hourglass, bottom hourglass, pear, apple, inverted triangle and rectangle.",
+      "featureList": [
+        "Female body shape calculator",
+        "Seven body shape classification",
+        "Bust, waist, high hip and hip measurement analysis",
+        "Waist-to-hip ratio calculation",
+        "Waist-to-height ratio calculation",
+        "BMI calculation",
+        "Body proportion analysis",
+        "Body shape styling recommendations",
+        "Centimeter and inch measurements",
+        "Shareable calculation results",
+        "Downloadable result image"
+      ],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+      "creator": { "@id": "https://bodyshapecalculator.net/#organization" },
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://bodyshapecalculator.net/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bodyshapecalculator.net/" },
+        { "@type": "ListItem", "position": 2, "name": "Body Type Calculator", "item": "https://bodyshapecalculator.net/" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://bodyshapecalculator.net/#organization",
+      "name": "Body Shape Calculator",
+      "url": "https://bodyshapecalculator.net/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bodyshapecalculator.net/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What measurements do I need to use this calculator?", "acceptedAnswer": { "@type": "Answer", "text": "You need three measurements: bust or chest, waist, and hip, all in the same unit (inches or centimetres). High hip is optional and adds a bonus ratio. Age, height and weight are optional extras that unlock BMI and an age-context note in your result." } },
+        { "@type": "Question", "name": "Is this body type calculator for men too?", "acceptedAnswer": { "@type": "Answer", "text": "This calculator is built around female proportions. Men have their own five-shape system using chest, waist and hip measurements instead, covered by a separate dedicated calculator linked in the navigation above." } },
+        { "@type": "Question", "name": "How accurate is a body type calculator?", "acceptedAnswer": { "@type": "Answer", "text": "The calculator accurately applies its classification formula to the measurements entered. The main source of variation is measurement technique. For better accuracy, use a flexible measuring tape, measure twice, keep your posture natural, and avoid rounding your measurements." } },
+        { "@type": "Question", "name": "Why do different calculators give different body shape results?", "acceptedAnswer": { "@type": "Answer", "text": "Calculators use different systems (four-shape versus seven-shape), some include high hip and some don't, and small rounding differences can push a borderline result from one shape to another. Use a calculator with a consistent, documented formula and measure as precisely as you can." } },
+        { "@type": "Question", "name": "What if I fall between two body types?", "acceptedAnswer": { "@type": "Answer", "text": "Very common and completely normal — the boundaries between shapes are gradients, not sharp lines. If your measurements sit on the edge between two shapes, you genuinely share characteristics of both, so the styling tips for both will apply to you." } },
+        { "@type": "Question", "name": "Can your body shape change over time or with exercise?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pregnancy, weight changes, ageing and hormonal shifts all change your proportions, and targeted strength training can change measurements around the shoulders, back, waist and hips. Re-measure every six months, or after any significant change." } },
+        { "@type": "Question", "name": "What is the most common female body shape?", "acceptedAnswer": { "@type": "Answer", "text": "Rectangle, also called banana or straight, is the most commonly cited female body shape, with figures from a 2006 NC State analysis putting it around 46% of women. Body shape distributions vary depending on the classification method and population studied." } },
+        { "@type": "Question", "name": "What is the difference between hourglass and pear body shape?", "acceptedAnswer": { "@type": "Answer", "text": "An hourglass shape has a bust and hips that are nearly equal with a dramatically smaller waist in between. A pear shape has hips noticeably wider than the bust, with a waist that is present but not as sharply defined." } },
+        { "@type": "Question", "name": "What is high hip measurement and why does it matter?", "acceptedAnswer": { "@type": "Answer", "text": "The high hip is measured approximately 7 inches below the natural waist, around the upper hip area. It feeds the High Hip-to-Waist ratio shown in your result, which can flag a pronounced shelf pattern at the top of the hip that bust/waist/hip alone can miss." } },
+        { "@type": "Question", "name": "Is hourglass really the ideal body shape?", "acceptedAnswer": { "@type": "Answer", "text": "Western fashion has historically treated it that way, and a waist-to-hip ratio near 0.7 is widely perceived as attractive across many cultures — but beauty standards vary by culture, era and personal taste. Every shape has silhouettes that look genuinely excellent on it." } },
+        { "@type": "Question", "name": "Does body shape depend on weight or size?", "acceptedAnswer": { "@type": "Answer", "text": "No. Body shape is determined by proportions, not by weight or dress size. A slim person can have an apple-shaped body and a larger person can have an hourglass figure — size and shape are independent." } },
+        { "@type": "Question", "name": "Is there a body shape calculator that just uses height and weight?", "acceptedAnswer": { "@type": "Answer", "text": "Not for the hourglass, pear, apple and rectangle system, which needs bust, waist and hip measurements because it is about proportion rather than size. Height and weight alone can produce a BMI figure and, with a wrist measurement, a body frame size." } },
+        { "@type": "Question", "name": "Does this calculator use shoulder measurements?", "acceptedAnswer": { "@type": "Answer", "text": "No. This calculator uses bust, waist, high hip and hip only. Bust width serves as the practical stand-in for upper-body breadth in this measurement system." } },
+        { "@type": "Question", "name": "Is spoon a body shape this calculator can give me?", "acceptedAnswer": { "@type": "Answer", "text": "No — this calculator's seven shapes are hourglass, top hourglass, bottom hourglass, pear, apple, inverted triangle and rectangle. Spoon is a related term some other systems use for a pear shape with a pronounced high-hip shelf; here that pattern is captured within the pear result." } },
+        { "@type": "Question", "name": "How often should I re-measure?", "acceptedAnswer": { "@type": "Answer", "text": "Every six months is enough for most people, or after any significant change such as pregnancy, a notable weight shift, a new training programme, or a hormonal transition such as perimenopause." } },
+        { "@type": "Question", "name": "What's the difference between body type and body shape?", "acceptedAnswer": { "@type": "Answer", "text": "In everyday use the terms are often interchangeable, and this site uses them that way. More strictly, body shape refers to visible proportions from bust, waist and hip measurements, while body type can also describe frame, build, or somatotype in other fields such as fitness." } },
+        { "@type": "Question", "name": "What body type do I have if my waist is bigger than my hips?", "acceptedAnswer": { "@type": "Answer", "text": "That pattern usually points toward apple, especially if your bust and hips are close in size. The exact result still depends on how your bust compares to both waist and hips, so it's worth running your full numbers through the calculator rather than judging from the waist alone." } },
+        { "@type": "Question", "name": "Does body type affect clothing size?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Two people can wear the same size label and still need different cuts, because size measures overall volume while body type describes where that volume sits. That's why the same dress size can fit very differently on an hourglass versus a rectangle." } }
+      ]
+    }
+  ]
+}
+</script>
+<style id="btc-css">
+.btc-wrap *,.btc-wrap *::before,.btc-wrap *::after{box-sizing:border-box;margin:0;padding:0}
+.btc-wrap{--btc-bg:#0d0d0d;--btc-surface:#161616;--btc-card:#1e1e1e;--btc-gold:#c9a84c;--btc-gold-l:#e8c97a;--btc-cream:#f5efe0;--btc-muted:#8a8a8a;--btc-border:#2a2a2a;--btc-text:#f0e8d8;--btc-serif:"Playfair Display",Georgia,"Times New Roman",serif;--btc-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--btc-sans);background:var(--btc-bg);color:var(--btc-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
+.btc-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.btc-wrap::after{content:"";position:absolute;bottom:-15%;right:-15%;width:45%;height:45%;background:radial-gradient(circle,rgba(201,168,76,.05) 0,transparent 70%);pointer-events:none;z-index:0}
+.btc-wrap a{text-decoration:none}
+.btc-wrap :focus-visible{outline:2px solid var(--btc-gold);outline-offset:3px;border-radius:6px}
+.btc-nav{background:rgba(13,13,13,.92);border-bottom:1px solid #222;padding:0 24px;position:relative;z-index:10}
+.btc-nav-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;gap:6px;height:52px;overflow-x:auto;scrollbar-width:none}
+.btc-nav-inner::-webkit-scrollbar{display:none}
+.btc-nav-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#555;white-space:nowrap;padding-right:10px;border-right:1px solid var(--btc-border);margin-right:6px;font-weight:500;flex-shrink:0}
+.btc-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;white-space:nowrap;transition:border-color .2s,color .2s,background .2s;flex-shrink:0;border:1px solid transparent;letter-spacing:.3px}
+.btc-pill.btc-current{background:rgba(201,168,76,.15);border-color:rgba(201,168,76,.4);color:var(--btc-gold)}
+.btc-pill.btc-current .btc-dot{background:var(--btc-gold)}
+.btc-pill.btc-linked{background:#1a1a1a;border-color:var(--btc-border);color:#999}
+.btc-pill.btc-linked:hover{border-color:var(--btc-gold);color:var(--btc-gold-l);background:rgba(201,168,76,.07)}
+.btc-dot{width:6px;height:6px;border-radius:50%;background:#555;flex-shrink:0}
+.btc-container{max-width:780px;margin:0 auto;padding:56px 24px 20px;position:relative;z-index:1}
+.btc-header{text-align:center;margin-bottom:52px}
+.btc-eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--btc-gold);margin-bottom:14px;font-weight:500}
+.btc-h1{font-family:var(--btc-serif);font-size:clamp(32px,6vw,54px);font-weight:900;line-height:1.05;color:var(--btc-cream);margin-bottom:14px}
+.btc-h1 span{color:var(--btc-gold);font-style:italic}
+.btc-subtitle{color:var(--btc-muted);font-size:15px;font-weight:400;max-width:420px;margin:0 auto}
+.btc-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;margin:18px 0 6px;font-size:12.5px;color:var(--btc-muted)}
+.btc-trust-row span{white-space:nowrap}
+.btc-updated{text-align:center;font-size:11.5px;color:#555;margin-bottom:20px}
+.btc-unit-toggle{display:flex;align-items:center;justify-content:center;margin:0 auto 36px;background:var(--btc-surface);border:1px solid var(--btc-border);border-radius:100px;padding:4px;width:fit-content}
+.btc-unit-toggle button{padding:8px 22px;border:none;border-radius:100px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:background .2s,color .2s;color:var(--btc-muted);background:transparent;letter-spacing:.5px}
+.btc-unit-toggle button.btc-active{background:var(--btc-gold);color:#000}
+.btc-diagram{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:16px;padding:20px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
+.btc-diagram-svg{width:120px;height:190px;flex-shrink:0}
+.btc-diagram-key{display:flex;flex-direction:column;gap:10px;flex:1;min-width:180px}
+.btc-diagram-row{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--btc-muted)}
+.btc-diagram-dot{width:10px;height:3px;border-radius:2px;flex-shrink:0}
+.btc-diagram-row strong{color:var(--btc-cream);font-weight:600}
+.btc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.btc-progress{display:flex;gap:7px;justify-content:center;margin-bottom:18px}
+.btc-progress-dot{width:8px;height:8px;border-radius:50%;background:var(--btc-border);transition:background .25s,transform .25s}
+.btc-progress-dot.btc-filled{background:var(--btc-gold);transform:scale(1.15)}
+.btc-field{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:16px;padding:18px 18px 14px;transition:border-color .2s}
+.btc-field:focus-within{border-color:var(--btc-gold)}
+.btc-field label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--btc-gold);font-weight:500;margin-bottom:10px}
+.btc-optional-tag{display:inline-block;background:rgba(255,255,255,.06);color:var(--btc-muted);font-size:9px;letter-spacing:1px;padding:2px 7px;border-radius:100px;margin-left:4px;font-weight:400}
+.btc-field-hint{font-size:11px;color:var(--btc-muted);margin-top:4px}
+.btc-input-wrap{position:relative}
+.btc-wrap input[type=number]{width:100%;background:transparent;border:none;border-bottom:1px solid var(--btc-border);padding:6px 36px 6px 0;font-size:22px;font-family:var(--btc-serif);color:var(--btc-cream);outline:none;transition:border-color .2s;-moz-appearance:textfield}
+.btc-wrap input[type=number]::-webkit-outer-spin-button,.btc-wrap input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.btc-wrap input[type=number]:focus{border-bottom-color:var(--btc-gold)}
+.btc-wrap input::placeholder{color:#444;font-size:18px}
+.btc-unit-lbl{position:absolute;right:0;bottom:8px;font-size:12px;color:var(--btc-muted)}
+.btc-age-row{display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+.btc-age-field{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:12px;flex:1;min-width:150px;transition:border-color .2s}
+.btc-age-field:focus-within{border-color:var(--btc-gold)}
+.btc-age-field label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--btc-gold);font-weight:500;white-space:nowrap}
+.btc-age-field input[type=number]{font-size:20px;padding:4px 0;width:50px;flex:1;min-width:0}
+.btc-age-unit{font-size:12px;color:var(--btc-muted);white-space:nowrap}
+.btc-wt-field{flex-direction:column;align-items:flex-start;gap:8px}
+.btc-wt-top{display:flex;align-items:center;gap:12px;width:100%}
+.btc-wt-toggle{display:inline-flex;background:var(--btc-surface);border:1px solid var(--btc-border);border-radius:100px;padding:3px}
+.btc-wt-toggle button{padding:4px 12px;border:none;border-radius:100px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;transition:background .2s,color .2s;color:var(--btc-muted);background:transparent}
+.btc-wt-toggle button.btc-active{background:var(--btc-gold);color:#000}
+.btc-error{background:rgba(220,60,60,.12);border:1px solid rgba(220,60,60,.3);border-radius:10px;padding:12px 16px;font-size:13px;color:#f08080;margin-bottom:16px;display:none}
+.btc-error.btc-show{display:block}
+.btc-btn{width:100%;padding:18px;background:var(--btc-gold);color:#000;border:none;border-radius:14px;font-family:var(--btc-serif);font-size:18px;font-weight:700;cursor:pointer;letter-spacing:.5px;transition:background .2s,transform .2s,box-shadow .2s;margin-bottom:40px}
+.btc-btn:hover{background:var(--btc-gold-l);transform:translateY(-1px);box-shadow:0 8px 32px rgba(201,168,76,.25)}
+.btc-btn:active{transform:translateY(0)}
+.btc-results{display:none}
+.btc-results.btc-show{display:block;animation:btcUp .45s ease both}
+@keyframes btcUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.btc-result-head{text-align:center;margin-bottom:24px}
+.btc-result-lbl{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--btc-muted);margin-bottom:10px}
+.btc-result-type{font-family:var(--btc-serif);font-size:clamp(38px,8vw,68px);font-weight:900;color:var(--btc-gold);line-height:1;margin-bottom:8px}
+.btc-result-desc{color:var(--btc-muted);font-size:15px;max-width:460px;margin:0 auto}
+.btc-result-pct{display:inline-block;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--btc-gold-l);font-size:12px;font-weight:600;letter-spacing:.3px;padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.btc-share-row{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.btc-share-btn{flex:1;min-width:150px;padding:11px 14px;background:transparent;border:1px solid rgba(201,168,76,.4);border-radius:10px;color:var(--btc-gold-l);font-family:inherit;font-size:12.5px;font-weight:500;cursor:pointer;transition:background .2s,border-color .2s;letter-spacing:.3px}
+.btc-share-btn:hover{background:rgba(201,168,76,.1);border-color:var(--btc-gold)}
+.btc-mbar{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:16px;padding:20px;margin-bottom:20px;display:flex}
+.btc-mitem{flex:1;text-align:center;padding:6px;border-right:1px solid var(--btc-border)}
+.btc-mitem:last-child{border-right:none}
+.btc-mval{font-family:var(--btc-serif);font-size:20px;color:var(--btc-cream);font-weight:700}
+.btc-mkey{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--btc-muted);margin-top:4px}
+.btc-sil-row{display:flex;gap:10px;margin-bottom:20px;justify-content:center;flex-wrap:wrap}
+.btc-sil-card{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:14px;padding:14px 10px;text-align:center;width:100px;transition:border-color .3s,background .3s}
+.btc-sil-card.btc-active{border-color:var(--btc-gold);background:rgba(201,168,76,.08)}
+.btc-sil-svg{width:46px;height:74px;margin:0 auto 8px;display:block}
+.btc-sil-name{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--btc-muted);font-weight:500}
+.btc-sil-card.btc-active .btc-sil-name{color:var(--btc-gold)}
+.btc-stats-card,.btc-ratios{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:16px;padding:22px;margin-bottom:20px}
+.btc-stats-title,.btc-ratios-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--btc-gold);font-weight:500;margin-bottom:18px}
+.btc-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px}
+.btc-stat-item{text-align:center}
+.btc-stat-item[hidden]{display:none}
+.btc-stat-val{font-family:var(--btc-serif);font-size:24px;font-weight:700;color:var(--btc-cream);line-height:1}
+.btc-bmi-normal{color:#6fcf97}.btc-bmi-under{color:#56ccf2}.btc-bmi-over{color:#f2c94c}.btc-bmi-obese{color:#eb5757}
+.btc-stat-key{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--btc-muted);margin-top:5px}
+.btc-stat-sub{font-size:11px;color:var(--btc-muted);margin-top:2px}
+.btc-rrow{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.btc-rrow:last-child{margin-bottom:0}
+.btc-rlbl{font-size:13px;color:var(--btc-muted);width:115px;flex-shrink:0}
+.btc-rbar-bg{flex:1;height:6px;background:var(--btc-border);border-radius:100px;overflow:hidden}
+.btc-rbar-fill{height:100%;width:0;background:var(--btc-gold);border-radius:100px;transition:width .8s cubic-bezier(.23,1,.32,1)}
+.btc-rval{font-size:13px;color:var(--btc-cream);width:40px;text-align:right;font-weight:500}
+.btc-traits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.btc-trait{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:14px;padding:16px}
+.btc-trait-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--btc-gold);font-weight:500;margin-bottom:7px}
+.btc-trait-text{font-size:14px;color:var(--btc-muted)}
+.btc-insight{background:linear-gradient(135deg,rgba(201,168,76,.07),rgba(201,168,76,.02));border:1px solid rgba(201,168,76,.22);border-radius:14px;padding:18px 20px;margin-bottom:20px;display:none}
+.btc-insight.btc-show{display:block}
+.btc-insight-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.btc-badge{background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.35);border-radius:100px;padding:3px 12px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--btc-gold);font-weight:500}
+.btc-insight-title{font-family:var(--btc-serif);font-size:15px;color:var(--btc-cream);font-weight:700}
+.btc-insight-body{font-size:13px;color:var(--btc-muted)}
+.btc-insight-body strong{color:var(--btc-cream);font-weight:500}
+.btc-divider{border:none;border-top:1px solid var(--btc-border);margin:28px 0}
+.btc-related-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#555;font-weight:500;margin-bottom:12px}
+.btc-related-card{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(201,168,76,.02));border:1px solid rgba(201,168,76,.2);border-radius:16px;padding:20px 22px;transition:border-color .25s,transform .25s,box-shadow .25s;margin-bottom:12px}
+.btc-related-card:hover{border-color:rgba(201,168,76,.5);transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,168,76,.1)}
+.btc-related-icon{width:46px;height:46px;border-radius:12px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.btc-related-body{flex:1;min-width:0}
+.btc-related-ey{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--btc-gold);font-weight:500;margin-bottom:3px}
+.btc-related-name{font-family:var(--btc-serif);font-size:17px;font-weight:700;color:var(--btc-cream);margin-bottom:3px}
+.btc-related-desc{font-size:13px;color:var(--btc-muted)}
+.btc-related-arr{font-size:18px;color:var(--btc-gold);opacity:.7;flex-shrink:0;transition:transform .2s,opacity .2s}
+.btc-related-card:hover .btc-related-arr{transform:translateX(4px);opacity:1}
+.btc-reset{width:100%;padding:13px;background:transparent;border:1px solid var(--btc-border);border-radius:12px;color:var(--btc-muted);font-family:inherit;font-size:14px;cursor:pointer;transition:border-color .2s,color .2s;margin-top:6px}
+.btc-reset:hover{border-color:var(--btc-muted);color:var(--btc-text)}
+.btc-art{max-width:780px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:1}
+.btc-sec{content-visibility:auto;contain-intrinsic-size:1px 900px;padding-top:44px}
+.btc-art h2{font-family:var(--btc-serif);font-size:clamp(24px,4vw,34px);font-weight:900;color:var(--btc-cream);line-height:1.2;margin-bottom:8px}
+.btc-art h2::after{content:"";display:block;width:52px;height:2px;background:var(--btc-gold);margin:14px 0 20px}
+.btc-art h3{font-family:var(--btc-serif);font-size:19px;font-weight:700;color:var(--btc-gold-l);margin:26px 0 8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.btc-art p{color:#bdb6a8;font-size:15.5px;margin-bottom:14px}
+.btc-art strong{color:var(--btc-cream);font-weight:600}
+.btc-art ul{list-style:none;margin:0 0 16px}
+.btc-art li{color:#bdb6a8;font-size:15px;padding:6px 0 6px 22px;position:relative}
+.btc-art li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--btc-gold);opacity:.7}
+.btc-art a{color:var(--btc-gold-l);border-bottom:1px solid rgba(232,201,122,.35)}
+.btc-art a:hover{border-bottom-color:var(--btc-gold-l)}
+.btc-note{background:var(--btc-card);border-left:3px solid var(--btc-gold);border-radius:0 12px 12px 0;padding:16px 20px;margin:18px 0}
+.btc-note p:last-child{margin-bottom:0}
+.btc-tbl-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--btc-border);border-radius:14px}
+.btc-art table{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
+.btc-art th{background:rgba(201,168,76,.08);color:var(--btc-gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-align:left;padding:12px 16px}
+.btc-art td{padding:12px 16px;color:#bdb6a8;border-top:1px solid var(--btc-border)}
+.btc-art td:first-child{color:var(--btc-cream);font-weight:500;white-space:nowrap}
+.btc-faq{border:1px solid var(--btc-border);border-radius:12px;background:var(--btc-card);margin-bottom:10px;overflow:hidden}
+.btc-faq summary{padding:16px 20px;cursor:pointer;color:var(--btc-cream);font-weight:500;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.btc-faq summary::-webkit-details-marker{display:none}
+.btc-faq summary::after{content:"+";color:var(--btc-gold);font-size:20px;line-height:1;flex-shrink:0}
+.btc-faq[open] summary::after{content:"–"}
+.btc-faq[open] summary{color:var(--btc-gold)}
+.btc-faq-body{padding:0 20px 18px}
+.btc-faq-body p:last-child{margin-bottom:0}
+.btc-disc{font-size:13px;color:#777;border-top:1px solid var(--btc-border);padding-top:20px;margin-top:44px}
+.btc-unique{display:inline-block;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);color:var(--btc-gold-l);font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:2px 10px;border-radius:100px;font-family:var(--btc-sans);font-weight:600}
+@media (max-width:640px){
+.btc-container{padding:40px 18px 56px}
+.btc-art{padding:0 18px 60px}
+.btc-grid,.btc-traits{grid-template-columns:1fr}
+.btc-stats-grid{grid-template-columns:1fr 1fr}
+.btc-mbar{flex-wrap:wrap;gap:8px}
+.btc-mitem{flex:1 1 45%;border-right:none}
+.btc-rlbl{width:92px;font-size:12px}
+.btc-related-card{gap:14px;padding:16px}
+.btc-share-row{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+.btc-wrap *,.btc-wrap *::before,.btc-wrap *::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+
+<div class="btc-wrap" id="btc-app">
+
+  <div class="btc-container">
+
+    <header class="btc-header">
+      <p class="btc-eyebrow">Proportional Analysis</p>
+      <h1 class="btc-h1">Body <span>Type</span> Calculator</h1>
+      <p class="btc-subtitle">Enter your measurements to find your body shape — a free, instant read on your figure and proportions using bust, waist, high hip and hip.</p>
+    </header>
+
+    <div class="btc-trust-row">
+      <span>✓ No signup or account needed</span>
+      <span>✓ Stays in your browser — never stored</span>
+      <span>✓ Inches or centimeters</span>
+    </div>
+    <p class="btc-updated">Last updated: September 2026</p>
+
+    <div class="btc-unit-toggle" role="group" aria-label="Measurement unit">
+      <button type="button" class="btc-active" data-act="unit" data-v="cm" aria-pressed="true">Centimeters</button>
+      <button type="button" data-act="unit" data-v="in" aria-pressed="false">Inches</button>
+    </div>
+
+    <div class="btc-diagram">
+      <svg class="btc-diagram-svg" viewBox="0 0 220 340" aria-hidden="true">
+        <path d="M110,10 C130,10 140,25 140,45 C150,60 148,80 142,100 C150,110 150,125 140,140 C132,155 126,165 120,178 C118,182 118,186 120,190 C126,200 132,208 138,218 C146,225 150,232 148,245 C144,258 138,268 130,278 C126,290 122,300 118,310 L110,315 L102,310 C98,300 94,290 90,278 C82,268 76,258 72,245 C70,232 74,225 82,218 C88,208 94,200 100,190 C102,186 102,182 100,178 C94,165 88,155 80,140 C70,125 70,110 78,100 C72,80 70,60 80,45 C80,25 90,10 110,10 Z" fill="none" stroke="#c9a84c" stroke-width="2" opacity="0.85"/>
+        <line x1="55" y1="118" x2="165" y2="118" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.8"/>
+        <line x1="55" y1="184" x2="165" y2="184" stroke="#e8c97a" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.8"/>
+        <line x1="55" y1="207" x2="165" y2="207" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+        <line x1="55" y1="233" x2="165" y2="233" stroke="#e8c97a" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.8"/>
+      </svg>
+      <div class="btc-diagram-key">
+        <div class="btc-diagram-row"><span class="btc-diagram-dot" style="background:#c9a84c"></span><strong>Bust</strong> — fullest part of the chest</div>
+        <div class="btc-diagram-row"><span class="btc-diagram-dot" style="background:#e8c97a"></span><strong>Waist</strong> — narrowest point, above the navel</div>
+        <div class="btc-diagram-row"><span class="btc-diagram-dot" style="background:#c9a84c;opacity:.6"></span><strong>High Hip</strong> — ~7in below the waist</div>
+        <div class="btc-diagram-row"><span class="btc-diagram-dot" style="background:#e8c97a"></span><strong>Hip</strong> — widest part of the buttocks</div>
+      </div>
+    </div>
+
+    <div class="btc-progress" id="btc-progress" aria-hidden="true">
+      <span class="btc-progress-dot" data-for="btc-bust"></span>
+      <span class="btc-progress-dot" data-for="btc-waist"></span>
+      <span class="btc-progress-dot" data-for="btc-highhip"></span>
+      <span class="btc-progress-dot" data-for="btc-hips"></span>
+    </div>
+
+    <div class="btc-grid">
+      <div class="btc-field">
+        <label for="btc-bust">Bust</label>
+        <div class="btc-input-wrap">
+          <input type="number" id="btc-bust" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="btc-unit-lbl btc-u">cm</span>
+        </div>
+        <p class="btc-field-hint">Fullest part of the chest, over a non-padded bra</p>
+      </div>
+      <div class="btc-field">
+        <label for="btc-waist">Waist</label>
+        <div class="btc-input-wrap">
+          <input type="number" id="btc-waist" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="btc-unit-lbl btc-u">cm</span>
+        </div>
+        <p class="btc-field-hint">Narrowest part, just above the belly button</p>
+      </div>
+      <div class="btc-field">
+        <label for="btc-highhip">High Hip <span class="btc-optional-tag">Optional</span></label>
+        <div class="btc-input-wrap">
+          <input type="number" id="btc-highhip" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="btc-unit-lbl btc-u">cm</span>
+        </div>
+        <p class="btc-field-hint">About 18 cm (7 in) below the waist — skip if you'd rather not measure this</p>
+      </div>
+      <div class="btc-field">
+        <label for="btc-hips">Hips</label>
+        <div class="btc-input-wrap">
+          <input type="number" id="btc-hips" inputmode="decimal" placeholder="0" min="0" step="0.1">
+          <span class="btc-unit-lbl btc-u">cm</span>
+        </div>
+        <p class="btc-field-hint">Widest circumference over the buttocks</p>
+      </div>
+    </div>
+
+    <div class="btc-age-row">
+      <div class="btc-age-field">
+        <label for="btc-age">Age</label>
+        <input type="number" id="btc-age" inputmode="numeric" placeholder="—" min="10" max="100" step="1">
+        <span class="btc-age-unit">yrs</span>
+      </div>
+      <div class="btc-age-field">
+        <label for="btc-height">Height</label>
+        <input type="number" id="btc-height" inputmode="decimal" placeholder="—" min="0" step="0.1">
+        <span class="btc-age-unit btc-u">cm</span>
+      </div>
+      <div class="btc-age-field btc-wt-field">
+        <div class="btc-wt-top">
+          <label for="btc-weight">Weight</label>
+          <div class="btc-wt-toggle" role="group" aria-label="Weight unit">
+            <button type="button" class="btc-active" data-act="wunit" data-v="kg" aria-pressed="true">kg</button>
+            <button type="button" data-act="wunit" data-v="lb" aria-pressed="false">lb</button>
+          </div>
+        </div>
+        <div class="btc-wt-bot">
+          <input type="number" id="btc-weight" inputmode="decimal" placeholder="—" min="0" step="0.1">
+          <span class="btc-age-unit" id="btc-wu">kg</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="btc-error" id="btc-error" role="alert">Add your bust, waist and hips as numbers greater than zero. High hip is optional.</p>
+    <button type="button" class="btc-btn" data-act="calc">Calculate My Body Type</button>
+
+    <section class="btc-results" id="btc-results" aria-live="polite">
+
+      <div class="btc-result-head">
+        <p class="btc-result-lbl">Your body type is</p>
+        <p class="btc-result-type" id="btc-r-type">—</p>
+        <p class="btc-result-pct" id="btc-r-pct"></p>
+        <p class="btc-result-desc" id="btc-r-desc"></p>
+      </div>
+
+      <div class="btc-share-row">
+        <button type="button" class="btc-share-btn" id="btc-copy-btn" data-act="share">Copy result link</button>
+        <button type="button" class="btc-share-btn" data-act="download">Download image</button>
+        <button type="button" class="btc-share-btn" data-act="download-story">Download for Stories</button>
+      </div>
+
+      <div class="btc-mbar">
+        <div class="btc-mitem"><div class="btc-mval" id="btc-r-bu">—</div><div class="btc-mkey">Bust</div></div>
+        <div class="btc-mitem"><div class="btc-mval" id="btc-r-wa">—</div><div class="btc-mkey">Waist</div></div>
+        <div class="btc-mitem"><div class="btc-mval" id="btc-r-hh">—</div><div class="btc-mkey">High Hip</div></div>
+        <div class="btc-mitem"><div class="btc-mval" id="btc-r-hi">—</div><div class="btc-mkey">Hips</div></div>
+      </div>
+
+      <div class="btc-sil-row" id="btc-sil-row">
+        <div class="btc-sil-card" data-k="hourglass"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M10 8Q25 2 40 8l-2 20Q25 36 12 28Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="8" ry="6" fill="#c9a84c" opacity=".6"/><path d="M12 28q13 6 26 0l4 27Q25 68 8 55Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Hourglass</div></div>
+        <div class="btc-sil-card" data-k="bottom_hourglass"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M12 8Q25 2 38 8l-2 20Q25 34 14 28Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="7" ry="6" fill="#c9a84c" opacity=".6"/><path d="M14 28q11 5 22 0l8 28Q25 70 6 56Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Btm. Hourglass</div></div>
+        <div class="btc-sil-card" data-k="top_hourglass"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M8 8Q25 2 42 8l-2 20Q25 35 10 28Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="9" ry="6" fill="#c9a84c" opacity=".6"/><path d="M10 28q15 5 30 0l-4 28Q25 62 14 56Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Top Hourglass</div></div>
+        <div class="btc-sil-card" data-k="apple"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M13 9Q25 3 37 9Q40 20 35 27Q41 40 36 54Q28 66 14 54Q9 40 15 27Q10 20 13 9Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="8" ry="6" fill="#c9a84c" opacity=".6"/></svg><div class="btc-sil-name">Apple</div></div>
+        <div class="btc-sil-card" data-k="triangle"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M15 8Q25 2 35 8l-2 18Q25 32 17 26Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="7" ry="6" fill="#c9a84c" opacity=".6"/><path d="M17 26q8 5 16 0l11 30Q25 70 6 56Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Triangle</div></div>
+        <div class="btc-sil-card" data-k="inverted_triangle"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M8 8Q25 2 42 8l-2 20Q25 35 10 28Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="9" ry="6" fill="#c9a84c" opacity=".6"/><path d="M10 28q15 5 30 0l-6 30Q25 64 16 58Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Inv. Triangle</div></div>
+        <div class="btc-sil-card" data-k="rectangle"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M13 8Q25 2 37 8l-1 22Q25 34 14 30Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="7" ry="6" fill="#c9a84c" opacity=".6"/><path d="M14 30q11 3 22 0l1 28Q25 62 13 58Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Rectangle</div></div>
+      </div>
+
+      <div class="btc-stats-card">
+        <p class="btc-stats-title">Body Stats</p>
+        <div class="btc-stats-grid">
+          <div class="btc-stat-item" id="btc-si-ht" hidden><div class="btc-stat-val" id="btc-v-ht">—</div><div class="btc-stat-key">Height</div><div class="btc-stat-sub" id="btc-s-ht"></div></div>
+          <div class="btc-stat-item" id="btc-si-wt" hidden><div class="btc-stat-val" id="btc-v-wt">—</div><div class="btc-stat-key">Weight</div><div class="btc-stat-sub" id="btc-s-wt"></div></div>
+          <div class="btc-stat-item" id="btc-si-bmi" hidden><div class="btc-stat-val" id="btc-v-bmi">—</div><div class="btc-stat-key">BMI</div><div class="btc-stat-sub" id="btc-s-bmi"></div></div>
+          <div class="btc-stat-item" id="btc-si-whtr" hidden><div class="btc-stat-val" id="btc-v-whtr">—</div><div class="btc-stat-key">WHtR</div><div class="btc-stat-sub" id="btc-s-whtr"></div></div>
+          <div class="btc-stat-item"><div class="btc-stat-val" id="btc-v-whr">—</div><div class="btc-stat-key">WHR</div><div class="btc-stat-sub" id="btc-s-whr"></div></div>
+        </div>
+      </div>
+
+      <div class="btc-ratios">
+        <p class="btc-ratios-title">Proportional Ratios</p>
+        <div class="btc-rrow"><span class="btc-rlbl">Waist–Hip</span><div class="btc-rbar-bg"><div class="btc-rbar-fill" id="btc-bar-wh"></div></div><span class="btc-rval" id="btc-val-wh">—</span></div>
+        <div class="btc-rrow"><span class="btc-rlbl">Bust–Hip</span><div class="btc-rbar-bg"><div class="btc-rbar-fill" id="btc-bar-sh"></div></div><span class="btc-rval" id="btc-val-sh">—</span></div>
+        <div class="btc-rrow"><span class="btc-rlbl">Bust–Waist</span><div class="btc-rbar-bg"><div class="btc-rbar-fill" id="btc-bar-bh"></div></div><span class="btc-rval" id="btc-val-bh">—</span></div>
+        <div class="btc-rrow"><span class="btc-rlbl">High Hip–Waist</span><div class="btc-rbar-bg"><div class="btc-rbar-fill" id="btc-bar-wb"></div></div><span class="btc-rval" id="btc-val-wb">—</span></div>
+      </div>
+
+      <div class="btc-traits" id="btc-traits">
+        <div class="btc-trait"><div class="btc-trait-title"></div><div class="btc-trait-text"></div></div>
+        <div class="btc-trait"><div class="btc-trait-title"></div><div class="btc-trait-text"></div></div>
+        <div class="btc-trait"><div class="btc-trait-title"></div><div class="btc-trait-text"></div></div>
+        <div class="btc-trait"><div class="btc-trait-title"></div><div class="btc-trait-text"></div></div>
+      </div>
+
+      <div class="btc-insight" id="btc-insight">
+        <div class="btc-insight-head">
+          <span class="btc-badge" id="btc-badge">—</span>
+          <span class="btc-insight-title" id="btc-ins-title">Age &amp; Body Context</span>
+        </div>
+        <p class="btc-insight-body" id="btc-ins-body"></p>
+      </div>
+
+      <hr class="btc-divider">
+
+      <p class="btc-related-lbl">Related Tools</p>
+      <a class="btc-related-card" href="/waist-to-hip-ratio-calculator/">
+        <span class="btc-related-icon">📏</span>
+        <span class="btc-related-body">
+          <span class="btc-related-ey">Try Next</span>
+          <span class="btc-related-name">Waist to Hip Ratio Calculator</span>
+          <span class="btc-related-desc">Get the full WHO risk breakdown and sourcing behind the WHR number shown above.</span>
+        </span>
+        <span class="btc-related-arr">→</span>
+      </a>
+
+      <button type="button" class="btc-reset" data-act="reset">← Calculate Again</button>
+    </section>
+  </div>
+
+  <div class="btc-art">
+
+  <div style="text-align:center;margin:0 0 8px;">
+    <img src="/assets/images/Body-Shape-Calculator-Guide-300x164.webp" alt="Body shape calculator guide" style="max-width:420px;width:100%;border-radius:16px;border:1px solid #2a2a2a;" loading="lazy">
+  </div>
+
+  <section class="btc-sec" id="btc-what">
+    <h2>What Is a Body Type Calculator and How Does It Work?</h2>
+    <p>A body type calculator is a measurement-based tool that compares your bust, waist and hip circumferences to classify your figure into one of several recognised shapes. It calculates the ratios and differences between your measurements and matches them against established formulas — the same ones used in clothing science research. Unlike a weighing scale or BMI chart, it does not measure how much you weigh; it tells you how your measurements relate to each other, which determines your overall silhouette.</p>
+    <p>The logic is straightforward: bust and hip measurements are compared to see which is larger and by how much, then the waist is compared to both to determine how defined it is. Based on those differences, the calculator places you into one of seven body shapes — hourglass, top hourglass, bottom hourglass, pear, apple, inverted triangle or rectangle.</p>
+    <div class="btc-note">
+      <p><strong>This is a fashion and self-awareness tool, not a health screening device.</strong> The result is a starting point for understanding your proportions and finding styles that suit you — not a medical classification or a value judgment.</p>
+    </div>
+    <ul>
+      <li><strong>Seven shapes beat four.</strong> Older calculators use only four. This one uses a seven-shape system based on research published in the <em>International Journal of Clothing Science and Technology</em>, which gives a more precise result and reduces the "I fall between two shapes" problem.</li>
+      <li><strong>Accuracy depends on your measurements.</strong> Measure carefully and the result is genuinely useful. Rush, and the calculator is working with bad data.</li>
+      <li><strong>You get more than a label.</strong> Every result comes with outfit direction and a waist-to-hip ratio reading.</li>
+    </ul>
+  </section>
+
+  <section class="btc-sec" id="btc-measure">
+    <h2>How to Take Accurate Body Measurements at Home</h2>
+    <p>Accurate measurements equal accurate results. Grab a flexible measuring tape (the soft fabric kind used for sewing, not a metal builder's tape), stand in front of a mirror if you can, and breathe normally throughout. Stand straight with your arms relaxed and feet together. This calculator works equally well in centimeters or inches — use the toggle above and enter every measurement in the same unit.</p>
+
+    <h3>How to Measure Your Bust Size</h3>
+    <p>Wrap the tape around the fullest part of your chest, usually across the nipple line. If you are measuring in a bra, wear a properly fitted, non-padded one. The tape should sit level across your back and front — don't let it dip or ride up at the back. Keep it snug against the skin without compressing anything, breathe naturally, then take the reading.</p>
+
+    <h3>How to Measure Your Waist Size</h3>
+    <p>Your natural waist is the narrowest part of your torso, usually an inch or two <em>above</em> the belly button rather than at it — that mix-up is the most common measuring mistake. Don't suck in your stomach; exhale gently and measure your relaxed shape, keeping the tape parallel to the floor. Not sure where your natural waist is? Bend sideways — the crease that forms is the spot.</p>
+
+    <h3>How to Measure Your Hip Size</h3>
+    <p>Stand with your feet together and wrap the tape around the widest part of your buttocks and hips, usually about 7–9 inches below the natural waist. Keep the tape level all the way around and check the back in a mirror so it doesn't tilt downward. Measure over bare skin or form-fitting clothes, never over thick fabric.</p>
+
+    <h3>What Is High Hip and How Do You Measure It?</h3>
+    <p>The high hip is measured roughly 7 inches (18 cm) below your natural waist, just above the pelvic bone — the widest point of the upper hip area, distinct from the full hip below. Most calculators skip it entirely. This tool uses it to show your High Hip–Waist ratio alongside your other proportions, which is useful supplementary context even though your bust, waist and hip numbers alone determine your shape category.</p>
+
+    <h3>Inches vs. Centimeters — Which Should You Use?</h3>
+    <p>Both work equally well; the calculator accepts either unit. What matters is consistency — measure everything in the same unit. Mixing inches and centimeters will give you an incorrect result. If you have a tape that only shows one unit and want the other, multiply centimeters by 0.394 to get inches, or inches by 2.54 to get centimeters. Most modern measuring tapes show both units on opposite sides.</p>
+
+    <div class="btc-note">
+      <p><strong>Pro tip:</strong> Ask a friend to take your measurements if possible — self-measuring, especially at the back, can introduce errors. Measure in the morning before meals for the most consistent results. Want the complete rundown — chest, thigh, inseam and more? Our full <a href="/body-measurements/">body measurements</a> guide covers every point of the tape.</p>
+    </div>
+  </section>
+
+  <section class="btc-sec" id="btc-shapes">
+    <h2>The 7 Female Body Shapes Explained (With Formulas)</h2>
+    <p>Most people know the classic four: hourglass, pear, apple and rectangle. Real bodies are more nuanced. A seven-shape system — supported by research from North Carolina State University and used in clothing science literature — captures those nuances far more accurately, including two shapes older four-category systems collapse into "pear": bottom hourglass and top hourglass. The percentages below are the most widely cited figures, drawn from a 2006 analysis of over 6,300 women; later re-analyses using different methods have found different splits, so treat the numbers as a general picture rather than an exact census. Every shape has its own styling strengths; none is more "correct" than another.</p>
+
+    <div class="btc-tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Shape</th><th scope="col">Roughly how common</th><th scope="col">Defining formula (inches)</th></tr></thead>
+        <tbody>
+          <tr><td>Rectangle / Banana</td><td>~46%</td><td>Bust &amp; hips within 3.6 in; waist less than 9 in smaller</td></tr>
+          <tr><td>Pear / Triangle</td><td>~20%</td><td>Hips ≥ 3.6 in wider than bust; hips − waist &lt; 9 in</td></tr>
+          <tr><td>Apple / Oval</td><td>~14%</td><td>Bust &amp; hips within 3.6 in of each other; waist within 2 in of — or larger than — both bust and hips</td></tr>
+          <tr><td>Hourglass</td><td>~8%</td><td>Bust − hips ≤ 1 in; waist ≥ 9 in smaller than bust</td></tr>
+          <tr><td>Top Hourglass</td><td>Less common</td><td>Bust 1–10 in larger than hips; bust − waist ≥ 9 in</td></tr>
+          <tr><td>Bottom Hourglass</td><td>Less common</td><td>Hips 3.6–10 in larger than bust; hips − waist ≥ 9 in</td></tr>
+          <tr><td>Inverted Triangle</td><td>Less common</td><td>Bust ≥ 3.6 in wider than hips; bust − waist &lt; 9 in</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Hourglass Body Shape</h3>
+    <p>The hourglass has a bust and hips that are roughly equal, with a waist significantly narrower than both — the difference between bust and hips is less than 3.6 inches, and the waist is at least 9 inches smaller than both. Only about 8% of women have a true hourglass figure, making it far rarer than most people assume. If this is your result, your proportions are already balanced — the main styling rule is to keep them visible rather than hiding them under boxy shapes. See our full <a href="/hourglass-body-shape/">hourglass body shape</a> guide for the deeper breakdown, including how it compares to top and bottom hourglass.</p>
+
+    <h3>Top Hourglass Body Shape <span class="btc-unique">Distinct from pear</span></h3>
+    <p>Similar to the classic hourglass, but the bust is larger than the hips, typically by 1 to 10 inches. The waist is still clearly defined (at least 9 inches smaller than the bust), so the silhouette keeps its pinched look while the balance tilts upward. This distinction matters for necklines and top choices — if generic "hourglass tips" have never quite worked for you, this may be why. Draw attention downward with patterned or wide-leg trousers, A-line skirts in bold colors, and V-necklines that lengthen rather than broaden the upper body.</p>
+
+    <h3>Bottom Hourglass Body Shape <span class="btc-unique">Distinct from pear</span></h3>
+    <p>The mirror image of the top hourglass: hips are 3.6 to 10 inches larger than the bust, but the waist stays clearly defined, at least 9 inches smaller than the hips. Four-shape systems usually collapse this into "pear" — the real difference is waist definition: pear shapes have a softer waist, bottom hourglass shapes have a strongly cinched one. Balance your proportions by adding volume to the upper body — boat necklines, puff sleeves and structured blazers work beautifully, paired with A-line or fit-and-flare skirts.</p>
+
+    <h3>Pear (Triangle) Body Shape</h3>
+    <p>Also called the triangle or bell shape, sometimes searched as "glute shape" or "butt shape." Hips are noticeably wider than the bust, typically by 3.6 inches or more, with a waist that is present but not dramatically defined (less than 9 inches smaller than the hips). Fullness concentrates in the hips, thighs and bottom. <strong>Best outfits:</strong> A-line skirts, bootcut jeans, wrap tops, off-shoulder necklines and bold prints on top. <strong>Avoid:</strong> very tight skirts that add bulk below, and pale or nude bottoms that draw attention to the hips. Our full <a href="/pear-body-shape/">pear body shape</a> guide covers formal, casual and swimwear picks in more depth.</p>
+
+    <h3>Is Pear the Same as "Spoon" Body Shape?</h3>
+    <p>Some calculators list "spoon" as its own category, distinct from pear. The pattern they're describing is a pear shape with a pronounced high-hip shelf — where the high hip (measured about 7 inches below the waist) is significantly larger than the waist itself, rather than tapering gradually into the hip. In practice this is a variant of pear rather than a separate silhouette: the styling advice is the same (draw attention upward, balance with A-line or straight-leg bottoms), but a wrap top or peplum that sits right at the high-hip line can look more flattering than one that ends higher up, since it works with the shelf instead of cutting across it. If your result above mentions a "shelf pattern," this is what it's referring to.</p>
+
+    <h3>Apple Body Shape</h3>
+    <p>The apple shape carries fullness through the middle: bust and hips stay fairly close in size, but the waist doesn't taper much between them, with weight often sitting around the belly, chest and upper back. <strong>Apple isn't a weight category</strong> — a slim person can be apple-shaped and a larger person can be an hourglass; it's about proportion, not size. Create the illusion of a waist with wrap dresses, empire-waist styles and V-necks. Avoid wide belts cinched at the natural waist — they sit on the fullest point rather than defining it. See our full <a href="/apple-body-shape/">apple body shape</a> guide for the exact formula and how it differs from rectangle.</p>
+
+    <h3>Inverted Triangle Body Shape</h3>
+    <p>The opposite of the pear: shoulders and bust are more than 3.6 inches wider than the hips, and the waist-to-bust difference is under 9 inches. Common among naturally broad-shouldered women and those who train the upper body heavily — swimmers often develop this silhouette. Add visual volume below the waist with A-line and flared skirts, wide-leg trousers and bootcut jeans; deep V-necks work better than boat necks, which emphasise shoulder width further. Our full <a href="/inverted-triangle-body-shape/">inverted triangle body shape</a> guide covers a waist-to-hip ratio quirk specific to this shape.</p>
+
+    <h3>Rectangle (Banana/Straight) Body Shape</h3>
+    <p>The most common shape, roughly 46% of women according to NC State research. Bust, waist and hips are all similar — less than 3.6 inches between bust and hips, and less than 9 inches between the waist and either. Create the curves and definition the proportions don't naturally provide: peplum tops, ruffled skirts, belted styles and layering all work well, and bootcut or flared jeans add width at the hem for a more balanced proportion.</p>
+  </section>
+
+  <section class="btc-sec" id="btc-style">
+    <h2>How to Dress for Your Body Type — Style Tips for Every Shape</h2>
+    <p>Style rules are tools, not rules. The point of dressing for your body type is not to meet an external standard — it is to understand your proportions so you can pick clothes that make you feel the way you want to feel. Every shape has looks that feel effortless, and the same proportional logic carries into every context: formal, casual, and special occasions.</p>
+
+    <h3>What to Wear for Formal Occasions by Body Shape</h3>
+    <div class="btc-tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Shape</th><th scope="col">Formal go-to</th></tr></thead>
+        <tbody>
+          <tr><td>Hourglass family</td><td>Fitted sheath dress, tailored wrap dress, or pencil skirt with a structured blouse — prioritise waist definition</td></tr>
+          <tr><td>Pear</td><td>Fit-and-flare dress, or a structured blazer over wide-leg trousers with a statement neckline</td></tr>
+          <tr><td>Apple</td><td>Flowy wrap dress or empire-waist gown in structured-but-fluid fabric</td></tr>
+          <tr><td>Inverted Triangle</td><td>A-line dress with minimal upper-body detail, or wide-leg formal trousers with a simple top</td></tr>
+          <tr><td>Rectangle</td><td>Ruched or belted formal dress, or a peplum top with wide-leg trousers</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Accessories apply to every shape: a well-placed belt can transform almost any outfit, and statement earrings or necklaces draw the eye toward the face.</p>
+
+    <h3>What to Wear for Casual Occasions by Body Shape</h3>
+    <div class="btc-tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Shape</th><th scope="col">Casual go-to</th></tr></thead>
+        <tbody>
+          <tr><td>Hourglass family</td><td>High-waisted jeans with a tucked-in tee, or a wrap-style casual dress</td></tr>
+          <tr><td>Pear</td><td>Bright or patterned top with straight-leg jeans</td></tr>
+          <tr><td>Apple</td><td>Tunic top over leggings, or a wrap top with straight-leg trousers</td></tr>
+          <tr><td>Inverted Triangle</td><td>Flared or wide-leg trousers with a simple fitted top</td></tr>
+          <tr><td>Rectangle</td><td>Peplum top or belted shirt with bootcut jeans</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><strong>Denim by shape:</strong> hourglass — high-waisted and fitted; pear — straight-leg or wide-leg; apple — mid-rise straight or wide-leg; inverted triangle — flared or wide-leg; rectangle — bootcut or flared to add proportion at the hem.</li>
+      <li><strong>Swimwear:</strong> ruffled tops balance pear shapes, high-waist bottoms complement apple figures, and bandeau styles suit hourglass silhouettes beautifully.</li>
+      <li><strong>Footwear:</strong> a pointed toe or block heel elongates the leg for most shapes, while ankle-strap styles visually shorten it.</li>
+    </ul>
+
+    <h3>What to Wear for Special Occasions by Body Shape</h3>
+    <div class="btc-tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Shape</th><th scope="col">Special-occasion go-to</th></tr></thead>
+        <tbody>
+          <tr><td>Hourglass family</td><td>Fitted mermaid or bodycon gown that follows the natural waist</td></tr>
+          <tr><td>Pear</td><td>A-line gown with an embellished bodice and a plain skirt</td></tr>
+          <tr><td>Apple</td><td>Empire-waist gown with a flowing skirt and a structured neckline</td></tr>
+          <tr><td>Inverted Triangle</td><td>A-line gown with a soft V-neck and minimal shoulder detail</td></tr>
+          <tr><td>Rectangle</td><td>Ruched or wrap-style gown with a defined waist</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Seasonal note: layering can add bulk in winter — pear shapes look best keeping heavier layers on top and sleek on the bottom. In summer, wrap dresses work for almost every shape because they create waist definition automatically.</p>
+  </section>
+
+  <section class="btc-sec" id="btc-heightweight">
+    <h2>Looking for a Body Shape Calculator by Height and Weight?</h2>
+    <p>If you searched for a body shape calculator using height and weight, it's worth knowing upfront: hourglass, pear, apple and the other classic shapes are defined by the relationship between bust, waist and hip measurements, not by overall size — two people with identical height and weight can have completely different shapes. Height and weight alone can tell you your BMI and, with your wrist added, your body frame size, but not your shape category. If that's specifically what you're after, our <a href="/body-frame-size-calculator/">body frame size calculator</a> covers that directly. For an actual visual — a 3D figure you can rotate, scaled to your height and weight — try our <a href="/body-visualizer/">body visualizer</a>.</p>
+  </section>
+
+  <section class="btc-sec" id="btc-health">
+    <h2>Waist-to-Hip Ratio, Waist-to-Height Ratio, and What Your Shape Says About Health</h2>
+    <p>Body shape and health are connected, but not the way most people assume. Your shape is not a diagnosis. A pear shape is not automatically healthier than an apple shape, and an hourglass figure doesn't signal excellent health. What the research does tell us is that <strong>where</strong> your body stores fat is a meaningful signal — and that's exactly what waist-to-hip ratio (WHR) is built to capture.</p>
+
+    <h3>What Is Waist-to-Hip Ratio and Why Does It Matter?</h3>
+    <p>WHR is your waist measurement divided by your hip measurement — a 30-inch waist and 40-inch hips gives a WHR of 0.75. It's a proxy for whether more of your fat sits around the abdomen (central fat) versus the hips and thighs (peripheral fat) — a circumference-based estimate, not a direct measurement of fat itself, but a distinction that matters for health-risk assessment.</p>
+    <div class="btc-tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Sex</th><th scope="col">WHO Threshold</th></tr></thead>
+        <tbody>
+          <tr><td>Women</td><td>Above 0.85 is classified as abdominal obesity</td></tr>
+          <tr><td>Men</td><td>Above 0.90 is classified as abdominal obesity</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>These are the WHO's published cutoffs, not a graded scale — there's no separate "moderate" tier below them from the WHO itself. The INTERHEART study, led by Salim Yusuf and colleagues and published in <em>The Lancet</em> in 2004, tracked heart attack risk across more than 50 countries and found WHR outperformed BMI as a predictor of myocardial infarction, largely because BMI can't distinguish someone carrying abdominal fat from someone carrying the same weight elsewhere. A 2015 study of over 15,000 adults, published in the <em>Annals of Internal Medicine</em>, went further: people with a <em>normal</em> BMI but a high WHR ("normal-weight central obesity") had worse long-term survival than people classified as obese by BMI alone. Get the fuller breakdown on our dedicated <a href="/waist-to-hip-ratio-calculator/">waist-to-hip ratio calculator</a>.</p>
+
+    <h3>Waist-to-Height Ratio — A Second Number Worth Checking</h3>
+    <p>Waist-to-height ratio (WHtR) divides your waist measurement by your height, using the same unit for both. A ratio below 0.5 — keeping your waist under half your height — is the widely cited healthy target, and several studies suggest it flags cardiometabolic risk earlier than BMI does, since it doesn't depend on frame size. Because it only needs waist and height, it's a useful second check alongside WHR — and it's also part of current 2026 U.S. military body-composition standards. Our <a href="/waist-to-height-ratio-calculator/">waist to height ratio calculator</a> walks through it in full, including the military standards.</p>
+
+    <h3>Apple vs. Pear — Fat Distribution and Cardiovascular Risk</h3>
+    <p>Research published by the WHO and in journals including <em>The Lancet</em> has linked central obesity — the pattern the apple body shape tends to reflect — with elevated risk for cardiovascular disease, type 2 diabetes, hypertension and metabolic syndrome. Abdominal fat tends to include a higher share of visceral fat, which surrounds organs and behaves differently, metabolically, from fat stored elsewhere — though a circumference-based shape result can't confirm how much visceral fat someone actually has; it's a correlated pattern, not a direct measurement. In contrast, fat stored in the hips and thighs — characteristic of the pear shape — is generally associated with lower cardiovascular risk at a comparable body size, tracking with lower WHR values in population-level data. This is a general pattern, not an individual guarantee; lifestyle, genetics and many other factors matter too. Research has also linked WHR to fertility: women with a WHR above 0.80 have been found to have significantly lower pregnancy rates than those between 0.70 and 0.79, independent of BMI, while men around 0.90 tend to show better fertility markers than those notably higher or lower — suggesting fat distribution carries hormonal dimensions beyond cardiovascular health. See the full breakdown on our <a href="/waist-to-hip-ratio-calculator/">waist-to-hip ratio calculator</a>.</p>
+
+    <h3>WHR and WHtR vs. BMI — Which Is a Better Health Indicator?</h3>
+    <p>BMI (Body Mass Index) — weight (kg) ÷ height² (m²) — has been the dominant health screening tool for decades, but it has real limitations. It cannot distinguish fat mass from muscle mass, so a highly muscular athlete can register as "obese." It tells you nothing about where fat is distributed — the question WHR was specifically designed to answer. And its formula was developed by the statistician Adolphe Quetelet in the 1830s using data drawn almost entirely from white European men; later research that popularized it as "BMI" (Ancel Keys, 1972) also drew mainly on European, American and Japanese men — a narrow base that has been shown to misclassify risk in people of Asian, South Asian and African descent. The 2015 Annals of Internal Medicine study cited above is a clear example: "normal-weight central obesity," invisible to BMI, carried a higher mortality risk than obesity classified by BMI alone. The practical takeaway: use BMI as a rough starting point if needed, but use WHR and WHtR for a fuller picture of where health risk actually sits. None of these metrics replace a full clinical assessment.</p>
+  </section>
+
+  <section class="btc-sec" id="btc-sizeshape">
+    <h2>Body Shape vs. Body Size — Why They Are Not the Same Thing <span class="btc-unique">Often overlooked</span></h2>
+    <p><strong>Body shape</strong> refers to the proportional relationship between your measurements — your silhouette, whether you are wider at the hips, broader at the shoulders, or balanced on both sides of the waist. Shape is about differences, not absolute numbers. <strong>Body size</strong> refers to the actual numerical values — your weight, height, dress size or BMI. Two people who weigh exactly the same and share the same height can have completely different body shapes; two people with the same shape — say, both pear-shaped — might wear completely different clothing sizes.</p>
+    <p>This matters practically: clothing advice based on body shape is size-agnostic — the styling tips that work for a pear shape apply whether that person is a size 8 or a size 22. Understanding your shape independent of your size also helps decouple appearance from weight, which is a useful step toward a healthier relationship with your body.</p>
+    <div class="btc-note">
+      <p>Your body shape can remain the same across different sizes. Many people find that even after significant weight gain or loss, their proportional shape classification stays consistent — they simply become a larger or smaller version of the same shape.</p>
+    </div>
+  </section>
+
+  <section class="btc-sec" id="btc-changes">
+    <h2>How Your Body Shape Can Change Over Time <span class="btc-unique">Often overlooked</span></h2>
+    <p>Your body shape is not fixed for life. While genetics establish a strong baseline, several major life factors can meaningfully shift your proportions over the years — sometimes gradually, sometimes quite significantly.</p>
+
+    <h3>Age-Related Changes</h3>
+    <p>As estrogen levels decline with age, women often experience a redistribution of fat from the hips and thighs toward the abdomen. A person who had a pear or hourglass shape in their twenties and thirties may find their waist measurement growing proportionally faster than their hips in their forties and fifties — sometimes shifting their classification toward rectangle or even apple. This is entirely normal and does not represent a failure of any kind.</p>
+
+    <h3>Weight Gain and Weight Loss</h3>
+    <p>Weight changes affect body shape differently depending on where your body preferentially stores or loses fat, which is largely genetic. Some people gain primarily in the abdomen (shifting toward apple), others in the hips (staying pear). Weight loss may not change your shape proportionally either — you might simply become a smaller version of your existing shape. The calculator is most useful when taken at a stable weight.</p>
+
+    <h3>Pregnancy and Postpartum Changes</h3>
+    <p>Pregnancy temporarily, and sometimes permanently, alters body shape — the ribcage can expand, hip bones may widen slightly, and fat distribution often shifts postpartum. Many women find their classification changes after pregnancy, commonly from hourglass or pear toward rectangle or apple, due to abdominal muscle changes and fat redistribution. Postpartum measurements can keep changing for months, so results may be more useful once your body has settled into a stable pattern.</p>
+
+    <h3>Exercise and Muscle Development</h3>
+    <p>Strength training can meaningfully change your measurements and therefore your shape classification. Building your shoulders and upper back can shift a pear toward a rectangle or even top hourglass; developing glutes can shift a rectangle toward bottom hourglass or pear. This is one reason body shape and fitness goals are deeply connected — targeted training can sculpt your proportions over time.</p>
+    <p><strong>When to recalculate:</strong> if your weight has changed by more than 10–15 pounds, you have gone through pregnancy or a major hormonal shift, or you have been strength training consistently for 6+ months, it's worth retaking your measurements.</p>
+  </section>
+
+  <section class="btc-sec" id="btc-men">
+    <h2>Body Shape for Men</h2>
+    <p>This calculator is built around female proportions — bust, waist, high hip and hips. Men have their own measurement-based system with five shapes — trapezoid, inverted triangle, rectangle, triangle and oval — built around chest, waist and hips instead, covered in full depth (with styling guidance for each) on our dedicated <a href="/male-body-type-calculator/">body type calculator for men</a>. Separately, fitness culture often discusses male build through a different lens entirely: somatotype.</p>
+
+    <h3>Ectomorph, Mesomorph and Endomorph</h3>
+    <p>Somatotype is a broader classification than measurement-based shape — it describes how a build tends to respond to training and diet rather than current proportions. <strong>Ectomorph:</strong> naturally lean with a fast metabolism and narrow shoulders, often struggling to gain weight or muscle despite eating well — usually falls into the rectangle shape category. <strong>Mesomorph:</strong> the stereotypically athletic build, naturally broad-shouldered with muscle that builds easily — usually measures as inverted triangle or trapezoid. <strong>Endomorph:</strong> a larger frame with higher body fat and a wider waist, gaining weight more easily — usually measures as oval or apple. Most people are a mix of two somatotypes rather than a pure example of one; the terms are reference points, not boxes.</p>
+  </section>
+
+  <section class="btc-sec" id="btc-faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="btc-faq"><summary>What measurements do I need to use this calculator?</summary><div class="btc-faq-body">
+      <p>You need three measurements: bust or chest, waist, and hip, all in the same unit — either inches or centimetres. High hip is optional and adds a bonus ratio to your result. Age, height and weight are optional extras that unlock a BMI reading and an age-context note.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>Is this body type calculator for men too?</summary><div class="btc-faq-body">
+      <p>This calculator is built around female proportions, so it's the "body type calculator female" version if that's the phrase you searched. Men have their own five-shape system based on chest, waist and hips instead — the men's calculator is linked in the navigation above.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>How accurate is a body type calculator?</summary><div class="btc-faq-body">
+      <p>It's accurate in the sense that it correctly applies the classification formula to your measurements. The bigger variable is measurement accuracy — measure twice, use a fabric tape (not a rigid ruler), wear minimal clothing, keep your posture natural, and don't round numbers significantly.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>Why do different calculators give different body shape results?</summary><div class="btc-faq-body">
+      <p>Calculators use different systems — four-shape versus seven-shape — some include the high hip measurement and some don't, and small rounding differences can push a borderline result from one shape to another. If two tools disagree, you're probably on the border between those two shapes, meaning the styling tips for both apply to you.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>What if I fall between two body types?</summary><div class="btc-faq-body">
+      <p>Very common and completely normal — the boundaries between shapes are gradients, not sharp lines. In practice that means more options, not fewer: try the tips for both shapes and keep whichever matches how your clothes actually fit.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>Can your body shape change over time or with exercise?</summary><div class="btc-faq-body">
+      <p>Yes, and quite significantly. Pregnancy, weight changes, ageing and hormonal shifts all change your proportions, and targeted strength training changes measurements around the shoulders, back, waist and hips. See the section above for the full breakdown by cause. Re-measure every six months rather than treating one result as permanent.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>What is the most common female body shape?</summary><div class="btc-faq-body">
+      <p>The rectangle (also called banana or straight) is the most commonly cited female body shape, with figures from a 2006 NC State analysis putting it around 46% of women. Pear and apple are next most cited, while the classic hourglass — often considered the "ideal" — is actually the least common in that same data, at around 8%.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>What is the difference between hourglass and pear body shape?</summary><div class="btc-faq-body">
+      <p>An hourglass has a bust and hip that are nearly equal in size, with a dramatically smaller waist in between. A pear shape has hips noticeably wider than the bust, with the waist moderately defined but not dramatically so. In simple terms: hourglass is about symmetry and a defined waist; pear is about the lower body being wider than the upper.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>What is high hip measurement and why is it included?</summary><div class="btc-faq-body">
+      <p>The high hip is measured approximately 7 inches below your natural waist, at the upper part of your hip bone — above the fullest part of your buttocks. It doesn't change your shape category on its own, but it feeds the High Hip–Waist ratio shown in your result, which helps flag a pronounced "shelf" pattern that a plain bust/waist/hip reading can miss.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>Is hourglass really the "ideal" body shape?</summary><div class="btc-faq-body">
+      <p>Historically, Western fashion has treated it that way, and research does suggest a waist-to-hip ratio near 0.7 is widely perceived as attractive across many cultures. But "widely perceived" and "universally ideal" are different things, and beauty standards vary by culture, era and personal taste. The hourglass is one of seven shapes, not the benchmark for the rest.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>Does body shape depend on weight or size?</summary><div class="btc-faq-body">
+      <p>No. Body shape is determined by proportions — the relationships between your measurements — not by weight or dress size. A slim person can have an apple-shaped body and a larger person can have an hourglass figure. See the "Body Shape vs. Body Size" section above for more on why these are separate conversations.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>Is there a body shape calculator that just uses height and weight?</summary><div class="btc-faq-body">
+      <p>Not for the hourglass/pear/apple system — that specifically needs bust, waist and hip measurements, since it's about proportion rather than size. Height and weight alone can give you BMI, and with a wrist measurement added, a body frame size — our <a href="/body-frame-size-calculator/">body frame size calculator</a> covers that version directly.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>Does this calculator use shoulder measurements?</summary><div class="btc-faq-body">
+      <p>No — this calculator uses bust, waist, high hip and hip only. Shoulder width is a real factor in how broad-shouldered shapes like inverted triangle actually look, but it isn't collected here; bust width serves as the practical stand-in for upper-body breadth in this measurement system.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>Is spoon a body shape this calculator can give me?</summary><div class="btc-faq-body">
+      <p>No — this calculator's seven shapes are hourglass, top hourglass, bottom hourglass, pear, apple, inverted triangle and rectangle. "Spoon" is a related term some other systems use for a pear shape with a pronounced high-hip shelf; here, that pattern is captured within the pear result rather than split into its own category.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>How often should I re-measure?</summary><div class="btc-faq-body">
+      <p>Every six months is enough for most people, or after any significant change — pregnancy, a notable weight shift, a new training programme, or a hormonal transition such as perimenopause. Measuring more often mostly captures normal daily fluctuation rather than a real change in proportion.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>What's the difference between body type and body shape?</summary><div class="btc-faq-body">
+      <p>In everyday use the terms are often interchangeable, and this site uses them that way. More strictly, body shape refers to visible proportions from your bust, waist and hip measurements, while body type can also describe frame, build, or somatotype in other contexts such as fitness (see the ectomorph/mesomorph/endomorph section above).</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>What body type do I have if my waist is bigger than my hips?</summary><div class="btc-faq-body">
+      <p>That pattern usually points toward apple, especially if your bust and hips are close in size. The exact result still depends on how your bust compares to both waist and hips, so it's worth running your full numbers through the calculator above rather than judging from the waist alone.</p>
+    </div></details>
+
+    <details class="btc-faq"><summary>Does body type affect clothing size?</summary><div class="btc-faq-body">
+      <p>Yes. Two people can wear the same size label and still need very different cuts, because size measures overall volume while body type describes where that volume sits. That's why the same dress size can fit differently on an hourglass versus a rectangle — the number on the tag doesn't capture proportion.</p>
+    </div></details>
+  </section>
+
+  <p class="btc-disc">This calculator is an educational and styling tool. It does not diagnose any medical condition and its results are not a substitute for advice from a qualified healthcare professional. If you have concerns about your weight, waist-to-hip ratio or general health, speak to a doctor.</p>
+
+  </div>
+</div>
+
+<script id="btc-js">
+(function(){
+"use strict";
+var root=document.getElementById("btc-app");
+if(!root||root.dataset.btcInit)return;root.dataset.btcInit="1";
+
+var $=function(i){return document.getElementById(i)};
+var el={
+ bust:$("btc-bust"),waist:$("btc-waist"),hh:$("btc-highhip"),hips:$("btc-hips"),
+ age:$("btc-age"),ht:$("btc-height"),wt:$("btc-weight"),wu:$("btc-wu"),
+ err:$("btc-error"),res:$("btc-results"),
+ type:$("btc-r-type"),pct:$("btc-r-pct"),desc:$("btc-r-desc"),
+ rbu:$("btc-r-bu"),rwa:$("btc-r-wa"),rhh:$("btc-r-hh"),rhi:$("btc-r-hi"),
+ siHt:$("btc-si-ht"),vHt:$("btc-v-ht"),sHt:$("btc-s-ht"),
+ siWt:$("btc-si-wt"),vWt:$("btc-v-wt"),sWt:$("btc-s-wt"),
+ siBmi:$("btc-si-bmi"),vBmi:$("btc-v-bmi"),sBmi:$("btc-s-bmi"),
+ siWhtr:$("btc-si-whtr"),vWhtr:$("btc-v-whtr"),sWhtr:$("btc-s-whtr"),
+ vWhr:$("btc-v-whr"),sWhr:$("btc-s-whr"),
+ insight:$("btc-insight"),badge:$("btc-badge"),insT:$("btc-ins-title"),insB:$("btc-ins-body")
+};
+var units=root.querySelectorAll(".btc-u");
+var sils=root.querySelectorAll(".btc-sil-card");
+var traits=root.querySelectorAll(".btc-trait");
+var bars=[$("btc-bar-wh"),$("btc-bar-sh"),$("btc-bar-bh"),$("btc-bar-wb")];
+var vals=[$("btc-val-wh"),$("btc-val-sh"),$("btc-val-bh"),$("btc-val-wb")];
+var caps=[1.3,1.4,1.4,1.5];
+var unit="cm",wUnit="kg",activeSil=null,lastKey=null;
+
+var T={
+hourglass:{n:"Hourglass",pct:"~8% of women",d:"Your bust and hips are nearly equal with a significantly narrower waist \u2014 the classic X-shape with balanced, symmetrical curves.",t:[["Defining Feature","Bust no more than 1 inch bigger than hips, and hips no more than 3.6 inches bigger than bust; waist at least 9 inches smaller than the bust or 10 inches smaller than the hips."],["Style Tips","Wrap dresses, fitted tops and belted styles highlight your natural waist definition."],["What Suits You","Body-con silhouettes, A-line skirts and high-waisted bottoms all complement your balanced proportions."],["Formula Note","Bust\u2212hips \u2264 1 in AND hips\u2212bust < 3.6 in AND (bust\u2212waist \u2265 9 in OR hips\u2212waist \u2265 10 in)."]]},
+bottom_hourglass:{n:"Bottom Hourglass",pct:"Less common shape",d:"A fuller lower body with a well-defined waist \u2014 your hips are noticeably wider than your bust while the waist stays cinched.",t:[["Defining Feature","Hips 3.6\u201310 inches wider than the bust; hips\u2212waist of 9 inches or more."],["Style Tips","Draw attention upward with embellished necklines, bold prints on top and structured shoulders."],["What Suits You","A-line skirts, wide-leg trousers and wrap tops balance your proportions."],["Formula Note","Hips\u2212bust 3.6\u201310 in AND hips\u2212waist \u2265 9 in."]]},
+top_hourglass:{n:"Top Hourglass",pct:"Less common shape",d:"A fuller upper body with a well-defined waist \u2014 your bust is noticeably larger than your hips while the waist stays cinched.",t:[["Defining Feature","Bust 1\u201310 inches larger than the hips; bust\u2212waist of 9 inches or more."],["Style Tips","V-necks and scoop necklines balance the proportions; A-line and flared skirts add volume below."],["What Suits You","Fit-and-flare dresses, darker tops with lighter bottoms and structured blazers."],["Formula Note","Bust\u2212hips 1\u201310 in AND bust\u2212waist \u2265 9 in."]]},
+apple:{n:"Apple",pct:"~14% of women",d:"Your bust and hips stay close in size, but your waist doesn't taper much between them \u2014 most of your fullness sits through the midsection.",t:[["Defining Feature","Bust and hips within 3.6 inches of each other; waist within 2 inches of \u2014 or larger than \u2014 both the bust and the hips."],["Style Tips","Empire waistlines, wrap styles and V-necks create shape without clinging at the middle."],["What Suits You","Flowing fabrics, vertical seams and structured jackets that skim rather than cinch at the waist."],["Formula Note","Bust\u2212hips < 3.6 in AND hips\u2212bust < 3.6 in AND waist \u2265 (bust\u22122 in) AND waist \u2265 (hips\u22122 in)."]]},
+triangle:{n:"Triangle (Pear)",pct:"~20% of women",d:"Your hips are noticeably wider than your bust, so the silhouette widens from the shoulders down \u2014 the classic pear shape.",t:[["Defining Feature","Hips 3.6 inches or more wider than the bust; less than 9 inches between hips and waist."],["Style Tips","Boat necks, off-shoulder tops and bold upper-body prints add visual width up top."],["What Suits You","Darker bottoms, A-line skirts and straight-leg trousers elongate the lower body."],["Formula Note","Hips\u2212bust \u2265 3.6 in AND hips\u2212waist < 9 in."]]},
+inverted_triangle:{n:"Inverted Triangle",pct:"Less common shape",d:"Your bust and shoulders are notably wider than your hips, giving a strong, athletic upper body that tapers downward.",t:[["Defining Feature","Bust 3.6 inches or more wider than the hips; bust\u2212waist of less than 9 inches."],["Style Tips","Add volume below the waist with full skirts, wide-leg trousers and brighter or patterned bottoms."],["What Suits You","A-line and flared skirts, bootcut jeans and V-necks soften the upper body."],["Formula Note","Bust\u2212hips \u2265 3.6 in AND bust\u2212waist < 9 in."]]},
+rectangle:{n:"Rectangle (Banana)",pct:"~46% of women",d:"Your bust, waist and hips are all similar in width \u2014 a lean, straight silhouette with subtle curves throughout.",t:[["Defining Feature","Hips and bust within 3.6 inches; waist less than 9 inches smaller than the bust and less than 10 inches smaller than the hips."],["Style Tips","Build the impression of curves with peplum tops, ruffled skirts and belted waists."],["What Suits You","Layered outfits, off-shoulder styles and textured or embellished fabrics add dimension."],["Formula Note","Catch-all: applied when none of the other conditions are met."]]}
+};
+
+function detect(b,w,hh,h){
+ var f=unit==="cm"?0.393701:1,B=b*f,W=w*f,HH=hh*f,H=h*f;
+ var bh=B-H,hb=H-B,bw=B-W,hw=H-W;
+ if(bh<=1&&hb<3.6&&(bw>=9||hw>=10))return "hourglass";
+ if(hb>=3.6&&hb<10&&hw>=9)return "bottom_hourglass";
+ if(bh>1&&bh<10&&bw>=9)return "top_hourglass";
+ if(Math.abs(B-H)<3.6&&W>=B-2&&W>=H-2)return "apple";
+ if(hb>=3.6&&hw<9)return "triangle";
+ if(bh>=3.6&&bw<9)return "inverted_triangle";
+ return "rectangle";
+}
+
+function insight(a,name){
+ if(!a||a<10||a>100)return null;
+ if(a<20)return["Teen \u00b7 Under 20","Still Developing","At <strong>"+a+"</strong>, your body is still maturing \u2014 hormonal shifts keep reshaping proportions, so today's measurements are not your final form. Your <strong>"+name+"</strong> shape may still change. Movement and balanced nutrition tend to matter more at this stage than any particular aesthetic goal."];
+ if(a<30)return["Twenties \u00b7 20\u201329","Peak Metabolic Years","In your <strong>20s</strong>, estrogen supports fat distribution toward the hips and thighs, which can reinforce a <strong>"+name+"</strong> shape. Muscle also tends to respond quickly to training at this age, which is often why habits built now carry forward long-term."];
+ if(a<40)return["Thirties \u00b7 30\u201339","Metabolic Shift Begins","Through your <strong>30s</strong>, metabolism slows subtly and progesterone fluctuations can affect fat distribution. A <strong>"+name+"</strong> shape stays fairly stable for most people, though waist measurements may shift. Strength training is often highlighted as particularly useful during this stage."];
+ if(a<50)return["Forties \u00b7 40\u201349","Hormonal Transition","Your <strong>40s</strong> often bring perimenopause \u2014 declining estrogen can shift fat storage toward the abdomen and soften a <strong>"+name+"</strong> silhouette. Core strength, protein intake and sleep are commonly emphasised during this transition."];
+ if(a<60)return["Fifties \u00b7 50\u201359","Post-Menopause","In your <strong>50s</strong>, menopause resets hormonal baselines \u2014 fat redistribution toward the trunk is common and a <strong>"+name+"</strong> classification may shift. Bone density and muscle mass are often considered the more relevant metrics at this stage."];
+ return ["Sixty+ \u00b7 60 & over","Healthy Ageing Focus","At <strong>"+a+"</strong>, body composition shifts naturally \u2014 but not inevitably. Your <strong>"+name+"</strong> classification is a snapshot of today. Functional strength and cardiovascular health are generally considered far more relevant than any silhouette category."];
+}
+
+var fmt=function(n){return String(Math.round(n*10)/10)};
+function cmToFeetIn(cm){
+ var totalIn=Math.round(cm/2.54),ft=Math.floor(totalIn/12),inch=totalIn%12;
+ return ft+"'"+inch+'"';
+}
+
+function calculate(){
+ var b=parseFloat(el.bust.value),w=parseFloat(el.waist.value),
+     hh=parseFloat(el.hh.value),h=parseFloat(el.hips.value),
+     age=parseInt(el.age.value,10),ht=parseFloat(el.ht.value),wt=parseFloat(el.wt.value);
+
+ if(!(b>0)||!(w>0)||!(h>0)){el.err.classList.add("btc-show");return}
+ el.err.classList.remove("btc-show");
+ var hasHH=hh>0;
+
+ var key=detect(b,w,hh,h),t=T[key];
+ lastKey=key;
+ el.type.textContent=t.n;
+ el.pct.textContent=t.pct?("Shared by "+t.pct):"";
+ var hhRatio=hasHH?(hh/w):0;
+ var isSpoonPattern=(hasHH&&key==="triangle"&&hhRatio>=1.193);
+ el.desc.textContent=t.d+(isSpoonPattern?" Your high hip is notably larger than your waist, a shelf pattern some calculators single out as \"spoon.\"":"");
+ el.rbu.textContent=fmt(b)+" "+unit;
+ el.rwa.textContent=fmt(w)+" "+unit;
+ el.rhh.textContent=hasHH?(fmt(hh)+" "+unit):"—";
+ el.rhi.textContent=fmt(h)+" "+unit;
+
+ if(activeSil)activeSil.classList.remove("btc-active");
+ for(var i=0;i<sils.length;i++){if(sils[i].dataset.k===key){activeSil=sils[i];sils[i].classList.add("btc-active");break}}
+
+ var r=[w/h,b/h,b/w,hasHH?(hh/w):0];
+ for(var j=0;j<4;j++)vals[j].textContent=(j===3&&!hasHH)?"—":r[j].toFixed(2);
+
+ var whr=r[0],risk=whr>0.85?"Above WHO threshold":"Below WHO threshold";
+ el.vWhr.textContent=whr.toFixed(2);
+ el.vWhr.style.color=whr>0.85?"#eb5757":"#6fcf97";
+ el.sWhr.textContent=risk;
+
+ var hasHt=ht>0,hasWt=wt>0,htCm=0,wtKg=0;
+ if(hasHt){
+  htCm=unit==="cm"?ht:ht*2.54;
+  el.vHt.textContent=fmt(ht)+" "+unit;
+  el.sHt.textContent=unit==="cm"?cmToFeetIn(htCm):Math.round(htCm)+" cm";
+  var whtr=w/ht;
+  el.vWhtr.textContent=whtr.toFixed(2);
+  el.vWhtr.style.color=whtr>0.5?"#f2c94c":"#6fcf97";
+  el.sWhtr.textContent=whtr>0.5?"Above 0.5":"Below 0.5";
+ }
+ el.siHt.hidden=!hasHt;
+ el.siWhtr.hidden=!hasHt;
+ if(hasWt){
+  wtKg=wUnit==="kg"?wt:wt*0.453592;
+  el.vWt.textContent=fmt(wt)+" "+wUnit;
+  el.sWt.textContent=wUnit==="kg"?(wt*2.20462).toFixed(1)+" lb":wtKg.toFixed(1)+" kg";
+ }
+ el.siWt.hidden=!hasWt;
+ if(hasHt&&hasWt){
+  var m=htCm/100,bmi=wtKg/(m*m),cls,cat;
+  var ageKnown=age>0&&age<=100;
+  if(ageKnown&&age<20){cls="";cat="Adult BMI ranges don't apply under 20"}
+  else if(bmi<18.5){cls="btc-bmi-under";cat="Underweight"}
+  else if(bmi<25){cls="btc-bmi-normal";cat="Normal"}
+  else if(bmi<30){cls="btc-bmi-over";cat="Overweight"}
+  else{cls="btc-bmi-obese";cat="Obese"}
+  el.vBmi.textContent=bmi.toFixed(1);
+  el.vBmi.className="btc-stat-val "+cls;
+  el.sBmi.textContent=cat;
+  el.siBmi.hidden=false;
+ }else el.siBmi.hidden=true;
+
+ for(var k=0;k<4;k++){
+  traits[k].firstElementChild.textContent=t.t[k][0];
+  traits[k].lastElementChild.textContent=t.t[k][1];
+ }
+
+ var ins=insight(age,t.n.toLowerCase());
+ if(ins){el.badge.textContent=ins[0];el.insT.textContent=ins[1];el.insB.innerHTML=ins[2];el.insight.classList.add("btc-show")}
+ else el.insight.classList.remove("btc-show");
+
+ el.res.classList.add("btc-show");
+ requestAnimationFrame(function(){
+  for(var i=0;i<4;i++)bars[i].style.width=(i===3&&!hasHH)?"0%":(Math.min(r[i]/caps[i]*100,100)+"%");
+  el.res.scrollIntoView({behavior:"smooth",block:"nearest"});
+ });
+}
+
+function reset(){
+ el.res.classList.remove("btc-show");
+ el.insight.classList.remove("btc-show");
+ el.err.classList.remove("btc-show");
+ if(activeSil){activeSil.classList.remove("btc-active");activeSil=null}
+ el.bust.value=el.waist.value=el.hh.value=el.hips.value=el.age.value=el.ht.value=el.wt.value="";
+ for(var i=0;i<4;i++)bars[i].style.width="0%";
+ if(typeof updateProgress==="function")updateProgress();
+ el.bust.focus();
+}
+
+function setUnit(v,btns,cb){
+ for(var i=0;i<btns.length;i++){
+  var on=btns[i].dataset.v===v;
+  btns[i].classList.toggle("btc-active",on);
+  btns[i].setAttribute("aria-pressed",on?"true":"false");
+ }
+ cb(v);
+}
+var uBtns=root.querySelectorAll('[data-act="unit"]'),wBtns=root.querySelectorAll('[data-act="wunit"]');
+
+function changeUnit(v){
+ if(v===unit)return;
+ var factor=v==="in"?(1/2.54):2.54;
+ var inputs=[el.bust,el.waist,el.hh,el.hips,el.ht];
+ for(var i=0;i<inputs.length;i++){
+  var val=parseFloat(inputs[i].value);
+  if(val>0)inputs[i].value=Math.round(val*factor*100)/100;
+ }
+ unit=v;
+ setUnit(v,uBtns,function(vv){for(var j=0;j<units.length;j++)units[j].textContent=vv});
+}
+function changeWUnit(v){
+ if(v===wUnit)return;
+ var factor=v==="lb"?2.20462:(1/2.20462);
+ var val=parseFloat(el.wt.value);
+ if(val>0)el.wt.value=Math.round(val*factor*100)/100;
+ wUnit=v;
+ setUnit(v,wBtns,function(vv){el.wu.textContent=vv});
+}
+
+function flashCopyBtn(ok){
+ var b=$("btc-copy-btn"); if(!b)return;
+ var orig="Copy result link";
+ b.textContent=ok?"Copied!":"Couldn't copy \u2014 try again";
+ setTimeout(function(){b.textContent=orig;},1800);
+}
+function shareLink(){
+ var p=new URLSearchParams();
+ p.set("bust",el.bust.value);p.set("waist",el.waist.value);p.set("hh",el.hh.value);p.set("hips",el.hips.value);
+ p.set("unit",unit);
+ if(el.age.value)p.set("age",el.age.value);
+ if(el.ht.value)p.set("ht",el.ht.value);
+ if(el.wt.value){p.set("wt",el.wt.value);p.set("wunit",wUnit);}
+ var url=location.origin+location.pathname+"?"+p.toString()+"#btc-app";
+ if(navigator.clipboard&&navigator.clipboard.writeText){
+  navigator.clipboard.writeText(url).then(function(){flashCopyBtn(true)},function(){flashCopyBtn(false)});
+ }else{
+  try{
+   var ta=document.createElement("textarea");ta.value=url;ta.style.position="fixed";ta.style.opacity="0";
+   document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);
+   flashCopyBtn(true);
+  }catch(e){flashCopyBtn(false)}
+ }
+}
+
+function wrapText(ctx,text,x,y,maxW,lh){
+ var words=text.split(" "),line="",yy=y;
+ for(var i=0;i<words.length;i++){
+  var test=line+words[i]+" ";
+  if(ctx.measureText(test).width>maxW&&line){ctx.fillText(line,x,yy);line=words[i]+" ";yy+=lh;}
+  else line=test;
+ }
+ ctx.fillText(line,x,yy);
+ return yy+lh;
+}
+function downloadImage(){
+ var t=T[lastKey]; if(!t)return;
+ var c=document.createElement("canvas"); c.width=800;c.height=1000;
+ var ctx=c.getContext("2d");
+ var grad=ctx.createLinearGradient(0,0,0,1000);
+ grad.addColorStop(0,"#0d0d0d");grad.addColorStop(1,"#161616");
+ ctx.fillStyle=grad;ctx.fillRect(0,0,800,1000);
+ ctx.strokeStyle="#c9a84c";ctx.lineWidth=2;ctx.strokeRect(20,20,760,960);
+ ctx.textAlign="center";
+ ctx.fillStyle="#8a8a8a";ctx.font="14px Georgia, serif";
+ ctx.fillText("YOUR BODY TYPE RESULT",400,110);
+ ctx.fillStyle="#c9a84c";ctx.font="bold 60px Georgia, serif";
+ ctx.fillText(t.n,400,190);
+ ctx.fillStyle="#bdb6a8";ctx.font="16px Georgia, sans-serif";
+ var afterDesc=wrapText(ctx,t.d,400,240,640,24);
+
+ var mY=Math.max(afterDesc+30,340);
+ ctx.strokeStyle="#2a2a2a";ctx.beginPath();ctx.moveTo(60,mY);ctx.lineTo(740,mY);ctx.stroke();
+ var mLabels=["Bust","Waist","High Hip","Hips"];
+ var mValues=[el.rbu.textContent,el.rwa.textContent,el.rhh.textContent,el.rhi.textContent];
+ for(var i=0;i<4;i++){
+  var x=140+i*180;
+  ctx.fillStyle="#f0e8d8";ctx.font="bold 22px Georgia, serif";ctx.fillText(mValues[i],x,mY+50);
+  ctx.fillStyle="#8a8a8a";ctx.font="11px sans-serif";ctx.fillText(mLabels[i].toUpperCase(),x,mY+72);
+ }
+
+ var ry=mY+120;
+ ctx.textAlign="left";
+ ctx.fillStyle="#c9a84c";ctx.font="bold 13px sans-serif";
+ ctx.fillText("PROPORTIONAL RATIOS",60,ry);
+ var rLabels=["Waist\u2013Hip (WHR)","Bust\u2013Hip","Bust\u2013Waist","High Hip\u2013Waist"];
+ var rValues=[el.vWhr.textContent,vals[1].textContent,vals[2].textContent,vals[3].textContent];
+ if(!el.siWhtr.hidden){rLabels.push("Waist\u2013Height (WHtR)");rValues.push(el.vWhtr.textContent)}
+ for(var j=0;j<rValues.length;j++){
+  var yy=ry+34+j*30;
+  ctx.textAlign="left";ctx.fillStyle="#8a8a8a";ctx.font="14px sans-serif";ctx.fillText(rLabels[j],60,yy);
+  ctx.textAlign="right";ctx.fillStyle="#f0e8d8";ctx.font="bold 14px Georgia, serif";ctx.fillText(rValues[j],740,yy);
+ }
+
+ ctx.textAlign="center";ctx.fillStyle="#555";ctx.font="12px sans-serif";
+ ctx.fillText(location.hostname||"Body Type Calculator",400,960);
+
+ var url=c.toDataURL("image/png");
+ var a=document.createElement("a");a.href=url;a.download="body-type-result.png";
+ document.body.appendChild(a);a.click();document.body.removeChild(a);
+}
+
+function downloadImageStory(){
+ var t=T[lastKey]; if(!t)return;
+ var c=document.createElement("canvas"); c.width=1080;c.height=1920;
+ var ctx=c.getContext("2d");
+ var grad=ctx.createLinearGradient(0,0,0,1920);
+ grad.addColorStop(0,"#0d0d0d");grad.addColorStop(1,"#161616");
+ ctx.fillStyle=grad;ctx.fillRect(0,0,1080,1920);
+ ctx.strokeStyle="#c9a84c";ctx.lineWidth=3;ctx.strokeRect(36,36,1008,1848);
+ ctx.textAlign="center";
+ ctx.fillStyle="#8a8a8a";ctx.font="22px Georgia, serif";
+ ctx.fillText("YOUR BODY TYPE RESULT",540,220);
+ ctx.fillStyle="#c9a84c";ctx.font="bold 84px Georgia, serif";
+ ctx.fillText(t.n,540,330);
+ if(t.pct){
+  ctx.fillStyle="#e8c97a";ctx.font="bold 24px sans-serif";
+  ctx.fillText("SHARED BY "+t.pct.toUpperCase(),540,390);
+ }
+ ctx.fillStyle="#bdb6a8";ctx.font="26px Georgia, sans-serif";
+ var afterDesc=wrapText(ctx,t.d,540,470,760,38);
+
+ var mY=Math.max(afterDesc+60,650);
+ ctx.strokeStyle="#2a2a2a";ctx.beginPath();ctx.moveTo(120,mY);ctx.lineTo(960,mY);ctx.stroke();
+ var mLabels=["Bust","Waist","High Hip","Hips"];
+ var mValues=[el.rbu.textContent,el.rwa.textContent,el.rhh.textContent,el.rhi.textContent];
+ for(var i=0;i<4;i++){
+  var col=i%2,row=Math.floor(i/2);
+  var x=350+col*380,yy=mY+80+row*110;
+  ctx.fillStyle="#f0e8d8";ctx.font="bold 38px Georgia, serif";ctx.fillText(mValues[i],x,yy);
+  ctx.fillStyle="#8a8a8a";ctx.font="16px sans-serif";ctx.fillText(mLabels[i].toUpperCase(),x,yy+30);
+ }
+
+ var ry=mY+310;
+ ctx.textAlign="left";
+ ctx.fillStyle="#c9a84c";ctx.font="bold 20px sans-serif";
+ ctx.fillText("PROPORTIONAL RATIOS",120,ry);
+ var rLabels=["Waist\u2013Hip (WHR)","Bust\u2013Hip","Bust\u2013Waist","High Hip\u2013Waist"];
+ var rValues=[el.vWhr.textContent,vals[1].textContent,vals[2].textContent,vals[3].textContent];
+ if(!el.siWhtr.hidden){rLabels.push("Waist\u2013Height (WHtR)");rValues.push(el.vWhtr.textContent)}
+ for(var j=0;j<rValues.length;j++){
+  var yy2=ry+50+j*46;
+  ctx.textAlign="left";ctx.fillStyle="#8a8a8a";ctx.font="22px sans-serif";ctx.fillText(rLabels[j],120,yy2);
+  ctx.textAlign="right";ctx.fillStyle="#f0e8d8";ctx.font="bold 22px Georgia, serif";ctx.fillText(rValues[j],960,yy2);
+ }
+
+ ctx.textAlign="center";ctx.fillStyle="#555";ctx.font="20px sans-serif";
+ ctx.fillText(location.hostname||"Body Type Calculator",540,1840);
+
+ var url=c.toDataURL("image/png");
+ var a=document.createElement("a");a.href=url;a.download="body-type-result-story.png";
+ document.body.appendChild(a);a.click();document.body.removeChild(a);
+}
+
+root.addEventListener("click",function(e){
+ var b=e.target.closest("[data-act]");
+ if(!b)return;
+ var a=b.dataset.act;
+ if(a==="calc")calculate();
+ else if(a==="reset")reset();
+ else if(a==="share")shareLink();
+ else if(a==="download")downloadImage();
+ else if(a==="download-story")downloadImageStory();
+ else if(a==="unit")changeUnit(b.dataset.v);
+ else if(a==="wunit")changeWUnit(b.dataset.v);
+});
+var requiredOrder=[el.bust,el.waist,el.hh,el.hips];
+root.addEventListener("keydown",function(e){
+ if(e.key==="Enter"&&e.target.tagName==="INPUT"){
+  e.preventDefault();
+  var idx=requiredOrder.indexOf(e.target);
+  if(idx>-1){
+   var next=null;
+   for(var i=idx+1;i<requiredOrder.length;i++){if(!requiredOrder[i].value){next=requiredOrder[i];break}}
+   if(next){next.focus();return}
+  }
+  calculate();
+ }
+});
+var progressDots=root.querySelectorAll(".btc-progress-dot");
+function updateProgress(){
+ for(var i=0;i<requiredOrder.length;i++){
+  progressDots[i].classList.toggle("btc-filled",!!requiredOrder[i].value);
+ }
+}
+requiredOrder.forEach(function(inp){inp.addEventListener("input",updateProgress)});
+
+(function prefillFromUrl(){
+ try{
+  var qs=new URLSearchParams(location.search);
+  if(!qs.has("bust"))return;
+  if(qs.get("unit")==="in")setUnit("in",uBtns,function(v){unit=v;for(var i=0;i<units.length;i++)units[i].textContent=v});
+  el.bust.value=qs.get("bust")||"";el.waist.value=qs.get("waist")||"";el.hh.value=qs.get("hh")||"";el.hips.value=qs.get("hips")||"";
+  if(qs.get("age"))el.age.value=qs.get("age");
+  if(qs.get("ht"))el.ht.value=qs.get("ht");
+  if(qs.get("wt")){el.wt.value=qs.get("wt"); if(qs.get("wunit")==="lb")setUnit("lb",wBtns,function(v){wUnit=v;el.wu.textContent=v});}
+  calculate();
+ }catch(e){}
+})();
+})();
+</script>
