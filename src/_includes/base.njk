@@ -6,6 +6,22 @@
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
   <link rel="canonical" href="https://bodyshapecalculator.net{{ page.url }}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Body Shape Calculator">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="https://bodyshapecalculator.net{{ page.url }}">
+  {% if ogImage %}<meta property="og:image" content="https://bodyshapecalculator.net{{ ogImage }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {% if ogImageAlt %}<meta property="og:image:alt" content="{{ ogImageAlt }}">
+  {% endif %}<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bodyshapecalculator.net{{ ogImage }}">{% else %}<meta name="twitter:card" content="summary">{% endif %}
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
   <link rel="icon" type="image/jpeg" href="/assets/images/body_shape_calculator_faveicon.jpg">
   <link rel="apple-touch-icon" href="/assets/images/body_shape_calculator_faveicon.jpg">
   <link rel="stylesheet" href="/assets/css/site.css">
@@ -21,6 +37,8 @@
         <a href="/waist-to-hip-ratio-calculator/" {% if page.url == "/waist-to-hip-ratio-calculator/" %}class="active"{% endif %}>WHR</a>
         <a href="/waist-to-height-ratio-calculator/" {% if page.url == "/waist-to-height-ratio-calculator/" %}class="active"{% endif %}>WHtR</a>
         <a href="/body-frame-size-calculator/" {% if page.url == "/body-frame-size-calculator/" %}class="active"{% endif %}>Frame Size</a>
+        <a href="/body-visualizer/" {% if page.url == "/body-visualizer/" %}class="active"{% endif %}>Visualizer</a>
+        <a href="/body-proportions-calculator/" {% if page.url == "/body-proportions-calculator/" %}class="active"{% endif %}>Proportions</a>
       </nav>
     </div>
   </header>
@@ -36,6 +54,8 @@
         <a href="/waist-to-hip-ratio-calculator/">Waist to Hip Ratio Calculator</a>
         <a href="/waist-to-height-ratio-calculator/">Waist to Height Ratio Calculator</a>
         <a href="/body-frame-size-calculator/">Body Frame Size Calculator</a>
+        <a href="/body-visualizer/">Body Visualizer</a>
+        <a href="/body-proportions-calculator/">Body Proportions Calculator</a>
       </div>
       <div class="site-footer-col">
         <p class="site-footer-heading">Shape Guides</p>
