@@ -44,7 +44,7 @@ description: What defines a pear body shape, how it compares to bottom hourglass
 <style>
 .pbs-wrap *,.pbs-wrap *::before,.pbs-wrap *::after{box-sizing:border-box;margin:0;padding:0}
 .pbs-wrap{--pbs-bg:#0d0d0d;--pbs-card:#1e1e1e;--pbs-gold:#c9a84c;--pbs-gold-l:#e8c97a;--pbs-cream:#f5efe0;--pbs-muted:#8a8a8a;--pbs-border:#2a2a2a;--pbs-text:#f0e8d8;--pbs-serif:"Playfair Display",Georgia,"Times New Roman",serif;--pbs-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--pbs-sans);background:var(--pbs-bg);color:var(--pbs-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
-.pbs-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.pbs-wrap::before{content:"";position:absolute;top:-160px;left:-160px;width:640px;height:640px;max-width:80%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
 .pbs-wrap a{color:var(--pbs-gold-l);border-bottom:1px solid rgba(232,201,122,.35);text-decoration:none}
 .pbs-wrap a:hover{border-bottom-color:var(--pbs-gold-l)}
 .pbs-container{max-width:780px;margin:0 auto;padding:56px 24px 20px;position:relative;z-index:1}
@@ -64,6 +64,15 @@ description: What defines a pear body shape, how it compares to bottom hourglass
 .pbs-art li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--pbs-gold);opacity:.7}
 .pbs-note{background:var(--pbs-card);border-left:3px solid var(--pbs-gold);border-radius:0 12px 12px 0;padding:16px 20px;margin:18px 0}
 .pbs-note p:last-child{margin-bottom:0}
+.pbs-fig{margin:24px 0}
+.pbs-hero{margin:6px 0 8px}
+.pbs-gfig{margin:20px 0 30px}
+.pbs-gfig img{display:block;width:100%;height:auto;margin:0 auto;border-radius:14px;border:1px solid var(--pbs-border,#2a2a2a);background:#141412}
+.pbs-gfig + .pbs-gfig{margin-top:-14px}
+.pbs-fig img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--pbs-border);background:#111}
+.pbs-figcap{font-size:12.5px;color:var(--pbs-muted);margin-top:9px;line-height:1.55}
+.pbs-figcap a{color:var(--pbs-gold-l)}
+
 .pbs-tbl-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--pbs-border);border-radius:14px}
 .pbs-art table{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
 .pbs-art th{background:rgba(201,168,76,.08);color:var(--pbs-gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-align:left;padding:12px 16px}
@@ -89,6 +98,10 @@ description: What defines a pear body shape, how it compares to bottom hourglass
 .pbs-art{padding:12px 18px 48px}
 .pbs-related-grid{grid-template-columns:1fr}
 }
+.pbs-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.pbs-duo-card{background:var(--pbs-card);border:1px solid var(--pbs-border);border-radius:14px;padding:18px 18px 8px}
+.pbs-duo-h{font-family:var(--pbs-serif);color:var(--pbs-gold-l)!important;font-size:17px!important;font-weight:700;margin-bottom:6px!important}
+@media (max-width:640px){.pbs-duo{grid-template-columns:1fr}}
 </style>
 
 <div class="pbs-wrap">
@@ -102,9 +115,26 @@ description: What defines a pear body shape, how it compares to bottom hourglass
 
   <div class="pbs-art">
 
-    <div style="text-align:center;margin:0 0 8px;">
-      <img src="/assets/images/Pear-Body-Shape-Formula-Measurements-How-to-Dress-300x200.webp" alt="Pear body shape formula, measurements and how to dress" style="max-width:420px;width:100%;border-radius:16px;border:1px solid var(--pbs-border);" loading="lazy">
-    </div>
+    <figure class="pbs-fig pbs-hero">
+      <img src="/assets/images/3d-guide/pear-body-shape-3d-hero.webp" width="1500" height="1000" loading="eager" fetchpriority="high" decoding="async" alt="3D pear body shape: a front-view body with 37 in bust, 36 in waist and 44 in hips, traced by a pear outline that is narrow at the shoulders and full at the hips, next to a three-quarter view">
+      <figcaption class="pbs-figcap">The pear outline fitted to a real pear-shaped frame: narrow through the shoulders, fullest at the hip. Rotate the same figure in our <a href="/body-visualizer/">body visualizer</a>.</figcaption>
+    </figure>
+
+    <nav class="pg-toc pg-toc--pills" id="page-contents" aria-label="Pear body shape guide at a glance">
+      <details open>
+        <summary><span class="pg-toc-title">Pear body shape guide at a glance</span></summary>
+        <ol>
+          <li><a href="#pbs-what">What Is a Pear Body Shape?</a></li>
+          <li><a href="#pbs-rare">How Common Is the Pear Shape?</a></li>
+          <li><a href="#pbs-compare">Pear vs Bottom Hourglass — What&#x27;s the Real Difference?</a></li>
+          <li><a href="#pbs-whr">Waist-to-Hip Ratio for a Pear Shape</a></li>
+          <li><a href="#pbs-rule">The Pear Shape Rule in Two Lists</a></li>
+          <li><a href="#pbs-style">How to Dress for a Pear Body Shape</a><span class="pg-toc-sub"><a href="#pear-necklines">Necklines</a><a href="#pear-sleeves">Sleeves</a><a href="#pear-shirts-t-shirts-and-tops">Tops</a><a href="#pear-knitwear">Knitwear</a><a href="#pear-jackets">Jackets</a><a href="#pear-coats">Coats</a><a href="#pear-trousers">Trousers</a><a href="#pear-jeans">Jeans</a><a href="#pear-skirts">Skirts</a><a href="#pear-dresses">Dresses</a><a href="#pear-shorts">Shorts</a><a href="#pear-jumpsuits-and-playsuits">Jumpsuits</a></span></li>
+          <li><a href="#pbs-measure">Common Pear Shape Measurements by Size</a></li>
+          <li><a href="#pbs-faq">Frequently Asked Questions</a></li>
+        </ol>
+      </details>
+    </nav>
 
     <section class="pbs-sec" id="pbs-what">
       <h2>What Is a Pear Body Shape?</h2>
@@ -113,7 +143,12 @@ description: What defines a pear body shape, how it compares to bottom hourglass
       <div class="pbs-note">
         <p><strong>Quick check:</strong> hips at least 3.6 inches wider than the bust, waist within 9 inches of the hip measurement. If your waist is more than 9 inches smaller than your hips, you're actually a bottom hourglass, not a pear — the styling advice shifts a little.</p>
       </div>
-      <p>To see how a pear shape looks in three dimensions, tap the <strong>Pear</strong> preset in our <a href="/body-visualizer/">body visualizer</a> (female model, <em>Try a shape</em>) and switch between the front, side and back views. Or use Compare A/B to set it next to a bottom hourglass.</p>
+      <figure class="pbs-fig">
+        <img src="/assets/images/pear-body-shape-3d-front-side-back.webp" width="1500" height="1136" loading="lazy" decoding="async" alt="Pear body shape 3D illustration from the front, side and back, with bust, waist and hips measurement lines labelled at 37, 36 and 44 inches">
+        <figcaption class="pbs-figcap">A pear body shape rendered in 3D from the measurements above: hips noticeably wider than the bust, waist gently tapered rather than sharply cut. Open the <a href="/body-visualizer/">body visualizer</a> to rotate it yourself and try your own numbers.</figcaption>
+      </figure>
+
+      <p>To see how a pear shape looks interactively, tap the <strong>Pear</strong> preset in our <a href="/body-visualizer/">body visualizer</a> (female model, <em>Try a shape</em>) and switch between the front, side and back views. Or use Compare A/B to set it next to a bottom hourglass.</p>
     </section>
 
     <section class="pbs-sec" id="pbs-rare">
@@ -136,6 +171,12 @@ description: What defines a pear body shape, how it compares to bottom hourglass
           </tbody>
         </table>
       </div>
+
+      <figure class="pbs-fig">
+        <img src="/assets/images/pear-vs-bottom-hourglass-body-shape-3d.webp" width="1120" height="1148" loading="lazy" decoding="async" alt="3D comparison of pear and bottom hourglass body shapes at the same hip size, with bust, waist and hips labelled">
+        <figcaption class="pbs-figcap">Same wide hips on both — the pear's waist tapers gradually, the bottom hourglass cuts in sharply.</figcaption>
+      </figure>
+
       <p>You'll also see "spoon" used online as a related term — some calculators split out a spoon shape using a high-hip "shelf" measurement just below the waist. It's a genuine, well-documented distinction, but it's a subtler one than pear vs. bottom hourglass, and most people searching for spoon-shape advice find that the pear styling tips below work just as well for them. Our full <a href="/">body type calculator</a> flags this shelf pattern automatically when it shows up in your result.</p>
     </section>
 
@@ -145,28 +186,106 @@ description: What defines a pear body shape, how it compares to bottom hourglass
       <p>Run your exact numbers on our <a href="/waist-to-hip-ratio-calculator/">waist to hip ratio calculator</a> rather than relying on the shape category alone — WHR uses your specific waist and hip figures, and it's worth checking on its own. For a fuller set — including bust-to-hip ratio and your body shape — try the <a href="/body-proportions-calculator/">body proportions calculator</a>.</p>
     </section>
 
+    <section class="pbs-sec" id="pbs-rule">
+      <h2>The Pear Shape Rule in Two Lists</h2>
+      <p>Almost every recommendation further down comes from one idea: build up the top half, keep the bottom half smooth. If you remember nothing else, remember these two lists.</p>
+      <div class="pbs-duo">
+        <div class="pbs-duo-card">
+          <p class="pbs-duo-h">Add above the waist</p>
+          <ul>
+            <li>Wide necklines — boat, square, off-shoulder</li>
+            <li>Puff, cap or dropped-shoulder sleeves</li>
+            <li>Light colours, prints and detail on top</li>
+            <li>Structured shoulders on jackets</li>
+            <li>Cropped knits that stop at the waist</li>
+          </ul>
+        </div>
+        <div class="pbs-duo-card">
+          <p class="pbs-duo-h">Keep smooth below the waist</p>
+          <ul>
+            <li>A-line skirts and fit-and-flare dresses</li>
+            <li>Wide-leg trousers and bootcut jeans</li>
+            <li>Darker, plain fabric on the bottom half</li>
+            <li>Hems that clear the widest point of the hip</li>
+            <li>No heavy pockets or detail at hip level</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="pbs-sec" id="pbs-style">
       <h2>How to Dress for a Pear Body Shape</h2>
-      <p>The styling goal is balance, not disguise: add visual width to the shoulders and upper body so the frame reads as proportioned top to bottom, rather than trying to minimise the hips.</p>
+      <p>The core rule for this shape is balance: adding structure and width through the shoulder and upper body, while choosing fabric that skims rather than clings through the hip and thigh. The sections below work through each category piece by piece — with a 3D pear figure (37–36–44 in) wearing both versions, so you can judge the balance with your own eyes instead of taking the rule on trust.</p>
 
-      <h3>Work and Formal</h3>
-      <p>A structured blazer with a strong shoulder line, worn over a plain top, does most of the work on its own. Pencil skirts and straight trousers in darker, solid colours keep the lower half streamlined without clinging. A boat-neck or wide scoop-neck blouse widens the visual line across the collarbone.</p>
+      <h3 id="pear-necklines">Necklines</h3>
+      <p>A wider neckline is doing real, measurable work on this shape: it adds visual width exactly at the shoulder, which is the point you’re trying to bring into balance with your hips. A <strong>boat or bateau neckline</strong> is the clearest way to do that — it runs in a near-straight line from shoulder to shoulder. A wide scoop does a softer version of the same job. Halter necks and other narrow, vertical necklines are the ones to limit, since they pull the eye inward and make the shoulder line look even narrower against the hips below it.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-necklines-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of necklines on a pear body shape — avoid: halter neckline (cuts in at the shoulder and narrows it further); choose: boat or wide scoop (runs out toward the shoulder and widens the top line)">
+      </figure>
 
-      <h3>Casual and Everyday</h3>
-      <p>Bright colours, bold prints or textured fabric on top — paired with straight-leg or bootcut jeans in a dark, plain wash — is a formula that holds up in almost any casual setting. Save the pattern and detail for above the waist; keep the bottom simple.</p>
+      <h3 id="pear-sleeves">Sleeves</h3>
+      <p>This is one of the few shapes where <strong>adding volume at the shoulder is genuinely the goal</strong>, not something to avoid. A puff sleeve, a structured cap sleeve, or a dropped shoulder all add a bit of width right at the top of the arm, which reads as broader shoulders even without any padding involved. Ruffle or flutter detail at the shoulder seam does the same job in a softer way. Skinny, tightly fitted sleeves with no shape at the top are the ones that miss the opportunity — they keep the shoulder line as narrow as it already is, doing nothing to balance the hip below it.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-sleeves-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of sleeves on a pear body shape — avoid: skinny, sleeveless or clingy (adds nothing at the shoulder line); choose: puff or dropped shoulder (builds width exactly where the balance is needed)">
+      </figure>
 
-      <h3>Special Occasions</h3>
-      <p>An A-line gown with an embellished, structured bodice does exactly what pear styling is built around: definition and detail up top, a clean line that skims (rather than clings to) the hips below. Off-the-shoulder necklines are another strong option for the same reason.</p>
+      <h3 id="pear-shirts-t-shirts-and-tops">Shirts, T-Shirts &amp; Tops</h3>
+      <p>Tops that add structure at the shoulder and stop before they reach the hip are doing double duty for this shape — building width up top while staying clear of the area you’re usually trying to skim past. A <strong>peplum top</strong>, with its flared hem sitting right at the waist, adds shape at exactly the right point without any fabric continuing down over the hip. A boxy, structured top with some shoulder detail works the same way. What to avoid is a tight, hip-length top: fitted fabric that runs all the way down to the widest part of the hip has nowhere to go but cling to it.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-tops-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of tops on a pear body shape — avoid: tight, hip-length top (stops right on the widest line of the body); choose: structured top with shoulder interest (broadens the top half, ends above the hip)">
+      </figure>
 
-      <h3>Swimwear</h3>
-      <p>A top with embellishment, a high neck, or a bit of padding — paired with a plain, darker bottom in a boyshort or high-waisted cut — balances the frame well. Avoid a plain triangle top over a bold or light-coloured bottom, which does the opposite of what you want.</p>
+      <h3 id="pear-knitwear">Knitwear</h3>
+      <p>Length matters more than almost anything else in this category. A <strong>cropped sweater</strong> that ends at or above the hip bone keeps the knit’s natural clinginess away from the part of the body where it would add the most visual width. A structured, slightly boxy knit with some shoulder shaping does the same job while adding a bit of upper-body interest. Long, fitted knits that run past the hip are the trickier choice — knit fabric naturally follows the body’s shape, and a long, snug sweater will trace the hip and thigh line the whole way down rather than stopping before it.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-knitwear-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of knitwear on a pear body shape — avoid: long, clingy knit (hugs hip and thigh all the way down); choose: cropped boat-neck knit (stops at the waist and adds shape up top)">
+      </figure>
 
-      <h3>What to Avoid</h3>
-      <ul>
-        <li>Skinny jeans or tapered trousers in light washes, which draw the eye straight to the widest point</li>
-        <li>Clingy, hip-hugging fabric on the lower half with no structure on top to balance it</li>
-        <li>Plain, unadorned tops when the bottom half already has pattern or shine — it tips the balance further down instead of up</li>
-      </ul>
+      <h3 id="pear-jackets">Jackets</h3>
+      <p>A jacket with some structure at the shoulder — a notch lapel, a slight shoulder seam, a boxy cut — builds width exactly where this shape benefits from it, and a length that ends at the hip bone stops before it reaches the fullest point below. A <strong>cropped or hip-length blazer</strong> does both of these at once. Denim and utility jackets in a slightly boxy cut work the same way for something more casual. Long, unstructured coats are worth choosing carefully: a soft, floor-skimming coat with no shoulder structure draws one long line down the entire body, including the hip and thigh, rather than stopping to add balance up top.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-jackets-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of jackets on a pear body shape — avoid: long, unstructured jacket (soft shoulder, hem lands at the fullest thigh); choose: sharp-shouldered, hip-bone length (squares the shoulder and ends above the hip)">
+      </figure>
+      <h3 id="pear-coats">Coats</h3>
+      <p>With coats, the question is where the hem lands. A boxy coat that stops right at the hip draws a horizontal line across the widest part of your body — the exact place you want the eye to pass over. Go shorter (a jacket that ends at the waist or hip bone, as above) or go longer: an <strong>A-line or fit-and-flare coat</strong> that is fitted through the shoulder and bust, then kicks out gently over hip and thigh to knee length. A trench tied at the waist works too, as long as the skirt of the coat has enough flare to skim the hip rather than grip it. Shoulder epaulettes and wide lapels are a bonus here, not a problem.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-coats-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of coats on a pear body shape — avoid: boxy hip-length coat (hem draws a line across the widest point); choose: a-line or fit-and-flare coat (fitted up top, skims out over hip and thigh)">
+      </figure>
+
+      <h3 id="pear-trousers">Trousers</h3>
+      <p>A leg that <strong>keeps some width the whole way down</strong> reads as far more balanced on this shape than one that tapers in — a wide-leg or bootcut trouser continues roughly the same line from hip to hem, which stops the hip from looking like the widest point of an otherwise narrowing silhouette. A straight-leg cut in a structured fabric is a slightly more fitted version of the same idea. Skinny and tightly tapered jeans are the ones to be selective with, since the fabric narrows sharply below the hip, which makes the hip itself look comparatively wider by contrast rather than balanced against the leg.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-trousers-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of trousers on a pear body shape — avoid: skinny, tapered trousers (narrowing to the ankle exaggerates the hip); choose: high-rise wide-leg (falls straight from the hip and evens the line)">
+      </figure>
+      <h3 id="pear-jeans">Jeans</h3>
+      <p>A dark-wash, <strong>mid- to high-rise bootcut</strong> is the most dependable jean for this shape: the darker colour quiets the lower half, the rise sits above the hip, and the gentle flare at the hem puts width at the ankle to answer the width at the hip. Look at the back pockets too — pockets that are large, set high and slightly angled make the seat look smaller than small, low-set ones. Skinny jeans are the hard case: they trace the whole hip-to-ankle taper and leave the hip as the obvious widest point. If you love a slim leg, pair it with a top that adds width at the shoulder so the two halves still balance.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-jeans-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of jeans on a pear body shape — avoid: skinny jeans (traces the full hip-to-ankle taper); choose: mid- to high-rise bootcut (widens at the hem to mirror the hip)">
+      </figure>
+
+      <h3 id="pear-skirts">Skirts</h3>
+      <p>An <strong>A-line skirt</strong> is one of the most dependable choices available here, because it skims outward from the waist rather than following the hip’s exact width — the fullest part of the body ends up under moving fabric rather than fitted fabric. A gently flared or slightly gathered skirt does the same job with a touch more movement. A tight pencil skirt is the more demanding option: cut close through the hip and thigh, it follows the body’s widest measurement closely for the entire length of the skirt, which is the opposite of the skimming effect an A-line naturally provides.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-skirts-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of skirts on a pear body shape — avoid: tight pencil skirt (follows the full hip and thigh closely); choose: a-line skirt (steps away from the hip and softens it)">
+      </figure>
+
+      <h3 id="pear-dresses">Dresses</h3>
+      <p>A <strong>fit-and-flare dress</strong> is close to a perfect match for this shape’s logic: fitted through the bust and waist, where you want definition, then flaring outward right at the point where a fitted cut would otherwise cling to the hip. The flare does the balancing work that a wide-leg trouser or A-line skirt does elsewhere in this guide. A wrap dress with a fuller skirt does something similar with the added benefit of a defined waist tie. Bodycon and other dresses fitted the whole way down are the hardest category here, since there’s no point in the silhouette where the fabric stops following the hip and thigh.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-dresses-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of dresses on a pear body shape — avoid: bodycon dress (no ease anywhere through hip or thigh); choose: fit-and-flare dress (defines the waist, flares away from the hip)">
+      </figure>
+
+      <h3 id="pear-shorts">Shorts</h3>
+      <p><strong>Wide-leg or culotte-style shorts</strong> apply the same logic as wide trousers in a shorter length — the fabric skims past the hip and upper thigh instead of following their exact shape, which keeps the leg line looking straighter rather than tapered. A tailored short with a bit of ease through the thigh is a slightly more fitted alternative that still avoids clinging. Fitted bike shorts or anything cut close through the hip are the more difficult choice, since stretch fabric in a snug cut traces the hip and thigh closely for the entire length of the short, with no fabric movement to soften the line.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-shorts-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of shorts on a pear body shape — avoid: fitted bike shorts (clings to hip and thigh); choose: wide-leg culotte shorts (skims the hip, keeps a straighter line)">
+      </figure>
+      <h3 id="pear-jumpsuits-and-playsuits">Jumpsuits &amp; Playsuits</h3>
+      <p>Put the interest up top and the volume at the hem. An <strong>off-shoulder or boat-neck jumpsuit with a wide leg</strong> widens the shoulder line and lets the trouser fall straight from the hip, so the two halves meet in the middle. A contrasting belt helps if the fabric is plain. Strapless, skinny-leg styles do the opposite — nothing at the shoulder, cling from hip to ankle. For a playsuit, a short flared leg keeps the same logic in summer weight.</p>
+      <figure class="pbs-gfig">
+        <img src="/assets/images/3d-guide/pear-jumpsuits-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of jumpsuits on a pear body shape — avoid: strapless skinny-leg jumpsuit (nothing at the shoulder, cling at the hip); choose: off-shoulder wide-leg jumpsuit (width at the shoulder, width at the hem)">
+      </figure>
+
     </section>
 
     <section class="pbs-sec" id="pbs-measure">

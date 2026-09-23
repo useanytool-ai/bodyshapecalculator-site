@@ -25,6 +25,28 @@
   <link rel="icon" type="image/jpeg" href="/assets/images/body_shape_calculator_faveicon.jpg">
   <link rel="apple-touch-icon" href="/assets/images/body_shape_calculator_faveicon.jpg">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <!-- Google tag (gtag.js), loaded without blocking rendering: the queue below is set up
+       immediately (so the page view is recorded), and the ~150 KB library itself is fetched
+       only on the first scroll/tap/key press or ~3.5 s after the page has fully loaded. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EB10HRCTYE');
+    (function(){
+      var done = false, evs = ['scroll','pointerdown','keydown','touchstart'];
+      function load(){
+        if (done) return; done = true;
+        evs.forEach(function(e){ removeEventListener(e, load); });
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-EB10HRCTYE';
+        document.head.appendChild(s);
+      }
+      evs.forEach(function(e){ addEventListener(e, load, {passive: true, once: true}); });
+      addEventListener('load', function(){ setTimeout(load, 3500); });
+    })();
+  </script>
 </head>
 <body>
 
@@ -80,5 +102,72 @@
     </div>
   </footer>
 
+  <script>
+  /* Table of contents: accurate jumps, sticky side panel (desktop), bottom sheet (mobile), scroll-spy */
+  (function(){
+    var toc=document.getElementById("page-contents");if(!toc)return;
+    var det=toc.querySelector("details"),mq=window.matchMedia||function(){return{matches:false}};
+    if(det&&mq("(max-width:640px)").matches)det.removeAttribute("open");
+    var header=document.querySelector(".site-header");
+    function offset(){return (header?header.getBoundingClientRect().height:60)+16}
+    /* top-level sections listed in the in-page TOC */
+    var items=[].slice.call(toc.querySelectorAll("ol > li > a")).map(function(a){return{href:a.getAttribute("href"),text:a.textContent,el:document.getElementById(a.getAttribute("href").slice(1))}}).filter(function(i){return i.el});
+    if(!items.length)return;
+    /* panel shared by the desktop sidebar and the mobile sheet */
+    var panel=document.createElement("aside");panel.className="toc-panel";panel.setAttribute("aria-label","Table of contents");
+    var html='<div class="toc-panel-head"><span>Contents</span><button type="button" class="toc-panel-x" aria-label="Close contents">×</button></div><ol>';
+    items.forEach(function(i){html+='<li><a href="'+i.href+'">'+i.text.replace(/</g,"&lt;")+'</a></li>'});
+    panel.innerHTML=html+'</ol><a class="toc-panel-top" href="#page-contents">↑ Back to top of guide</a>';
+    document.body.appendChild(panel);
+    var fab=document.createElement("button");fab.type="button";fab.className="toc-fab";fab.innerHTML="☰ Contents";fab.setAttribute("aria-expanded","false");
+    document.body.appendChild(fab);
+    var scrim=document.createElement("div");scrim.className="toc-scrim";document.body.appendChild(scrim);
+    function wide(){return mq("(min-width:1240px)").matches}
+    function openSheet(o){panel.classList.toggle("open",o);scrim.classList.toggle("open",o);fab.setAttribute("aria-expanded",o?"true":"false");if(o){var c=panel.querySelector("a.current");if(c)c.scrollIntoView({block:"center"})}}
+    fab.addEventListener("click",function(){openSheet(!panel.classList.contains("open"))});
+    scrim.addEventListener("click",function(){openSheet(false)});
+    panel.querySelector(".toc-panel-x").addEventListener("click",function(){openSheet(false)});
+    /* accurate jump: load images above the target first, then correct if the layout moved */
+    var userScroll=0;
+    ["wheel","touchstart","keydown"].forEach(function(ev){window.addEventListener(ev,function(){userScroll=Date.now()},{passive:true})});
+    function go(id,push){
+      var t=document.getElementById(id);if(!t)return;
+      if(t.closest){var d=t.closest("details");if(d&&!d.open&&d!==det)d.open=true}
+      [].slice.call(document.querySelectorAll('img[loading="lazy"]')).forEach(function(im){if(im.compareDocumentPosition(t)&Node.DOCUMENT_POSITION_FOLLOWING)im.loading="eager"});
+      var start=Date.now();
+      function place(smooth){var y=t.getBoundingClientRect().top+window.pageYOffset-offset();window.scrollTo({top:Math.max(0,y),behavior:smooth?"smooth":"instant"})}
+      var far=Math.abs(t.getBoundingClientRect().top)>1800,sm=!far&&!mq("(prefers-reduced-motion: reduce)").matches;
+      place(sm);
+      (sm?[900,1600]:[250,700,1500]).forEach(function(ms){setTimeout(function(){if(userScroll>start)return;var d=t.getBoundingClientRect().top-offset();if(Math.abs(d)>6)place(false)},ms)});
+      if(push&&history.replaceState)history.replaceState(null,"","#"+id);
+      t.setAttribute("tabindex","-1");try{t.focus({preventScroll:true})}catch(e){}
+    }
+    document.addEventListener("click",function(e){
+      var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;
+      if(!(toc.contains(a)||panel.contains(a)))return;
+      var id=a.getAttribute("href").slice(1);if(!id)return;
+      e.preventDefault();
+      if(id==="page-contents"&&det)det.open=true;
+      if(panel.contains(a)&&!wide())openSheet(false);
+      go(id,true);
+    });
+    if(location.hash.length>1&&document.getElementById(location.hash.slice(1)))window.addEventListener("load",function(){go(location.hash.slice(1),false)});
+    /* scroll-spy + show/hide */
+    var links=[].slice.call(panel.querySelectorAll("ol a")),foot=document.querySelector(".site-footer"),tick=0;
+    function upd(){tick=0;
+      var off=offset()+30,cur=-1;
+      for(var i=0;i<items.length;i++){if(items[i].el.getBoundingClientRect().top<=off)cur=i}
+      links.forEach(function(l,i){l.classList.toggle("current",i===cur)});
+      var past=toc.getBoundingClientRect().bottom<0,nearFoot=foot&&foot.getBoundingClientRect().top<window.innerHeight*0.9;
+      var showSide=wide()&&past&&!nearFoot;
+      panel.classList.toggle("side",wide());panel.classList.toggle("visible",showSide);
+      fab.classList.toggle("show",!wide()&&past&&!nearFoot);
+      if(wide()){scrim.classList.remove("open")}
+      if(showSide){var c=panel.querySelector("a.current");if(c){var pr=panel.getBoundingClientRect(),cr=c.getBoundingClientRect();if(cr.top<pr.top+40||cr.bottom>pr.bottom-40)panel.scrollTop+=cr.top-pr.top-pr.height/2}}
+    }
+    window.addEventListener("scroll",function(){if(!tick)tick=requestAnimationFrame(upd)},{passive:true});
+    window.addEventListener("resize",upd);upd();
+  })();
+  </script>
 </body>
 </html>

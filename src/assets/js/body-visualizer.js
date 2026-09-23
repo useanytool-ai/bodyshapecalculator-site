@@ -249,7 +249,7 @@
     var Eb = ellipseAB(Cr, kB);
     var Eu = ellipseAB(Cr * lerp(0.965, 0.99, s), kB - 0.02);
     var Ec = ellipseAB(Cr * lerp(0.95, 0.985, s), kB - 0.05);
-    var hhC = p.waist + (p.hips - p.waist) * 0.45;
+    var hhC = (p.highhip > 0) ? clamp(p.highhip, Math.min(p.waist, p.hips) * 0.9, Math.max(p.waist, p.hips) * 1.08) : p.waist + (p.hips - p.waist) * 0.45;
     var Ehh = ellipseAB(hhC, (kW + kH) / 2);
     var Eth = ellipseAB(p.thigh, 0.97);
     var Enk = ellipseAB(p.neck, 0.98);
@@ -393,7 +393,7 @@
 
     return {
       H: H, parts: parts, Rb: Rb,
-      levels: { bust: yT(tBust), waist: yT(tW), hips: yT(tHip), shoulder: yS },
+      levels: { bust: yT(tBust), waist: yT(tW), highhip: yT((tHip + tW) / 2 - 0.02), hips: yT(tHip), shoulder: yS },
       yCrotch: yC
     };
   }

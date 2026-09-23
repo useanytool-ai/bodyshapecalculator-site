@@ -76,7 +76,7 @@ description: Use our free male body type calculator to find your body shape from
 <style id="mbc-css">
 .mbc-wrap *,.mbc-wrap *::before,.mbc-wrap *::after{box-sizing:border-box;margin:0;padding:0}
 .mbc-wrap{--mbc-bg:#0d0d0d;--mbc-surface:#161616;--mbc-card:#1e1e1e;--mbc-gold:#c9a84c;--mbc-gold-l:#e8c97a;--mbc-cream:#f5efe0;--mbc-muted:#8a8a8a;--mbc-border:#2a2a2a;--mbc-text:#f0e8d8;--mbc-serif:"Playfair Display",Georgia,"Times New Roman",serif;--mbc-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--mbc-sans);background:var(--mbc-bg);color:var(--mbc-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
-.mbc-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.mbc-wrap::before{content:"";position:absolute;top:-160px;left:-160px;width:640px;height:640px;max-width:80%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
 .mbc-wrap::after{content:"";position:absolute;bottom:-15%;right:-15%;width:45%;height:45%;background:radial-gradient(circle,rgba(201,168,76,.05) 0,transparent 70%);pointer-events:none;z-index:0}
 .mbc-wrap a{color:var(--mbc-gold-l);border-bottom:1px solid rgba(232,201,122,.35);text-decoration:none}
 .mbc-wrap a:hover{border-bottom-color:var(--mbc-gold-l)}
@@ -148,7 +148,20 @@ description: Use our free male body type calculator to find your body shape from
 .mbc-sil-row{display:flex;gap:10px;margin-bottom:20px;justify-content:center;flex-wrap:wrap}
 .mbc-sil-card{background:var(--mbc-card);border:1px solid var(--mbc-border);border-radius:14px;padding:14px 10px;text-align:center;width:100px;transition:border-color .3s,background .3s}
 .mbc-sil-card.mbc-active{border-color:var(--mbc-gold);background:rgba(201,168,76,.08)}
-.mbc-sil-svg{width:46px;height:74px;margin:0 auto 8px;display:block}
+.mbc-diagram{background:var(--mbc-card);border:1px solid var(--mbc-border);border-radius:16px;padding:20px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
+.mbc-diagram-img{width:130px;height:auto;flex-shrink:0;display:block}
+.mbc-diagram-key{display:flex;flex-direction:column;gap:10px;flex:1;min-width:180px}
+.mbc-diagram-row{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mbc-muted)}
+.mbc-diagram-dot{width:10px;height:3px;border-radius:2px;flex-shrink:0;background:#e8c97a}
+.mbc-diagram-row strong{color:var(--mbc-cream);font-weight:600}
+.mbc-3d{margin:0 0 20px;background:radial-gradient(ellipse at 50% 55%,#23211b 0,#121210 75%);border:1px solid var(--mbc-border);border-radius:16px;overflow:hidden}
+.mbc-3d canvas{display:block;width:100%;height:auto}
+.mbc-3d-cap{font-size:12.5px;color:var(--mbc-muted);padding:10px 16px 14px;line-height:1.55}
+.mbc-3d-cap a{color:var(--mbc-gold-l)}
+.mbc-fig{margin:20px 0 26px}
+.mbc-fig img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--mbc-border);background:#141412}
+.mbc-sil-img{width:60px;height:100px;margin:0 auto 8px;display:block;opacity:.55;transition:opacity .3s}
+.mbc-sil-card.mbc-active .mbc-sil-img{opacity:1}
 .mbc-sil-name{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--mbc-muted);font-weight:500}
 .mbc-sil-card.mbc-active .mbc-sil-name{color:var(--mbc-gold)}
 .mbc-stats-card,.mbc-ratios{background:var(--mbc-card);border:1px solid var(--mbc-border);border-radius:16px;padding:22px;margin-bottom:20px}
@@ -247,6 +260,15 @@ description: Use our free male body type calculator to find your body shape from
       <button type="button" data-act="unit" data-v="in" aria-pressed="false">Inches</button>
     </div>
 
+    <div class="mbc-diagram">
+      <img class="mbc-diagram-img" src="/assets/images/3d-guide/male-calculator-measure-points-3d.webp" width="300" height="440" loading="lazy" decoding="async" alt="3D male body with tape measures at the chest, natural waist and hips">
+      <div class="mbc-diagram-key">
+        <div class="mbc-diagram-row"><span class="mbc-diagram-dot"></span><strong>Chest</strong> — fullest part, under the arms and across the shoulder blades</div>
+        <div class="mbc-diagram-row"><span class="mbc-diagram-dot"></span><strong>Waist</strong> — narrowest point, usually just above the navel</div>
+        <div class="mbc-diagram-row"><span class="mbc-diagram-dot"></span><strong>Hips</strong> — widest part of the seat, feet together</div>
+      </div>
+    </div>
+
     <div class="mbc-progress" id="mbc-progress" aria-hidden="true">
       <span class="mbc-progress-dot" data-for="mbc-chest"></span>
       <span class="mbc-progress-dot" data-for="mbc-waist"></span>
@@ -328,12 +350,17 @@ description: Use our free male body type calculator to find your body shape from
         <div class="mbc-mitem"><div class="mbc-mval" id="mbc-r-hi">—</div><div class="mbc-mkey">Hips</div></div>
       </div>
 
+      <figure class="mbc-3d" id="mbc-3d" hidden>
+        <canvas id="mbc-3d-canvas" width="1120" height="820" role="img" aria-label="3D model of your body built from the chest, waist and hip measurements you entered"></canvas>
+        <figcaption class="mbc-3d-cap">Your own numbers, rendered as a 3D body with your chest, waist and hip lines. <a id="mbc-3d-link" href="/body-visualizer/">Rotate it in the 3D visualizer →</a></figcaption>
+      </figure>
+
       <div class="mbc-sil-row" id="mbc-sil-row">
-        <div class="mbc-sil-card" data-k="trapezoid"><svg class="mbc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M6 8h38l-6 20q-13 6-26 0z" fill="#c9a84c" opacity=".8"/><rect x="19" y="0" width="12" height="10" rx="4" fill="#c9a84c" opacity=".6"/><path d="M14 28q11 6 22 0l6 40H8Z" fill="#c9a84c" opacity=".8"/></svg><div class="mbc-sil-name">Trapezoid</div></div>
-        <div class="mbc-sil-card" data-k="inverted_triangle"><svg class="mbc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M5 8h40l-4 22H9z" fill="#c9a84c" opacity=".8"/><rect x="19" y="0" width="12" height="10" rx="4" fill="#c9a84c" opacity=".6"/><path d="M9 30h32l3 38H6Z" fill="#c9a84c" opacity=".8"/></svg><div class="mbc-sil-name">Inv. Triangle</div></div>
-        <div class="mbc-sil-card" data-k="rectangle"><svg class="mbc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M10 8h30l-2 22H12z" fill="#c9a84c" opacity=".8"/><rect x="19" y="0" width="12" height="10" rx="4" fill="#c9a84c" opacity=".6"/><path d="M12 30h26l2 38H10Z" fill="#c9a84c" opacity=".8"/></svg><div class="mbc-sil-name">Rectangle</div></div>
-        <div class="mbc-sil-card" data-k="triangle"><svg class="mbc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M14 8h22l-2 20H16z" fill="#c9a84c" opacity=".8"/><rect x="19" y="0" width="12" height="10" rx="4" fill="#c9a84c" opacity=".6"/><path d="M16 28h18l8 40H8Z" fill="#c9a84c" opacity=".8"/></svg><div class="mbc-sil-name">Triangle</div></div>
-        <div class="mbc-sil-card" data-k="oval"><svg class="mbc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M11 8h28l-3 18H14z" fill="#c9a84c" opacity=".8"/><rect x="19" y="0" width="12" height="10" rx="4" fill="#c9a84c" opacity=".6"/><path d="M14 26Q40 32 36 52Q30 68 14 60Q6 40 14 26Z" fill="#c9a84c" opacity=".8"/></svg><div class="mbc-sil-name">Oval</div></div>
+        <div class="mbc-sil-card" data-k="trapezoid"><img class="mbc-sil-img" src="/assets/images/3d-guide/male-shape-thumb-trapezoid.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="mbc-sil-name">Trapezoid</div></div>
+        <div class="mbc-sil-card" data-k="inverted_triangle"><img class="mbc-sil-img" src="/assets/images/3d-guide/male-shape-thumb-inverted-triangle.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="mbc-sil-name">Inv. Triangle</div></div>
+        <div class="mbc-sil-card" data-k="rectangle"><img class="mbc-sil-img" src="/assets/images/3d-guide/male-shape-thumb-rectangle.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="mbc-sil-name">Rectangle</div></div>
+        <div class="mbc-sil-card" data-k="triangle"><img class="mbc-sil-img" src="/assets/images/3d-guide/male-shape-thumb-triangle.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="mbc-sil-name">Triangle</div></div>
+        <div class="mbc-sil-card" data-k="oval"><img class="mbc-sil-img" src="/assets/images/3d-guide/male-shape-thumb-oval.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="mbc-sil-name">Oval</div></div>
       </div>
 
       <div class="mbc-stats-card">
@@ -396,9 +423,26 @@ description: Use our free male body type calculator to find your body shape from
 
   <div class="mbc-art">
 
-  <div style="text-align:center;margin:0 0 8px;">
-    <img src="/assets/images/Body_Type_Calculator_for_Men.webp" alt="Body type calculator for men - ectomorph, mesomorph, endomorph body types" style="max-width:420px;width:100%;border-radius:16px;border:1px solid #2a2a2a;" loading="lazy">
-  </div>
+  <figure style="margin:0 0 8px">
+    <img src="/assets/images/3d-guide/male-body-shapes-3d.webp" width="1500" height="900" loading="lazy" decoding="async" alt="The five male body shapes in 3D side by side: trapezoid, inverted triangle, rectangle, triangle and oval, each built from real chest, waist and hip measurements" style="display:block;width:100%;height:auto;border-radius:16px;border:1px solid #2a2a2a">
+    <figcaption style="font-size:12.5px;color:#8a8a8a;margin-top:9px;line-height:1.55">All five shapes rendered with the same 3D engine as our <a href="/body-visualizer/">body visualizer</a>, from measurements that fall squarely inside each formula below.</figcaption>
+  </figure>
+
+    <nav class="pg-toc pg-toc--cards" id="page-contents" aria-label="Male body type guide: jump to a topic">
+      <details open>
+        <summary><span class="pg-toc-title">Male body type guide: jump to a topic</span></summary>
+        <ol>
+          <li><a href="#mbc-what">What Is a Male Body Type Calculator and How Does It Work?</a></li>
+          <li><a href="#mbc-measure">How to Measure Chest, Waist and Hips</a></li>
+          <li><a href="#mbc-shapes">The 5 Male Body Shapes Explained (With Formulas)</a><span class="pg-toc-sub"><a href="#male-trapezoid-broad-chest-tapered-waist">Trapezoid</a><a href="#male-inverted-triangle-broad-chest-straight-waist">Inverted triangle</a><a href="#male-triangle-narrower-chest-wider-hips">Triangle</a><a href="#male-oval-fuller-midsection">Oval</a><a href="#male-rectangle-straight-up-and-down">Rectangle</a></span></li>
+          <li><a href="#mbc-style">How to Dress for Your Male Body Type</a><span class="pg-toc-sub"><a href="#dress-dressing-for-a-trapezoid-build">Trapezoid</a><a href="#dress-dressing-for-an-inverted-triangle-build">Inverted triangle</a><a href="#dress-dressing-for-a-triangle-build">Triangle</a><a href="#dress-dressing-for-an-oval-build">Oval</a><a href="#dress-dressing-for-a-rectangle-build">Rectangle</a><a href="#dress-what-to-wear-for-formal-occasions-by-body-shape">Formal</a></span></li>
+          <li><a href="#mbc-measure2">Common Male Body Shape Measurements by Size</a></li>
+          <li><a href="#mbc-whr">Body Shape and Waist-to-Hip Ratio</a></li>
+          <li><a href="#mbc-somatotype">Body Shape vs Somatotype — What&#x27;s the Difference?</a></li>
+          <li><a href="#mbc-faq">Frequently Asked Questions</a></li>
+        </ol>
+      </details>
+    </nav>
 
   <section class="mbc-sec" id="mbc-what">
     <h2>What Is a Male Body Type Calculator and How Does It Work?</h2>
@@ -442,42 +486,82 @@ description: Use our free male body type calculator to find your body shape from
 
     <p>Want to see them? The <a href="/body-visualizer/">male body visualizer</a> has a preset for each of these shapes. Choose the male model and tap <strong>Trapezoid</strong>, <strong>Oval</strong>, <strong>Rectangle</strong> or another chip under <em>Try a shape</em>, then rotate the figure to see the silhouette from the front, side and back.</p>
 
-    <h3>Trapezoid — Broad Chest, Tapered Waist</h3>
+    <h3 id="male-trapezoid-broad-chest-tapered-waist">Trapezoid — Broad Chest, Tapered Waist</h3>
     <p>Widely considered the classic athletic male build: chest and shoulders clearly wider than the hips, with a waist that tapers in noticeably between them — at least 7 inches smaller than the chest. This is the V-shape most strength-training advice is implicitly aimed at. If this is your result, your proportions already read as athletic; the styling goal is simply not to hide that taper under boxy fabric.</p>
+    <figure class="mbc-fig">
+      <img src="/assets/images/3d-guide/male-trapezoid-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D male trapezoid body shape with 44 in chest, 33 in waist and 38 in hips, traced by a trapezoid outline">
+    </figure>
 
-    <h3>Inverted Triangle — Broad Chest, Straight Waist</h3>
+
+    <h3 id="male-inverted-triangle-broad-chest-straight-waist">Inverted Triangle — Broad Chest, Straight Waist</h3>
     <p>Similar chest-to-hip spread as a trapezoid, but without the same waist taper — chest−waist comes in under 7 inches. The silhouette is broad and boxy through the torso rather than V-shaped. This is common in bigger, huskier builds and in men who carry muscle through the trunk without a sharply defined waist.</p>
+    <figure class="mbc-fig">
+      <img src="/assets/images/3d-guide/male-inverted-triangle-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D male inverted triangle body shape with 43 in chest, 39 in waist and 38 in hips, traced by a downward-pointing triangle">
+    </figure>
 
-    <h3>Triangle — Narrower Chest, Wider Hips</h3>
+
+    <h3 id="male-triangle-narrower-chest-wider-hips">Triangle — Narrower Chest, Wider Hips</h3>
     <p>Hips at least 3 inches wider than the chest — narrower shoulders with fullness sitting in the hips and thighs. Less commonly discussed than the female pear shape, but the same styling logic applies: the goal is adding visual width up top to balance the frame.</p>
+    <figure class="mbc-fig">
+      <img src="/assets/images/3d-guide/male-triangle-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D male triangle body shape with 37 in chest, 36 in waist and 41.5 in hips, traced by an upward-pointing triangle">
+    </figure>
 
-    <h3>Oval — Fuller Midsection</h3>
+
+    <h3 id="male-oval-fuller-midsection">Oval — Fuller Midsection</h3>
     <p>Chest and hips are close in size, but the waist doesn't taper — it sits close to, or even exceeds, both. This is the shape colloquially called a "dad bod" or "beer belly" build. Like the female apple shape, <strong>oval isn't a fitness judgment</strong> — it describes where a frame carries fullness, and it can show up at a wide range of overall sizes.</p>
+    <figure class="mbc-fig">
+      <img src="/assets/images/3d-guide/male-oval-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D male oval body shape with 43 in chest, 46 in waist and 43 in hips, traced by an oval outline">
+    </figure>
 
-    <h3>Rectangle — Straight Up and Down</h3>
+
+    <h3 id="male-rectangle-straight-up-and-down">Rectangle — Straight Up and Down</h3>
     <p>Chest, waist and hips are all fairly close, with the waist somewhat smaller than the chest but not dramatically so. A lean, uniform silhouette without pronounced taper in either direction — common in naturally slim, narrow-framed builds.</p>
+    <figure class="mbc-fig">
+      <img src="/assets/images/3d-guide/male-rectangle-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D male rectangle body shape with 39 in chest, 35 in waist and 39 in hips, traced by a rectangle outline">
+    </figure>
+
   </section>
 
   <section class="mbc-sec" id="mbc-style">
     <h2>How to Dress for Your Male Body Type</h2>
-    <p>The general principle across all five shapes: fit matters more than any single style choice, and the goal is proportion, not disguise.</p>
+    <p>The general principle across all five shapes: fit matters more than any single style choice, and the goal is proportion, not disguise. Each build below comes with a 3D side-by-side on a figure with those exact proportions — same body, same colours, only the clothes change.</p>
 
-    <h3>Dressing for a Trapezoid Build</h3>
+    <h3 id="dress-dressing-for-a-trapezoid-build">Dressing for a Trapezoid Build</h3>
     <p>Show the taper rather than hiding it — fitted (not skin-tight) shirts, tailored blazers that follow the waist, and flat-front trousers all work with your proportions instead of against them.</p>
+    <figure class="mbc-fig">
+      <img src="/assets/images/3d-guide/male-trapezoid-3d-styling.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D styling comparison for a male trapezoid build — avoid: oversized boxy shirt; choose: fitted shirt with straight trousers">
+    </figure>
 
-    <h3>Dressing for an Inverted Triangle Build</h3>
+
+    <h3 id="dress-dressing-for-an-inverted-triangle-build">Dressing for an Inverted Triangle Build</h3>
     <p>A single-breasted jacket with minimal shoulder padding keeps the upper body from reading as boxier than it needs to. Straight or slightly relaxed trousers balance a broad torso better than skinny cuts, which exaggerate the width up top.</p>
+    <figure class="mbc-fig">
+      <img src="/assets/images/3d-guide/male-inverted-triangle-3d-styling.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D styling comparison for a male inverted triangle build — avoid: padded blazer with skinny jeans; choose: unstructured blazer with straight-leg trousers">
+    </figure>
 
-    <h3>Dressing for a Triangle Build</h3>
-    <p>Structured jackets and shirts with some texture or pattern on top add visual width to the shoulders. Slim, tapered trousers in darker tones keep the lower half from adding further width.</p>
 
-    <h3>Dressing for an Oval Build</h3>
+    <h3 id="dress-dressing-for-a-triangle-build">Dressing for a Triangle Build</h3>
+    <p>Structured jackets and shirts with some texture or pattern on top add visual width to the shoulders. Straight-cut trousers in darker tones keep the lower half clean without clinging; skinny cuts trace the hip and make it the widest line.</p>
+    <figure class="mbc-fig">
+      <img src="/assets/images/3d-guide/male-triangle-3d-styling.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D styling comparison for a male triangle build — avoid: tight tee with skinny jeans; choose: structured jacket with dark straight trousers">
+    </figure>
+
+
+    <h3 id="dress-dressing-for-an-oval-build">Dressing for an Oval Build</h3>
     <p>Vertical lines — pinstripes, open jackets worn as a layer, shirts with a defined placket — elongate the torso. Avoid tucking in tightly fitted shirts across the midsection; a slightly longer, straighter cut skims rather than clings. Flat-front trousers sit better than pleated ones, which add bulk exactly where you don't want it.</p>
+    <figure class="mbc-fig">
+      <img src="/assets/images/3d-guide/male-oval-3d-styling.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D styling comparison for a male oval build — avoid: tight tucked-in tee; choose: open longline jacket">
+    </figure>
 
-    <h3>Dressing for a Rectangle Build</h3>
+
+    <h3 id="dress-dressing-for-a-rectangle-build">Dressing for a Rectangle Build</h3>
     <p>Layering — a jacket over a shirt, texture on texture — adds the visual dimension a straight frame doesn't naturally have. Structured shoulders and a slightly fitted waist on jackets create the impression of a more defined silhouette.</p>
+    <figure class="mbc-fig">
+      <img src="/assets/images/3d-guide/male-rectangle-3d-styling.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D styling comparison for a male rectangle build — avoid: plain straight tee; choose: structured-shoulder blazer">
+    </figure>
 
-    <h3>What to Wear for Formal Occasions by Body Shape</h3>
+
+    <h3 id="dress-what-to-wear-for-formal-occasions-by-body-shape">What to Wear for Formal Occasions by Body Shape</h3>
     <div class="mbc-tbl-wrap">
       <table>
         <thead><tr><th scope="col">Shape</th><th scope="col">Formal go-to</th></tr></thead>
@@ -582,7 +666,7 @@ var unit="cm",wUnit="kg",activeSil=null,lastKey=null;
 var T={
 trapezoid:{n:"Trapezoid",d:"Your chest is clearly wider than your hips, with a waist that tapers in noticeably between them \u2014 the classic athletic V-shape.",t:[["Defining Feature","Chest at least 3 inches wider than hips; waist at least 7 inches smaller than the chest."],["Style Tips","Fitted shirts and tailored blazers that follow your natural taper work best."],["What Suits You","Flat-front trousers, structured jackets, and anything that shows rather than hides the V-shape."],["Formula Note","Chest\u2212hips \u2265 3 in AND chest\u2212waist \u2265 7 in."]]},
 inverted_triangle:{n:"Inverted Triangle",d:"Your chest is wider than your hips, but without the same waist taper \u2014 a broad, boxier build through the torso.",t:[["Defining Feature","Chest at least 3 inches wider than hips; waist less than 7 inches smaller than the chest."],["Style Tips","Single-breasted jackets with minimal shoulder padding avoid adding extra width up top."],["What Suits You","Straight or relaxed-fit trousers balance a broad torso better than slim cuts."],["Formula Note","Chest\u2212hips \u2265 3 in AND chest\u2212waist < 7 in."]]},
-triangle:{n:"Triangle",d:"Your hips are wider than your chest, giving a narrower-shouldered silhouette with fullness sitting lower.",t:[["Defining Feature","Hips at least 3 inches wider than the chest."],["Style Tips","Structured shoulders and patterned or textured tops add visual width up top."],["What Suits You","Slim, tapered trousers in darker tones keep the lower half from adding further width."],["Formula Note","Hips\u2212chest \u2265 3 in."]]},
+triangle:{n:"Triangle",d:"Your hips are wider than your chest, giving a narrower-shouldered silhouette with fullness sitting lower.",t:[["Defining Feature","Hips at least 3 inches wider than the chest."],["Style Tips","Structured shoulders and patterned or textured tops add visual width up top."],["What Suits You","Straight-cut trousers in darker tones keep the lower half clean without clinging; skinny cuts trace the hip and make it the widest line."],["Formula Note","Hips\u2212chest \u2265 3 in."]]},
 oval:{n:"Oval",d:"Your chest and hips are close in size, but your waist doesn't taper between them \u2014 fullness sits through the midsection.",t:[["Defining Feature","Chest and hips within 3 inches of each other; waist within 2 inches of \u2014 or larger than \u2014 both."],["Style Tips","Vertical lines and open layering elongate the torso without clinging at the middle."],["What Suits You","Flat-front trousers and a slightly longer, straighter shirt cut that skims rather than tucks tight."],["Formula Note","Chest\u2212hips < 3 in AND waist \u2265 (chest\u22122 in) AND waist \u2265 (hips\u22122 in)."]]},
 rectangle:{n:"Rectangle",d:"Your chest, waist and hips are all fairly similar \u2014 a lean, straight silhouette without pronounced taper.",t:[["Defining Feature","Chest and hips within 3 inches of each other; waist moderately smaller than both, but not dramatically."],["Style Tips","Layering and structured shoulders add the visual dimension a straight frame doesn't naturally have."],["What Suits You","Double-breasted jackets and textured fabrics create shape where the proportions don't."],["Formula Note","Catch-all: applied when none of the other conditions are met."]]}
 };
@@ -680,13 +764,62 @@ function calculate(){
  else el.insight.classList.remove("mbc-show");
 
  el.res.classList.add("mbc-show");
+ var cmf=unit==="cm"?1:2.54;
+ render3d({chest:c*cmf,waist:w*cmf,hips:h*cmf,htCm:hasHt?htCm:0,wtKg:hasWt?wtKg:0});
  requestAnimationFrame(function(){
   for(var i=0;i<3;i++)bars[i].style.width=Math.min(r[i]/caps[i]*100,100)+"%";
   el.res.scrollIntoView({behavior:"smooth",block:"nearest"});
  });
 }
 
+
+/* ---- live 3D body from the user's own measurements (engine loaded on demand) ---- */
+var bvPromise=null,last3d=null;
+function loadEngine(){
+ if(window.BVCore)return Promise.resolve(window.BVCore);
+ if(bvPromise)return bvPromise;
+ bvPromise=new Promise(function(res,rej){
+  var sc=document.createElement("script");sc.src="/assets/js/body-visualizer.js";sc.async=true;
+  sc.onload=function(){window.BVCore?res(window.BVCore):rej()};sc.onerror=rej;document.head.appendChild(sc);
+ });
+ return bvPromise;
+}
+function render3d(o){
+ var fig=document.getElementById("mbc-3d"),cv=document.getElementById("mbc-3d-canvas");if(!fig||!cv)return;
+ loadEngine().then(function(C){
+  var H=o.htCm>=120&&o.htCm<=230?o.htCm:178;
+  var W=o.wtKg>0?o.wtKg:23*Math.pow(o.waist/(82*Math.pow(H/178,0.6)),1/0.7)*Math.pow(H/100,2);
+  var r=C.rangeFor("weight",{height:H});W=Math.min(r[1],Math.max(r[0],W));
+  var b=C.makeBody("m",H,W);
+  b.bust=o.chest;b.waist=o.waist;b.hips=o.hips;C.sanitize(b);
+  var m=C.buildModel(b),L=m.levels;
+  var cw=cv.width,ch=cv.height,y0=Math.max(0,m.yCrotch*0.52),y1=H+3,sc=(ch-36)/(y1-y0),gy=26+y1*sc;
+  var off=document.createElement("canvas");off.width=cw;off.height=ch;
+  var ox=off.getContext("2d"),img=ox.createImageData(cw,ch);
+  var narrow=(cv.getBoundingClientRect().width||fig.parentNode.clientWidth||600)<520;
+  var xF=narrow?cw*0.62:cw*0.40,x3=cw*0.80,col=[221,199,158];
+  if(!narrow)C.rasterize(img.data,cw,ch,m,{scale:sc,cxPx:x3,groundPx:gy,theta:0.62,color:col,alpha:0.62});
+  C.rasterize(img.data,cw,ch,m,{scale:sc,cxPx:xF,groundPx:gy,theta:0,color:col});
+  ox.putImageData(img,0,0);
+  var ctx=cv.getContext("2d");ctx.clearRect(0,0,cw,ch);ctx.drawImage(off,0,0);
+  var f=unit==="cm"?1:1/2.54,u=unit;
+  var lines=[["Chest",L.bust,o.chest],["Waist",L.waist,o.waist],["Hips",L.hips,o.hips]];
+  ctx.font="bold "+(narrow?44:26)+"px -apple-system,Segoe UI,Roboto,Arial,sans-serif";ctx.textBaseline="middle";
+  for(var i=0;i<lines.length;i++){
+   var ln=lines[i],yy=gy-ln[1]*sc,e=C.extentsAt(m,ln[1],0);if(!e)continue;
+   var xa=xF+e[0]*sc-10,xb=xF+e[1]*sc+10;
+   ctx.strokeStyle="#f0d48a";ctx.lineWidth=narrow?3.4:2.4;ctx.setLineDash([9,7]);ctx.beginPath();ctx.moveTo(xa,yy);ctx.lineTo(xb,yy);ctx.stroke();ctx.setLineDash([]);
+   ctx.beginPath();ctx.moveTo(xa,yy-8);ctx.lineTo(xa,yy+8);ctx.moveTo(xb,yy-8);ctx.lineTo(xb,yy+8);ctx.stroke();
+   ctx.fillStyle="#f0d48a";ctx.textAlign="right";ctx.fillText(ln[0]+" "+fmt(ln[2]*f)+" "+u,xa-12,yy);
+  }
+  var a=[H,W,o.chest,o.waist,o.hips,"","","","",""].map(function(v){return v===""?"":Math.round(v*10)/10});
+  document.getElementById("mbc-3d-link").href="/body-visualizer/#v=1&sx=m&u="+(unit==="cm"?"m":"i")+"&a="+a.join(",");
+  fig.hidden=false;last3d=cv;
+ }).catch(function(){fig.hidden=true;last3d=null});
+}
+
 function reset(){
+var f3=document.getElementById("mbc-3d");if(f3)f3.hidden=true;last3d=null;
  el.res.classList.remove("mbc-show");
  el.insight.classList.remove("mbc-show");
  el.err.classList.remove("mbc-show");
@@ -764,12 +897,12 @@ function wrapText(ctx,text,x,y,maxW,lh){
 }
 function downloadImage(){
  var t=T[lastKey]; if(!t)return;
- var c=document.createElement("canvas"); c.width=800;c.height=900;
+ var c=document.createElement("canvas"); var HH=last3d?1360:900; c.width=800;c.height=HH;
  var ctx=c.getContext("2d");
- var grad=ctx.createLinearGradient(0,0,0,900);
+ var grad=ctx.createLinearGradient(0,0,0,HH);
  grad.addColorStop(0,"#0d0d0d");grad.addColorStop(1,"#161616");
- ctx.fillStyle=grad;ctx.fillRect(0,0,800,900);
- ctx.strokeStyle="#c9a84c";ctx.lineWidth=2;ctx.strokeRect(20,20,760,860);
+ ctx.fillStyle=grad;ctx.fillRect(0,0,800,HH);
+ ctx.strokeStyle="#c9a84c";ctx.lineWidth=2;ctx.strokeRect(20,20,760,HH-40);
  ctx.textAlign="center";
  ctx.fillStyle="#8a8a8a";ctx.font="14px Georgia, serif";
  ctx.fillText("YOUR BODY TYPE RESULT",400,110);
@@ -800,8 +933,9 @@ function downloadImage(){
   ctx.textAlign="right";ctx.fillStyle="#f0e8d8";ctx.font="bold 14px Georgia, serif";ctx.fillText(rValues[j],740,yy);
  }
 
+ if(last3d){var yEnd=ry+34+rValues.length*30+10,bh=HH-80-yEnd,bw=bh*last3d.width/last3d.height;if(bw>700){bw=700;bh=bw*last3d.height/last3d.width}ctx.drawImage(last3d,400-bw/2,yEnd,bw,bh)}
  ctx.textAlign="center";ctx.fillStyle="#555";ctx.font="12px sans-serif";
- ctx.fillText(location.hostname||"Body Type Calculator for Men",400,860);
+ ctx.fillText(location.hostname||"Body Type Calculator for Men",400,HH-40);
 
  var url=c.toDataURL("image/png");
  var a=document.createElement("a");a.href=url;a.download="male-body-type-result.png";

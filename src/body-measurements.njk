@@ -44,7 +44,7 @@ description: How to accurately measure bust, chest, waist, high hip, hips and he
 <style>
 .bm-wrap *,.bm-wrap *::before,.bm-wrap *::after{box-sizing:border-box;margin:0;padding:0}
 .bm-wrap{--bm-bg:#0d0d0d;--bm-card:#1e1e1e;--bm-gold:#c9a84c;--bm-gold-l:#e8c97a;--bm-cream:#f5efe0;--bm-muted:#8a8a8a;--bm-border:#2a2a2a;--bm-text:#f0e8d8;--bm-serif:"Playfair Display",Georgia,"Times New Roman",serif;--bm-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--bm-sans);background:var(--bm-bg);color:var(--bm-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
-.bm-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.bm-wrap::before{content:"";position:absolute;top:-160px;left:-160px;width:640px;height:640px;max-width:80%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
 .bm-wrap a{color:var(--bm-gold-l);border-bottom:1px solid rgba(232,201,122,.35);text-decoration:none}
 .bm-wrap a:hover{border-bottom-color:var(--bm-gold-l)}
 .bm-container{max-width:780px;margin:0 auto;padding:56px 24px 20px;position:relative;z-index:1}
@@ -64,6 +64,15 @@ description: How to accurately measure bust, chest, waist, high hip, hips and he
 .bm-art li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--bm-gold);opacity:.7}
 .bm-note{background:var(--bm-card);border-left:3px solid var(--bm-gold);border-radius:0 12px 12px 0;padding:16px 20px;margin:18px 0}
 .bm-note p:last-child{margin-bottom:0}
+.bm-gfig{margin:22px 0 30px}
+.bm-gfig-row{display:flex;flex-wrap:wrap;gap:18px}
+.bm-gfig-row .bm-gfig{flex:1 1 280px;margin:0}
+.bm-gfig img{display:block;width:100%;height:auto}
+.bm-gfig-snug img{max-width:640px;margin:0 auto}
+.bm-fig{margin:24px 0}
+.bm-fig img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--bm-border);background:#111}
+.bm-figcap{font-size:12.5px;color:var(--bm-muted);margin-top:9px;line-height:1.55}
+.bm-figcap a{color:var(--bm-gold-l)}
 .bm-tbl-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--bm-border);border-radius:14px}
 .bm-art table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}
 .bm-art th{background:rgba(201,168,76,.08);color:var(--bm-gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-align:left;padding:12px 16px}
@@ -102,9 +111,29 @@ description: How to accurately measure bust, chest, waist, high hip, hips and he
 
   <div class="bm-art">
 
-    <div style="text-align:center;margin:0 0 8px;">
-      <img src="/assets/images/How-to-Take-Body-Measurements-at-Home-Bust-Waist-Hips-300x200.webp" alt="How to take body measurements at home - bust, waist and hips" style="max-width:420px;width:100%;border-radius:16px;border:1px solid var(--bm-border);" loading="lazy">
-    </div>
+    <figure class="bm-fig">
+      <img src="/assets/images/3d-guide/body-measurements-3d-hero.webp" width="1500" height="1000" loading="eager" fetchpriority="high" decoding="async" alt="3D female and male bodies with tape measures wrapped around the bust, waist, high hip and hips on the woman, and chest, waist and hips on the man">
+      <figcaption class="bm-figcap">Every tape position on this page, shown in 3D on a female and a male figure — rendered with the same engine as our <a href="/body-visualizer/">body visualizer</a>. Each measurement has its own front-and-back view below.</figcaption>
+    </figure>
+
+    <nav class="pg-toc pg-toc--steps" id="page-contents" aria-label="Body measurement guide: pick a measurement">
+      <details open>
+        <summary><span class="pg-toc-title">Body measurement guide: pick a measurement</span></summary>
+        <ol>
+          <li><a href="#bm-why">Why Accurate Measurements Matter</a></li>
+          <li><a href="#bm-tools">What You&#x27;ll Need</a></li>
+          <li><a href="#bm-bust">How to Measure Bust (Women)</a></li>
+          <li><a href="#bm-chest">How to Measure Chest (Men)</a></li>
+          <li><a href="#bm-waist">How to Measure Waist</a></li>
+          <li><a href="#bm-highhip">How to Measure High Hip</a></li>
+          <li><a href="#bm-hips">How to Measure Hips</a></li>
+          <li><a href="#bm-height">How to Measure Height</a></li>
+          <li><a href="#bm-mistakes">Common Measuring Mistakes</a></li>
+          <li><a href="#bm-convert">Inches to Centimeters Conversion Reference</a></li>
+          <li><a href="#bm-faq">Frequently Asked Questions</a></li>
+        </ol>
+      </details>
+    </nav>
 
     <section class="bm-sec" id="bm-why">
       <h2>Why Accurate Measurements Matter</h2>
@@ -127,6 +156,9 @@ description: How to accurately measure bust, chest, waist, high hip, hips and he
     <section class="bm-sec" id="bm-bust">
       <h2>How to Measure Bust (Women)</h2>
       <p>Wrap the tape around the fullest part of your chest, usually across the nipple line. Keep it level front to back — it's easy to let it ride up slightly at the back without noticing, which is why a mirror or a second person helps here specifically. If you're measuring in a bra, use a properly fitted, non-padded one for a consistent baseline. Keep the tape snug against the skin without compressing anything, breathe naturally, and read the number where the tape overlaps.</p>
+      <figure class="bm-fig">
+        <img src="/assets/images/3d-guide/measure-bust-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D model showing a tape measure around the fullest part of the bust, from the front and from the back, level all the way round">
+      </figure>
     </section>
 
     <section class="bm-sec" id="bm-chest">
@@ -137,6 +169,9 @@ description: How to accurately measure bust, chest, waist, high hip, hips and he
     <section class="bm-sec" id="bm-waist">
       <h2>How to Measure Waist</h2>
       <p>Your natural waist is the narrowest part of your torso — usually an inch or two above the belly button, not at it. That mix-up is the single most common measuring mistake. Not sure where yours is? Bend sideways; the crease that forms is the spot. Exhale gently and measure your relaxed shape — don't suck in or hold your breath, and keep the tape parallel to the floor.</p>
+      <figure class="bm-fig">
+        <img src="/assets/images/3d-guide/measure-waist-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D model showing a tape measure at the natural waist, the narrowest part of the torso, from the front and from the back">
+      </figure>
       <div class="bm-note">
         <p><strong>Checking a clinical or WHO-based reference instead?</strong> The World Health Organization's own protocol uses a slightly different landmark — midway between your lowest rib and the top of your hip bone — rather than the narrowest point described above. It matters specifically for waist-to-hip ratio results, since those health thresholds are sourced from WHO guidance built around that landmark (see the WHR calculator link below).</p>
       </div>
@@ -144,12 +179,18 @@ description: How to accurately measure bust, chest, waist, high hip, hips and he
 
     <section class="bm-sec" id="bm-highhip">
       <h2>How to Measure High Hip</h2>
-      <p>The high hip sits roughly 7 inches (18 cm) below your natural waist, just above the pelvic bone — the widest point of the upper hip area, distinct from the full hip below. Most general-purpose calculators skip this measurement entirely, but it's a useful extra data point for spotting a pronounced "shelf" shape at the top of the hip that a bust/waist/hip reading alone can miss — the pattern some calculators label <a href="/pear-body-shape/">spoon</a>. Wrap the tape at that point, keep it level, and record it separately from your full hip number.</p>
+      <p>The high hip sits roughly 3 to 4 inches (8–10 cm) below your natural waist, across the top of the pelvic bone — the widest point of the upper hip area, distinct from the full hip below. Most general-purpose calculators skip this measurement entirely, but it's a useful extra data point for spotting a pronounced "shelf" shape at the top of the hip that a bust/waist/hip reading alone can miss — the pattern some calculators label <a href="/pear-body-shape/">spoon</a>. Wrap the tape at that point, keep it level, and record it separately from your full hip number.</p>
+      <figure class="bm-fig">
+        <img src="/assets/images/3d-guide/measure-highhip-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D model showing a tape measure at the high hip, about 3 to 4 inches below the natural waist, from the front and from the back">
+      </figure>
     </section>
 
     <section class="bm-sec" id="bm-hips">
       <h2>How to Measure Hips</h2>
       <p>Stand with your feet together and wrap the tape around the widest part of your buttocks and hips — typically 7 to 9 inches below the natural waist, though this varies by frame. Keep the tape level all the way around; check in a mirror that it doesn't dip lower at the back, which is the most common way this measurement goes wrong.</p>
+      <figure class="bm-fig">
+        <img src="/assets/images/3d-guide/measure-hips-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D model showing a tape measure around the widest part of the hips and seat, from the front and from the back">
+      </figure>
     </section>
 
     <section class="bm-sec" id="bm-height">
@@ -167,6 +208,19 @@ description: How to accurately measure bust, chest, waist, high hip, hips and he
         <li><strong>Pulling the tape too tight.</strong> Snug is correct; compressing the skin isn't. You should be able to slide one finger under the tape.</li>
         <li><strong>Mixing units mid-measurement.</strong> Measuring your bust in inches and your waist in centimeters, even by accident, will break any calculator's result. Pick one unit and stay consistent.</li>
       </ul>
+
+      <figure class="bm-fig">
+        <img src="/assets/images/3d-guide/measure-mistake-dip-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D back view comparing a hip tape measure that slides down at the back with one kept level with the floor">
+      </figure>
+      <figure class="bm-fig">
+        <img src="/assets/images/3d-guide/measure-mistake-waistband-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of a tape measure placed at a low jeans waistband versus at the natural waist, the narrowest point of the torso">
+      </figure>
+      <figure class="bm-fig">
+        <img src="/assets/images/3d-guide/measure-mistake-bulky-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of a bust measurement taken over a chunky knit sweater versus over a thin fitted layer">
+      </figure>
+      <figure class="bm-gfig bm-gfig-snug">
+        <img src="/assets/images/garment-cards/measure-snug.svg" width="640" loading="lazy" decoding="async" alt="Illustration comparing a tape pulled tight enough to compress the skin with a tape kept snug, leaving room for one finger">
+      </figure>
     </section>
 
     <section class="bm-sec" id="bm-convert">

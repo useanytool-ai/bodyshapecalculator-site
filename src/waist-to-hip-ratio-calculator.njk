@@ -7,7 +7,7 @@ description: Calculate your waist-to-hip ratio (WHR) using waist and hip measure
 <style id="whrc-css">
 .whrc-wrap *,.whrc-wrap *::before,.whrc-wrap *::after{box-sizing:border-box;margin:0;padding:0}
 .whrc-wrap{--whrc-bg:#0d0d0d;--whrc-card:#1e1e1e;--whrc-gold:#c9a84c;--whrc-gold-l:#e8c97a;--whrc-cream:#f5efe0;--whrc-muted:#8a8a8a;--whrc-border:#2a2a2a;--whrc-text:#f0e8d8;--whrc-serif:"Playfair Display",Georgia,"Times New Roman",serif;--whrc-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--whrc-sans);background:var(--whrc-bg);color:var(--whrc-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
-.whrc-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.whrc-wrap::before{content:"";position:absolute;top:-160px;left:-160px;width:640px;height:640px;max-width:80%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
 .whrc-wrap a{color:var(--whrc-gold-l);border-bottom:1px solid rgba(232,201,122,.35);text-decoration:none}
 .whrc-wrap a:hover{border-bottom-color:var(--whrc-gold-l)}
 .whrc-wrap :focus-visible{outline:2px solid var(--whrc-gold);outline-offset:3px;border-radius:6px}
@@ -144,6 +144,22 @@ description: Calculate your waist-to-hip ratio (WHR) using waist and hip measure
 
   <div class="whrc-art">
 
+    <nav class="pg-toc pg-toc--circles" id="page-contents" aria-label="Waist-to-hip ratio guide contents">
+      <details open>
+        <summary><span class="pg-toc-title">Waist-to-hip ratio guide contents</span></summary>
+        <ol>
+          <li><a href="#whrc-what">What Is Waist-to-Hip Ratio?</a></li>
+          <li><a href="#whrc-measure">How to Measure Waist and Hip Correctly</a></li>
+          <li><a href="#whr-chart">WHR Risk Categories by Sex</a></li>
+          <li><a href="#whrc-research">What the Research Says</a></li>
+          <li><a href="#whrc-shapes">How Does Body Shape Relate to WHR?</a></li>
+          <li><a href="#whrc-fertility">WHR and Fertility</a></li>
+          <li><a href="#whrc-vs">WHR vs Waist-to-Height Ratio vs BMI — Which Should You Trust?</a></li>
+          <li><a href="#whrc-faq">Frequently Asked Questions</a></li>
+        </ol>
+      </details>
+    </nav>
+
     <section class="whrc-sec" id="whrc-what">
       <h2>What Is Waist-to-Hip Ratio?</h2>
       <p>Waist-to-hip ratio (WHR) is your waist measurement divided by your hip measurement — a 30-inch waist and 40-inch hips gives a WHR of 0.75. Unlike BMI, which only looks at weight relative to height, WHR captures <em>where</em> your body stores fat, and that distinction turns out to matter a lot for health risk.</p>
@@ -162,7 +178,7 @@ description: Calculate your waist-to-hip ratio (WHR) using waist and hip measure
       </div>
     </section>
 
-    <section class="whrc-sec" id="whrc-risk">
+    <section class="whrc-sec" id="whr-chart">
       <h2>WHR Risk Categories by Sex</h2>
       <p>The WHO's published standard is a single line for each sex: above 0.85 for women, or above 0.90 for men, is classified as abdominal obesity. There's no separate official "moderate" tier in between — a result sits either below or at/above that line, which is why the calculator above asks which threshold applies to you.</p>
       <div class="whrc-tbl-wrap">

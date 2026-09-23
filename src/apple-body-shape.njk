@@ -45,7 +45,7 @@ description: What defines an apple body shape, how it differs from rectangle, wh
 <style>
 .abs-wrap *,.abs-wrap *::before,.abs-wrap *::after{box-sizing:border-box;margin:0;padding:0}
 .abs-wrap{--abs-bg:#0d0d0d;--abs-card:#1e1e1e;--abs-gold:#c9a84c;--abs-gold-l:#e8c97a;--abs-cream:#f5efe0;--abs-muted:#8a8a8a;--abs-border:#2a2a2a;--abs-text:#f0e8d8;--abs-serif:"Playfair Display",Georgia,"Times New Roman",serif;--abs-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--abs-sans);background:var(--abs-bg);color:var(--abs-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
-.abs-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.abs-wrap::before{content:"";position:absolute;top:-160px;left:-160px;width:640px;height:640px;max-width:80%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
 .abs-wrap a{color:var(--abs-gold-l);border-bottom:1px solid rgba(232,201,122,.35);text-decoration:none}
 .abs-wrap a:hover{border-bottom-color:var(--abs-gold-l)}
 .abs-container{max-width:780px;margin:0 auto;padding:56px 24px 20px;position:relative;z-index:1}
@@ -65,6 +65,15 @@ description: What defines an apple body shape, how it differs from rectangle, wh
 .abs-art li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;border-radius:50%;background:var(--abs-gold);opacity:.7}
 .abs-note{background:var(--abs-card);border-left:3px solid var(--abs-gold);border-radius:0 12px 12px 0;padding:16px 20px;margin:18px 0}
 .abs-note p:last-child{margin-bottom:0}
+.abs-fig{margin:24px 0}
+.abs-hero{margin:6px 0 8px}
+.abs-gfig{margin:20px 0 30px}
+.abs-gfig img{display:block;width:100%;height:auto;margin:0 auto;border-radius:14px;border:1px solid var(--abs-border,#2a2a2a);background:#141412}
+.abs-gfig + .abs-gfig{margin-top:-14px}
+.abs-fig img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--abs-border);background:#111}
+.abs-figcap{font-size:12.5px;color:var(--abs-muted);margin-top:9px;line-height:1.55}
+.abs-figcap a{color:var(--abs-gold-l)}
+
 .abs-tbl-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--abs-border);border-radius:14px}
 .abs-art table{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
 .abs-art th{background:rgba(201,168,76,.08);color:var(--abs-gold);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;text-align:left;padding:12px 16px}
@@ -90,6 +99,9 @@ description: What defines an apple body shape, how it differs from rectangle, wh
 .abs-art{padding:12px 18px 48px}
 .abs-related-grid{grid-template-columns:1fr}
 }
+.abs-steps{counter-reset:s;list-style:none;margin:6px 0 16px;padding:0}
+.abs-steps li{counter-increment:s;position:relative;padding:12px 0 12px 46px;color:#bdb6a8;font-size:15px;border-bottom:1px solid var(--abs-border)}
+.abs-steps li::before{content:counter(s);position:absolute;left:0;top:11px;width:30px;height:30px;border-radius:50%;background:rgba(201,168,76,.14);border:1px solid rgba(201,168,76,.5);color:var(--abs-gold-l);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
 </style>
 
 <div class="abs-wrap">
@@ -103,9 +115,26 @@ description: What defines an apple body shape, how it differs from rectangle, wh
 
   <div class="abs-art">
 
-    <div style="text-align:center;margin:0 0 8px;">
-      <img src="/assets/images/Apple-Body-Shape-Formula-Measurements-How-to-Dress-300x200.webp" alt="Apple body shape formula, measurements and how to dress" style="max-width:420px;width:100%;border-radius:16px;border:1px solid var(--abs-border);" loading="lazy">
-    </div>
+    <figure class="abs-fig abs-hero">
+      <img src="/assets/images/3d-guide/apple-body-shape-3d-hero.webp" width="1500" height="1000" loading="eager" fetchpriority="high" decoding="async" alt="3D apple body shape: a front-view body with 38 in bust, 38 in waist and 40 in hips, traced by an apple outline that is fullest through the middle, next to a three-quarter view">
+      <figcaption class="abs-figcap">An apple outline over a real apple-shaped frame — round through the middle, with bust, waist and hips within a couple of inches of each other.</figcaption>
+    </figure>
+
+    <nav class="pg-toc pg-toc--serif" id="page-contents" aria-label="Apple body shape: what’s on this page">
+      <details open>
+        <summary><span class="pg-toc-title">Apple body shape: what’s on this page</span></summary>
+        <ol>
+          <li><a href="#abs-what">What Is an Apple Body Shape?</a></li>
+          <li><a href="#abs-rare">How Common Is the Apple Shape?</a></li>
+          <li><a href="#abs-compare">Apple vs Rectangle — What&#x27;s the Real Difference?</a></li>
+          <li><a href="#abs-whr">What Does an Apple Shape Mean for Waist-to-Hip and Waist-to-Height Ratio?</a></li>
+          <li><a href="#abs-style">How to Dress for an Apple Body Shape</a><span class="pg-toc-sub"><a href="#apple-necklines">Necklines</a><a href="#apple-sleeves">Sleeves</a><a href="#apple-shirts-t-shirts-and-tops">Tops</a><a href="#apple-knitwear">Knitwear</a><a href="#apple-jackets">Jackets</a><a href="#apple-coats">Coats</a><a href="#apple-trousers">Trousers</a><a href="#apple-jeans">Jeans</a><a href="#apple-skirts">Skirts</a><a href="#apple-dresses">Dresses</a><a href="#apple-shorts">Shorts</a><a href="#apple-jumpsuits-and-playsuits">Jumpsuits</a></span></li>
+          <li><a href="#abs-measure">Common Apple Shape Measurements by Size</a></li>
+          <li><a href="#abs-checklist">A Five-Point Check Before You Buy</a></li>
+          <li><a href="#abs-faq">Frequently Asked Questions</a></li>
+        </ol>
+      </details>
+    </nav>
 
     <section class="abs-sec" id="abs-what">
       <h2>What Is an Apple Body Shape?</h2>
@@ -114,7 +143,12 @@ description: What defines an apple body shape, how it differs from rectangle, wh
       <div class="abs-note">
         <p><strong>Quick check:</strong> bust and hips within 3.6 inches of each other, waist within 2 inches of (or bigger than) both of them. If your waist is clearly smaller than either one — by more than 2 inches, just not by a dramatic amount — you're more likely a rectangle.</p>
       </div>
-      <p>Want to see the shape rather than just read the formula? Open the <a href="/body-visualizer/">body visualizer</a>, choose the female model and tap the <strong>Apple</strong> chip under <em>Try a shape</em> to rotate an apple silhouette from the front, side and back.</p>
+      <figure class="abs-fig">
+        <img src="/assets/images/apple-body-shape-3d-front-side-back.webp" width="1500" height="1136" loading="lazy" decoding="async" alt="Apple body shape 3D illustration from the front, side and back, with bust, waist and hips measurement lines labelled at 38, 38 and 40 inches">
+        <figcaption class="abs-figcap">An apple body shape rendered in 3D from the measurements above: waist stays close to bust and hips rather than tapering in. Open the <a href="/body-visualizer/">body visualizer</a> to rotate it yourself and try your own numbers.</figcaption>
+      </figure>
+
+      <p>Want to see the shape interactively? Open the <a href="/body-visualizer/">body visualizer</a>, choose the female model and tap the <strong>Apple</strong> chip under <em>Try a shape</em> to rotate an apple silhouette from the front, side and back.</p>
     </section>
 
     <section class="abs-sec" id="abs-rare">
@@ -137,6 +171,12 @@ description: What defines an apple body shape, how it differs from rectangle, wh
           </tbody>
         </table>
       </div>
+
+      <figure class="abs-fig">
+        <img src="/assets/images/apple-vs-rectangle-body-shape-3d.webp" width="1120" height="1148" loading="lazy" decoding="async" alt="3D comparison of apple and rectangle body shapes at the same hip size, with bust, waist and hips labelled">
+        <figcaption class="abs-figcap">Same balanced bust and hips on both — the only real difference is how much the waist tapers in between them.</figcaption>
+      </figure>
+
       <p>If style advice written for "straight" or "athletic" body types has never quite worked for you, this is often why — rectangle tips assume there's a waist to belt or cinch, and an apple shape doesn't have the same room to work with in that specific spot.</p>
     </section>
 
@@ -151,26 +191,77 @@ description: What defines an apple body shape, how it differs from rectangle, wh
 
     <section class="abs-sec" id="abs-style">
       <h2>How to Dress for an Apple Body Shape</h2>
-      <p>The goal is to create the impression of a waistline and elongate the torso — without anything clinging tightly across the midsection, which draws attention exactly where you don't want it.</p>
+      <p>The core rule for this shape is about direction, not concealment: clothing that creates a long, unbroken vertical line — and skims rather than clings through the midsection — works with you, not against you. The sections below work through each category piece by piece, shown on a 3D apple-shaped figure (38–38–40 in) in two versions — one that breaks the vertical line, one that builds it.</p>
 
-      <h3>Work and Formal</h3>
-      <p>A structured blazer left open over a V-neck top does two things at once: the open front creates a long vertical line, and the V draws the eye down and away from a horizontal read across the middle. Dark, flat-front trousers with a straight or slightly wide leg keep the lower half clean. Avoid pencil skirts with a fitted waistband that sits directly on the fullest part.</p>
+      <h3 id="apple-necklines">Necklines</h3>
+      <p>A neckline that opens up vertically does more for this shape than almost anything else in the wardrobe, because it lengthens the distance the eye travels before it reaches your midsection. A <strong>V-neckline</strong>, the deeper the better within reason, is the most reliable choice — it draws a clean line downward and makes the whole torso read as longer. A scoop neck does a softer version of the same thing. High, crew, or boat necklines are worth limiting: they sit close to the collarbone and can make the distance between chin and bust look shorter, which puts more visual weight on the midsection rather than less.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-necklines-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of necklines on an apple body shape — avoid: high crew neckline (closes off the chest and shortens the torso); choose: v-neckline (lengthens the neck and draws the eye downward)">
+      </figure>
 
-      <h3>Casual and Everyday</h3>
-      <p>A wrap top or tunic over leggings or straight trousers is close to a uniform for this shape, and for good reason — the wrap creates a diagonal line that reads as a waist without any actual compression. Vertical stripes, seams or panel details in prints do a similar job. Skip anything boxy and shapeless; it removes the illusion of a waistline entirely rather than creating one.</p>
+      <h3 id="apple-sleeves">Sleeves</h3>
+      <p>Sleeves matter here mainly because of where they add width — the goal is to keep the shoulder and upper-arm line fairly streamlined so nothing competes with the vertical lines you’re building elsewhere. A <strong>fitted or tailored sleeve</strong> that follows the arm does this without effort. A three-quarter length is a particularly good option, since it shows a slim part of the arm and adds a natural break in the eye line. Puff, dolman, and heavily gathered sleeves are the ones to be selective with — they add volume right at the widest part of the upper body, which pulls attention back up to an area you’re usually trying to soften.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-sleeves-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of sleeves on an apple body shape — avoid: puff or balloon sleeve (adds bulk level with the fullest part of the torso); choose: fitted, tailored sleeve (streamlined arm keeps the silhouette narrow)">
+      </figure>
 
-      <h3>Special Occasions</h3>
-      <p>An empire-waist gown, cut just under the bust, is built specifically for this shape — everything below flows freely, and the visual waistline sits in a spot that's actually defined. Flowing chiffon or crepe in a single vertical panel from bust to hem elongates the whole silhouette.</p>
+      <h3 id="apple-shirts-t-shirts-and-tops">Shirts, T-Shirts &amp; Tops</h3>
+      <p>The most useful word for tops on this shape is <strong>skim</strong>, not fit and not hide — fabric that follows the body loosely enough to move past the midsection without clinging to it. A <strong>wrap top</strong> does this cleanly: the tie creates definition at a point you choose, while the rest of the fabric drapes rather than pulls. A relaxed tunic in a fabric with some drape works the same way over trousers or leggings. Tight, fitted-through-the-body tops are the trickiest choice here, since clingy fabric follows every contour of the midsection rather than skimming past it.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-tops-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of tops on an apple body shape — avoid: tight, clingy top (outlines the midsection exactly); choose: draped v-neck top (falls past the middle without holding onto it)">
+      </figure>
 
-      <h3>Swimwear</h3>
-      <p>A one-piece with ruching or a wrap-front panel across the midsection is the most reliable choice — it adds texture and a diagonal line exactly where a plain fabric would just sit flat. A high-waisted bottom paired with a structured top works for two-piece styles. Avoid a plain, low-rise bikini bottom with a triangle top; there's nothing in that combination creating a waist illusion.</p>
+      <h3 id="apple-knitwear">Knitwear</h3>
+      <p>Knitwear can be one of the more forgiving categories here, as long as the fabric has enough drape to move past the body rather than hug it. A <strong>longline, lightweight sweater</strong> that falls past the hip elongates the whole torso and skims over the midsection on its way down. A fine-gauge cardigan left open, worn over a V-neck layer, does something similar by creating a long vertical line down the front. Thick, chunky, or cropped knits are worth being selective with — heavier yarn adds bulk exactly where you’re usually trying to minimise it, and a cropped length stops right at the widest point instead of moving past it.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-knitwear-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of knitwear on an apple body shape — avoid: chunky turtleneck knit (heavy texture right at the fullest point); choose: longline fine-knit v-neck (drapes past the middle in one clean line)">
+      </figure>
 
-      <h3>What to Avoid</h3>
-      <ul>
-        <li>Wide belts cinched at the natural waist — they sit directly on the fullest point and emphasise it rather than defining it</li>
-        <li>Clingy, stretchy fabric with no structure across the midsection</li>
-        <li>Low-rise bottoms, which cut across the waist at its widest point instead of above or below it</li>
-      </ul>
+      <h3 id="apple-jackets">Jackets</h3>
+      <p>Jacket length is doing most of the work in this category. A <strong>longline blazer or duster coat</strong>, left open rather than buttoned, creates a continuous vertical line from shoulder to thigh that carries the eye straight past the midsection. An open, unstructured cardigan-style jacket works the same way for something more casual. Cropped jackets and boleros are the length to watch — anything that ends right at or just above the natural waist draws a horizontal line exactly at the point you’re usually trying to soften, which has the opposite effect of a longer style worn open.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-jackets-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of jackets on an apple body shape — avoid: cropped bolero jacket (ends right at the widest part of the torso); choose: longline open blazer (two vertical lines that extend past the middle)">
+      </figure>
+      <h3 id="apple-coats">Coats</h3>
+      <p>Leave the belt off your outerwear. A wrap coat tied at the waist cinches the fullest part of the torso, which is the reverse of what this shape needs. A <strong>straight, single-breasted coat</strong> worn open — or a longline duster — falls in a clean column from the shoulder and draws two long vertical lines down the front of the body. Aim for a hem at the knee or below and a fabric with some weight (wool, heavy crepe, a lined trench cotton) so it hangs from the shoulders instead of following the midsection.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-coats-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of coats on an apple body shape — avoid: belted wrap coat (the belt cinches the widest part of the torso); choose: straight single-breasted coat (falls in a clean column from the shoulder)">
+      </figure>
+
+      <h3 id="apple-trousers">Trousers</h3>
+      <p>A <strong>high-rise waistband</strong> is one of the most useful single choices available to this shape, since it holds the midsection in gently and extends the visual line of the torso upward before the leg even begins. Straight-leg or slightly wide-leg trousers in a structured fabric keep the rest of the silhouette clean and balanced underneath. Low-rise cuts are the ones to reconsider — a waistband that sits below the natural midsection point means fabric and seams collect right at the fullest part of the torso, which draws attention there rather than smoothing past it.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-trousers-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of trousers on an apple body shape — avoid: low-rise trousers (sits under the fullest part of the midsection); choose: high-rise straight leg (holds and smooths, then falls in a long line)">
+      </figure>
+      <h3 id="apple-jeans">Jeans</h3>
+      <p>Apple shapes often have slimmer legs than the upper body suggests, and jeans are the easiest place to use that. A <strong>mid-rise bootcut</strong> or straight leg sits flat below the midsection and adds a little width at the hem to balance the top half. Look for a contoured or wider waistband and a little stretch, so the band lies flat rather than digging in. Low-rise skinny jeans combine both problems at once: the waistband cuts in under the fullest point and the leg narrows away beneath it, which makes the torso read heavier than it is.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-jeans-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of jeans on an apple body shape — avoid: low-rise skinny jeans (waistband digs in, leg narrows under a fuller middle); choose: mid-rise bootcut jeans (balances the upper body with a little width at the hem)">
+      </figure>
+
+      <h3 id="apple-skirts">Skirts</h3>
+      <p>An <strong>A-line skirt</strong>, sitting at or just above the natural waist, is close to a universal recommendation for this shape because it skims outward from the body instead of clinging to it at any point. Paired with a top that has some vertical detail — a placket, a seam, an open cardigan — it builds one long line from shoulder to hem. A tight pencil skirt is the more difficult choice here, purely because the fitted fabric has nowhere to go but follow the body’s exact shape through the midsection, with none of the ease an A-line naturally builds in.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-skirts-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of skirts on an apple body shape — avoid: tight pencil skirt (clings to the midsection with no ease); choose: a-line skirt (skims from waist to hem without clinging)">
+      </figure>
+
+      <h3 id="apple-dresses">Dresses</h3>
+      <p>An <strong>empire-waist dress</strong> is one of the most reliably flattering silhouettes for this shape, because the seam sits just under the bust — above the midsection entirely — and everything below it falls loosely to the hem. That single design choice does most of the work: there’s a defined point on the body, and it isn’t the one you’re usually trying to minimise. A wrap dress in a fabric with good drape is a close second. Bodycon and other clingy, fitted-throughout dresses are the hardest category here, simply because there’s no point in the garment that isn’t following the body closely.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-dresses-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of dresses on an apple body shape — avoid: bodycon dress (fitted everywhere, including the midsection); choose: empire-waist dress (marks the narrow line under the bust, skims past the middle)">
+      </figure>
+
+      <h3 id="apple-shorts">Shorts</h3>
+      <p>Structured fabric does more here than cut alone — a pair of <strong>tailored shorts</strong> in a fabric with a little body (cotton twill, a light linen blend) holds its own shape rather than collapsing onto the midsection the way soft, clingy fabric does. A mid-rise waistband, neither cutting across the fullest point nor sitting so high it emphasises it, is usually the most comfortable balance. Tight bike shorts or anything in a very stretchy, thin jersey are the ones to be selective with, since that fabric follows the body’s exact shape from waistband to hem with essentially no ease built in.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-shorts-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of shorts on an apple body shape — avoid: tight bike shorts (clings from waist to thigh with no ease); choose: tailored mid-rise shorts (straight leg, sits flat at the front)">
+      </figure>
+      <h3 id="apple-jumpsuits-and-playsuits">Jumpsuits &amp; Playsuits</h3>
+      <p>Define the empire line, not the waist. A jumpsuit with a <strong>V-neck and a seam just under the bust</strong>, falling loose to a wide leg, gives you a defined point at your narrowest spot and room through the middle. Soft, drapey fabric matters more here than in any other category — crepe and viscose move past the midsection, stiff cotton stands away from it. A tight jumpsuit with a belt at the natural waist is the combination to avoid: it outlines the midsection and then draws a line across it.</p>
+      <figure class="abs-gfig">
+        <img src="/assets/images/3d-guide/apple-jumpsuits-3d.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D comparison of jumpsuits on an apple body shape — avoid: tight, belted jumpsuit (fitted and cinched at the fullest point); choose: empire v-neck wide-leg (defined under the bust, loose through the middle)">
+      </figure>
+
     </section>
 
     <section class="abs-sec" id="abs-measure">
@@ -188,6 +279,18 @@ description: What defines an apple body shape, how it differs from rectangle, wh
       </div>
       <p>In every row, the waist is within an inch or two of the bust — there's no 9-inch taper anywhere in sight. That's the entire signature of this shape, regardless of overall size.</p>
       <p>Try the average row in the <a href="/body-visualizer/">Body Visualizer</a>: switch to inches, enter a 38 in bust, 38 in waist and 40 in hips, and the live analysis confirms the shape while you rotate the model.</p>
+    </section>
+
+    <section class="abs-sec" id="abs-checklist">
+      <h2>A Five-Point Check Before You Buy</h2>
+      <p>You don't need to memorise every category above. Hold any piece up in the fitting room and run through these five questions — if it passes four, it will almost certainly work.</p>
+      <ol class="abs-steps">
+        <li><strong>Does it make a vertical line?</strong> V-necks, open jackets, long cardigans and front seams all do; horizontal stripes and wide belts at the middle don't.</li>
+        <li><strong>Does it skim or cling at the midsection?</strong> Hold the fabric an inch away from your stomach — if it falls back without grabbing, it skims.</li>
+        <li><strong>Where is the defined point?</strong> Under the bust or at the hip is fine; right at the natural waist usually isn't.</li>
+        <li><strong>Where does the hem land?</strong> Past the hip (tops, jackets) or at the knee (skirts, coats) — never at the fullest part of the torso.</li>
+        <li><strong>Are the legs doing any work?</strong> A straight, bootcut or slim leg, or a knee-length hem, shows off the part of the body that is usually slimmest.</li>
+      </ol>
     </section>
 
     <section class="abs-sec" id="abs-faq">

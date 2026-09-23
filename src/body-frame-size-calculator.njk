@@ -7,7 +7,7 @@ description: Use our body frame size calculator to find your small, medium, or l
 <style id="bfs-css">
 .bfs-wrap *,.bfs-wrap *::before,.bfs-wrap *::after{box-sizing:border-box;margin:0;padding:0}
 .bfs-wrap{--bfs-bg:#0d0d0d;--bfs-card:#1e1e1e;--bfs-gold:#c9a84c;--bfs-gold-l:#e8c97a;--bfs-cream:#f5efe0;--bfs-muted:#8a8a8a;--bfs-border:#2a2a2a;--bfs-text:#f0e8d8;--bfs-serif:"Playfair Display",Georgia,"Times New Roman",serif;--bfs-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--bfs-sans);background:var(--bfs-bg);color:var(--bfs-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
-.bfs-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.bfs-wrap::before{content:"";position:absolute;top:-160px;left:-160px;width:640px;height:640px;max-width:80%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
 .bfs-wrap a{color:var(--bfs-gold-l);border-bottom:1px solid rgba(232,201,122,.35);text-decoration:none}
 .bfs-wrap a:hover{border-bottom-color:var(--bfs-gold-l)}
 .bfs-wrap :focus-visible{outline:2px solid var(--bfs-gold);outline-offset:3px;border-radius:6px}
@@ -155,6 +155,21 @@ description: Use our body frame size calculator to find your small, medium, or l
 
   <div class="bfs-art">
 
+    <nav class="pg-toc pg-toc--compact" id="page-contents" aria-label="Body frame size guide contents">
+      <details open>
+        <summary><span class="pg-toc-title">Body frame size guide contents</span></summary>
+        <ol>
+          <li><a href="#bfs-why">Why Height and Weight Alone Can&#x27;t Determine Body Shape</a></li>
+          <li><a href="#bfs-what">What Body Frame Size Actually Measures</a></li>
+          <li><a href="#bfs-measure">How to Measure Your Wrist</a></li>
+          <li><a href="#bfs-categories">Frame Size Categories Explained</a></li>
+          <li><a href="#bfs-ideal-weight">Frame Size and Ideal Weight</a></li>
+          <li><a href="#bfs-bmi">What About BMI?</a></li>
+          <li><a href="#bfs-faq">Frequently Asked Questions</a></li>
+        </ol>
+      </details>
+    </nav>
+
     <section class="bfs-sec" id="bfs-why">
       <h2>Why Height and Weight Alone Can't Determine Body Shape</h2>
       <p>If you searched for a body shape calculator that only asks for height and weight, here's the honest answer: hourglass, pear, apple, rectangle and inverted triangle are all defined by the <em>relationship</em> between your bust, waist and hip measurements — not by your overall size. Two people with identical height and weight can have completely different shapes, and two people with the same shape can be very different sizes. Height and weight simply don't contain that information.</p>
@@ -188,7 +203,7 @@ description: Use our body frame size calculator to find your small, medium, or l
       <p>A smaller ratio means a comparatively thicker wrist for your height, which is why the numbers run in the opposite direction you might expect — small ratio, large frame. Different calculators online use very slightly different boundary numbers (some use 10.9 instead of 11.0 for women, for instance); the categories and general logic are consistent even where the exact decimal varies by source.</p>
     </section>
 
-    <section class="bfs-sec" id="bfs-weight">
+    <section class="bfs-sec" id="bfs-ideal-weight">
       <h2>Frame Size and Ideal Weight</h2>
       <p>Frame size matters most as context for weight charts. Classic ideal-body-weight formulas are typically built around a medium frame, then adjusted by roughly 10% in each direction — subtracting for a small frame, adding for a large one — since a broader skeleton simply carries more structural weight before body fat is even part of the picture. If a standard BMI or ideal-weight chart has always felt like it was aimed at someone else's body, a frame-size mismatch is often why.</p>
     </section>

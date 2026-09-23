@@ -94,7 +94,7 @@ description: Use this free body type calculator to find your female body shape u
         { "@type": "Question", "name": "Can your body shape change over time or with exercise?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pregnancy, weight changes, ageing and hormonal shifts all change your proportions, and targeted strength training can change measurements around the shoulders, back, waist and hips. Re-measure every six months, or after any significant change." } },
         { "@type": "Question", "name": "What is the most common female body shape?", "acceptedAnswer": { "@type": "Answer", "text": "Rectangle, also called banana or straight, is the most commonly cited female body shape, with figures from a 2006 NC State analysis putting it around 46% of women. Body shape distributions vary depending on the classification method and population studied." } },
         { "@type": "Question", "name": "What is the difference between hourglass and pear body shape?", "acceptedAnswer": { "@type": "Answer", "text": "An hourglass shape has a bust and hips that are nearly equal with a dramatically smaller waist in between. A pear shape has hips noticeably wider than the bust, with a waist that is present but not as sharply defined." } },
-        { "@type": "Question", "name": "What is high hip measurement and why does it matter?", "acceptedAnswer": { "@type": "Answer", "text": "The high hip is measured approximately 7 inches below the natural waist, around the upper hip area. It feeds the High Hip-to-Waist ratio shown in your result, which can flag a pronounced shelf pattern at the top of the hip that bust/waist/hip alone can miss." } },
+        { "@type": "Question", "name": "What is high hip measurement and why does it matter?", "acceptedAnswer": { "@type": "Answer", "text": "The high hip is measured approximately 3 to 4 inches (8–10 cm) below the natural waist, around the upper hip area. It feeds the High Hip-to-Waist ratio shown in your result, which can flag a pronounced shelf pattern at the top of the hip that bust/waist/hip alone can miss." } },
         { "@type": "Question", "name": "Is hourglass really the ideal body shape?", "acceptedAnswer": { "@type": "Answer", "text": "Western fashion has historically treated it that way, and a waist-to-hip ratio near 0.7 is widely perceived as attractive across many cultures — but beauty standards vary by culture, era and personal taste. Every shape has silhouettes that look genuinely excellent on it." } },
         { "@type": "Question", "name": "Does body shape depend on weight or size?", "acceptedAnswer": { "@type": "Answer", "text": "No. Body shape is determined by proportions, not by weight or dress size. A slim person can have an apple-shaped body and a larger person can have an hourglass figure — size and shape are independent." } },
         { "@type": "Question", "name": "Is there a body shape calculator that just uses height and weight?", "acceptedAnswer": { "@type": "Answer", "text": "Not for the hourglass, pear, apple and rectangle system, which needs bust, waist and hip measurements because it is about proportion rather than size. Height and weight alone can produce a BMI figure and, with a wrist measurement, a body frame size." } },
@@ -112,7 +112,7 @@ description: Use this free body type calculator to find your female body shape u
 <style id="btc-css">
 .btc-wrap *,.btc-wrap *::before,.btc-wrap *::after{box-sizing:border-box;margin:0;padding:0}
 .btc-wrap{--btc-bg:#0d0d0d;--btc-surface:#161616;--btc-card:#1e1e1e;--btc-gold:#c9a84c;--btc-gold-l:#e8c97a;--btc-cream:#f5efe0;--btc-muted:#8a8a8a;--btc-border:#2a2a2a;--btc-text:#f0e8d8;--btc-serif:"Playfair Display",Georgia,"Times New Roman",serif;--btc-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-family:var(--btc-sans);background:var(--btc-bg);color:var(--btc-text);border-radius:20px;overflow:hidden;position:relative;line-height:1.6;-webkit-font-smoothing:antialiased}
-.btc-wrap::before{content:"";position:absolute;top:-15%;left:-15%;width:55%;height:55%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
+.btc-wrap::before{content:"";position:absolute;top:-160px;left:-160px;width:640px;height:640px;max-width:80%;background:radial-gradient(circle,rgba(201,168,76,.07) 0,transparent 70%);pointer-events:none;z-index:0}
 .btc-wrap::after{content:"";position:absolute;bottom:-15%;right:-15%;width:45%;height:45%;background:radial-gradient(circle,rgba(201,168,76,.05) 0,transparent 70%);pointer-events:none;z-index:0}
 .btc-wrap a{text-decoration:none}
 .btc-wrap :focus-visible{outline:2px solid var(--btc-gold);outline-offset:3px;border-radius:6px}
@@ -139,7 +139,7 @@ description: Use this free body type calculator to find your female body shape u
 .btc-unit-toggle button{padding:8px 22px;border:none;border-radius:100px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:background .2s,color .2s;color:var(--btc-muted);background:transparent;letter-spacing:.5px}
 .btc-unit-toggle button.btc-active{background:var(--btc-gold);color:#000}
 .btc-diagram{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:16px;padding:20px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
-.btc-diagram-svg{width:120px;height:190px;flex-shrink:0}
+.btc-diagram-img{width:130px;height:auto;flex-shrink:0;display:block}
 .btc-diagram-key{display:flex;flex-direction:column;gap:10px;flex:1;min-width:180px}
 .btc-diagram-row{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--btc-muted)}
 .btc-diagram-dot{width:10px;height:3px;border-radius:2px;flex-shrink:0}
@@ -191,10 +191,15 @@ description: Use this free body type calculator to find your female body shape u
 .btc-mitem:last-child{border-right:none}
 .btc-mval{font-family:var(--btc-serif);font-size:20px;color:var(--btc-cream);font-weight:700}
 .btc-mkey{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--btc-muted);margin-top:4px}
-.btc-sil-row{display:flex;gap:10px;margin-bottom:20px;justify-content:center;flex-wrap:wrap}
-.btc-sil-card{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:14px;padding:14px 10px;text-align:center;width:100px;transition:border-color .3s,background .3s}
+.btc-3d{margin:0 0 20px;background:radial-gradient(ellipse at 50% 55%,#23211b 0,#121210 75%);border:1px solid var(--btc-border);border-radius:16px;overflow:hidden}
+.btc-3d canvas{display:block;width:100%;height:auto}
+.btc-3d-cap{font-size:12.5px;color:var(--btc-muted);padding:10px 16px 14px;line-height:1.55}
+.btc-3d-cap a{color:var(--btc-gold-l)}
+.btc-sil-row{display:flex;gap:8px;margin-bottom:20px;justify-content:center;flex-wrap:wrap}
+.btc-sil-card{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:14px;padding:14px 10px;text-align:center;width:92px;transition:border-color .3s,background .3s}
 .btc-sil-card.btc-active{border-color:var(--btc-gold);background:rgba(201,168,76,.08)}
-.btc-sil-svg{width:46px;height:74px;margin:0 auto 8px;display:block}
+.btc-sil-img{width:60px;height:100px;margin:0 auto 8px;display:block;opacity:.55;transition:opacity .3s}
+.btc-sil-card.btc-active .btc-sil-img{opacity:1}
 .btc-sil-name{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--btc-muted);font-weight:500}
 .btc-sil-card.btc-active .btc-sil-name{color:var(--btc-gold)}
 .btc-stats-card,.btc-ratios{background:var(--btc-card);border:1px solid var(--btc-border);border-radius:16px;padding:22px;margin-bottom:20px}
@@ -237,11 +242,15 @@ description: Use this free body type calculator to find your female body shape u
 .btc-reset{width:100%;padding:13px;background:transparent;border:1px solid var(--btc-border);border-radius:12px;color:var(--btc-muted);font-family:inherit;font-size:14px;cursor:pointer;transition:border-color .2s,color .2s;margin-top:6px}
 .btc-reset:hover{border-color:var(--btc-muted);color:var(--btc-text)}
 .btc-art{max-width:780px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:1}
-.btc-sec{content-visibility:auto;contain-intrinsic-size:1px 900px;padding-top:44px}
+.btc-sec{padding-top:44px}
 .btc-art h2{font-family:var(--btc-serif);font-size:clamp(24px,4vw,34px);font-weight:900;color:var(--btc-cream);line-height:1.2;margin-bottom:8px}
 .btc-art h2::after{content:"";display:block;width:52px;height:2px;background:var(--btc-gold);margin:14px 0 20px}
 .btc-art h3{font-family:var(--btc-serif);font-size:19px;font-weight:700;color:var(--btc-gold-l);margin:26px 0 8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .btc-art p{color:#bdb6a8;font-size:15.5px;margin-bottom:14px}
+.btc-fig{margin:20px 0 26px}
+.btc-fig img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--btc-border);background:#141412}
+.btc-figcap{font-size:12.5px;color:var(--btc-muted);margin-top:9px;line-height:1.55}
+.btc-fig + .btc-fig{margin-top:-10px}
 .btc-art strong{color:var(--btc-cream);font-weight:600}
 .btc-art ul{list-style:none;margin:0 0 16px}
 .btc-art li{color:#bdb6a8;font-size:15px;padding:6px 0 6px 22px;position:relative}
@@ -304,17 +313,11 @@ description: Use this free body type calculator to find your female body shape u
     </div>
 
     <div class="btc-diagram">
-      <svg class="btc-diagram-svg" viewBox="0 0 220 340" aria-hidden="true">
-        <path d="M110,10 C130,10 140,25 140,45 C150,60 148,80 142,100 C150,110 150,125 140,140 C132,155 126,165 120,178 C118,182 118,186 120,190 C126,200 132,208 138,218 C146,225 150,232 148,245 C144,258 138,268 130,278 C126,290 122,300 118,310 L110,315 L102,310 C98,300 94,290 90,278 C82,268 76,258 72,245 C70,232 74,225 82,218 C88,208 94,200 100,190 C102,186 102,182 100,178 C94,165 88,155 80,140 C70,125 70,110 78,100 C72,80 70,60 80,45 C80,25 90,10 110,10 Z" fill="none" stroke="#c9a84c" stroke-width="2" opacity="0.85"/>
-        <line x1="55" y1="118" x2="165" y2="118" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.8"/>
-        <line x1="55" y1="184" x2="165" y2="184" stroke="#e8c97a" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.8"/>
-        <line x1="55" y1="207" x2="165" y2="207" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
-        <line x1="55" y1="233" x2="165" y2="233" stroke="#e8c97a" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.8"/>
-      </svg>
+      <img class="btc-diagram-img" src="/assets/images/3d-guide/calculator-measure-points-3d.webp" width="300" height="440" loading="lazy" decoding="async" alt="3D body with tape measures at the bust, natural waist, high hip and hips">
       <div class="btc-diagram-key">
         <div class="btc-diagram-row"><span class="btc-diagram-dot" style="background:#c9a84c"></span><strong>Bust</strong> — fullest part of the chest</div>
         <div class="btc-diagram-row"><span class="btc-diagram-dot" style="background:#e8c97a"></span><strong>Waist</strong> — narrowest point, above the navel</div>
-        <div class="btc-diagram-row"><span class="btc-diagram-dot" style="background:#c9a84c;opacity:.6"></span><strong>High Hip</strong> — ~7in below the waist</div>
+        <div class="btc-diagram-row"><span class="btc-diagram-dot" style="background:#7fd6c8"></span><strong>High Hip</strong> — ~3–4 in below the waist</div>
         <div class="btc-diagram-row"><span class="btc-diagram-dot" style="background:#e8c97a"></span><strong>Hip</strong> — widest part of the buttocks</div>
       </div>
     </div>
@@ -412,14 +415,18 @@ description: Use this free body type calculator to find your female body shape u
         <div class="btc-mitem"><div class="btc-mval" id="btc-r-hi">—</div><div class="btc-mkey">Hips</div></div>
       </div>
 
+      <figure class="btc-3d" id="btc-3d" hidden>
+        <canvas id="btc-3d-canvas" width="1120" height="820" role="img" aria-label="3D model of your body built from the measurements you entered"></canvas>
+        <figcaption class="btc-3d-cap">Your own numbers, rendered as a 3D body with your bust, waist, high hip and hip lines. <a id="btc-3d-link" href="/body-visualizer/">Rotate it in the 3D visualizer →</a></figcaption>
+      </figure>
       <div class="btc-sil-row" id="btc-sil-row">
-        <div class="btc-sil-card" data-k="hourglass"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M10 8Q25 2 40 8l-2 20Q25 36 12 28Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="8" ry="6" fill="#c9a84c" opacity=".6"/><path d="M12 28q13 6 26 0l4 27Q25 68 8 55Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Hourglass</div></div>
-        <div class="btc-sil-card" data-k="bottom_hourglass"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M12 8Q25 2 38 8l-2 20Q25 34 14 28Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="7" ry="6" fill="#c9a84c" opacity=".6"/><path d="M14 28q11 5 22 0l8 28Q25 70 6 56Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Btm. Hourglass</div></div>
-        <div class="btc-sil-card" data-k="top_hourglass"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M8 8Q25 2 42 8l-2 20Q25 35 10 28Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="9" ry="6" fill="#c9a84c" opacity=".6"/><path d="M10 28q15 5 30 0l-4 28Q25 62 14 56Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Top Hourglass</div></div>
-        <div class="btc-sil-card" data-k="apple"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M13 9Q25 3 37 9Q40 20 35 27Q41 40 36 54Q28 66 14 54Q9 40 15 27Q10 20 13 9Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="8" ry="6" fill="#c9a84c" opacity=".6"/></svg><div class="btc-sil-name">Apple</div></div>
-        <div class="btc-sil-card" data-k="triangle"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M15 8Q25 2 35 8l-2 18Q25 32 17 26Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="7" ry="6" fill="#c9a84c" opacity=".6"/><path d="M17 26q8 5 16 0l11 30Q25 70 6 56Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Triangle</div></div>
-        <div class="btc-sil-card" data-k="inverted_triangle"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M8 8Q25 2 42 8l-2 20Q25 35 10 28Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="9" ry="6" fill="#c9a84c" opacity=".6"/><path d="M10 28q15 5 30 0l-6 30Q25 64 16 58Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Inv. Triangle</div></div>
-        <div class="btc-sil-card" data-k="rectangle"><svg class="btc-sil-svg" viewBox="0 0 50 80" aria-hidden="true"><path d="M13 8Q25 2 37 8l-1 22Q25 34 14 30Z" fill="#c9a84c" opacity=".8"/><ellipse cx="25" cy="6" rx="7" ry="6" fill="#c9a84c" opacity=".6"/><path d="M14 30q11 3 22 0l1 28Q25 62 13 58Z" fill="#c9a84c" opacity=".8"/></svg><div class="btc-sil-name">Rectangle</div></div>
+        <div class="btc-sil-card" data-k="hourglass"><img class="btc-sil-img" src="/assets/images/3d-guide/shape-thumb-hourglass.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="btc-sil-name">Hourglass</div></div>
+        <div class="btc-sil-card" data-k="bottom_hourglass"><img class="btc-sil-img" src="/assets/images/3d-guide/shape-thumb-bottom-hourglass.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="btc-sil-name">Btm. Hourglass</div></div>
+        <div class="btc-sil-card" data-k="top_hourglass"><img class="btc-sil-img" src="/assets/images/3d-guide/shape-thumb-top-hourglass.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="btc-sil-name">Top Hourglass</div></div>
+        <div class="btc-sil-card" data-k="apple"><img class="btc-sil-img" src="/assets/images/3d-guide/shape-thumb-apple.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="btc-sil-name">Apple</div></div>
+        <div class="btc-sil-card" data-k="triangle"><img class="btc-sil-img" src="/assets/images/3d-guide/shape-thumb-triangle.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="btc-sil-name">Triangle</div></div>
+        <div class="btc-sil-card" data-k="inverted_triangle"><img class="btc-sil-img" src="/assets/images/3d-guide/shape-thumb-inverted-triangle.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="btc-sil-name">Inv. Triangle</div></div>
+        <div class="btc-sil-card" data-k="rectangle"><img class="btc-sil-img" src="/assets/images/3d-guide/shape-thumb-rectangle.webp" width="180" height="300" loading="lazy" decoding="async" alt=""><div class="btc-sil-name">Rectangle</div></div>
       </div>
 
       <div class="btc-stats-card">
@@ -484,9 +491,28 @@ description: Use this free body type calculator to find your female body shape u
 
   <div class="btc-art">
 
-  <div style="text-align:center;margin:0 0 8px;">
-    <img src="/assets/images/Body-Shape-Calculator-Guide-300x164.webp" alt="Body shape calculator guide" style="max-width:420px;width:100%;border-radius:16px;border:1px solid #2a2a2a;" loading="lazy">
-  </div>
+  <figure class="btc-fig" style="margin-top:0">
+    <img src="/assets/images/3d-guide/female-body-shapes-3d.webp" width="1600" height="900" loading="lazy" decoding="async" alt="The seven female body shapes in 3D side by side: hourglass, top hourglass, bottom hourglass, pear, apple, inverted triangle and rectangle">
+    <figcaption class="btc-figcap">All seven shapes this calculator can return, rendered in 3D from measurements that sit squarely inside each formula. Each one is explained with its own front and three-quarter view further down.</figcaption>
+  </figure>
+
+    <nav class="pg-toc pg-toc--rail" id="page-contents" aria-label="What this body type calculator guide covers">
+      <details open>
+        <summary><span class="pg-toc-title">What this body type calculator guide covers</span></summary>
+        <ol>
+          <li><a href="#btc-what">What Is a Body Type Calculator and How Does It Work?</a></li>
+          <li><a href="#btc-measure">How to Take Accurate Body Measurements at Home</a></li>
+          <li><a href="#btc-shapes">The 7 Female Body Shapes Explained (With Formulas)</a><span class="pg-toc-sub"><a href="#hourglass-body-shape">Hourglass</a><a href="#top-hourglass-body-shape">Top hourglass</a><a href="#bottom-hourglass-body-shape">Bottom hourglass</a><a href="#pear-triangle-body-shape">Pear</a><a href="#apple-body-shape">Apple</a><a href="#inverted-triangle-body-shape">Inverted triangle</a><a href="#rectangle-banana-straight-body-shape">Rectangle</a></span></li>
+          <li><a href="#btc-style">How to Dress for Your Body Type — Style Tips for Every Shape</a><span class="pg-toc-sub"><a href="#dress-what-to-wear-for-formal-occasions-by-body-shape">Formal</a><a href="#dress-what-to-wear-for-casual-occasions-by-body-shape">Casual</a><a href="#dress-what-to-wear-for-special-occasions-by-body-shape">Special occasions</a></span></li>
+          <li><a href="#btc-heightweight">Looking for a Body Shape Calculator by Height and Weight?</a></li>
+          <li><a href="#btc-health">Waist-to-Hip Ratio, Waist-to-Height Ratio, and What Your Shape Says About Health</a></li>
+          <li><a href="#btc-sizeshape">Body Shape vs. Body Size — Why They Are Not the Same Thing</a></li>
+          <li><a href="#btc-changes">How Your Body Shape Can Change Over Time</a></li>
+          <li><a href="#btc-men">Body Shape for Men</a></li>
+          <li><a href="#btc-faq">Frequently Asked Questions</a></li>
+        </ol>
+      </details>
+    </nav>
 
   <section class="btc-sec" id="btc-what">
     <h2>What Is a Body Type Calculator and How Does It Work?</h2>
@@ -516,7 +542,7 @@ description: Use this free body type calculator to find your female body shape u
     <p>Stand with your feet together and wrap the tape around the widest part of your buttocks and hips, usually about 7–9 inches below the natural waist. Keep the tape level all the way around and check the back in a mirror so it doesn't tilt downward. Measure over bare skin or form-fitting clothes, never over thick fabric.</p>
 
     <h3>What Is High Hip and How Do You Measure It?</h3>
-    <p>The high hip is measured roughly 7 inches (18 cm) below your natural waist, just above the pelvic bone — the widest point of the upper hip area, distinct from the full hip below. Most calculators skip it entirely. This tool uses it to show your High Hip–Waist ratio alongside your other proportions, which is useful supplementary context even though your bust, waist and hip numbers alone determine your shape category.</p>
+    <p>The high hip is measured roughly 3 to 4 inches (8–10 cm) below your natural waist, across the top of the pelvic bone — the widest point of the upper hip area, distinct from the full hip below. Most calculators skip it entirely. This tool uses it to show your High Hip–Waist ratio alongside your other proportions, which is useful supplementary context even though your bust, waist and hip numbers alone determine your shape category.</p>
 
     <h3>Inches vs. Centimeters — Which Should You Use?</h3>
     <p>Both work equally well; the calculator accepts either unit. What matters is consistency — measure everything in the same unit. Mixing inches and centimeters will give you an incorrect result. If you have a tape that only shows one unit and want the other, multiply centimeters by 0.394 to get inches, or inches by 2.54 to get centimeters. Most modern measuring tapes show both units on opposite sides.</p>
@@ -537,7 +563,7 @@ description: Use this free body type calculator to find your female body shape u
           <tr><td>Rectangle / Banana</td><td>~46%</td><td>Bust &amp; hips within 3.6 in; waist less than 9 in smaller</td></tr>
           <tr><td>Pear / Triangle</td><td>~20%</td><td>Hips ≥ 3.6 in wider than bust; hips − waist &lt; 9 in</td></tr>
           <tr><td>Apple / Oval</td><td>~14%</td><td>Bust &amp; hips within 3.6 in of each other; waist within 2 in of — or larger than — both bust and hips</td></tr>
-          <tr><td>Hourglass</td><td>~8%</td><td>Bust − hips ≤ 1 in; waist ≥ 9 in smaller than bust</td></tr>
+          <tr><td>Hourglass</td><td>~8%</td><td>Bust − hips ≤ 1 in and hips − bust &lt; 3.6 in; waist ≥ 9 in smaller than bust (or ≥ 10 in smaller than hips)</td></tr>
           <tr><td>Top Hourglass</td><td>Less common</td><td>Bust 1–10 in larger than hips; bust − waist ≥ 9 in</td></tr>
           <tr><td>Bottom Hourglass</td><td>Less common</td><td>Hips 3.6–10 in larger than bust; hips − waist ≥ 9 in</td></tr>
           <tr><td>Inverted Triangle</td><td>Less common</td><td>Bust ≥ 3.6 in wider than hips; bust − waist &lt; 9 in</td></tr>
@@ -545,36 +571,82 @@ description: Use this free body type calculator to find your female body shape u
       </table>
     </div>
 
-    <h3>Hourglass Body Shape</h3>
-    <p>The hourglass has a bust and hips that are roughly equal, with a waist significantly narrower than both — the difference between bust and hips is less than 3.6 inches, and the waist is at least 9 inches smaller than both. Only about 8% of women have a true hourglass figure, making it far rarer than most people assume. If this is your result, your proportions are already balanced — the main styling rule is to keep them visible rather than hiding them under boxy shapes. See our full <a href="/hourglass-body-shape/">hourglass body shape</a> guide for the deeper breakdown, including how it compares to top and bottom hourglass.</p>
+    <h3 id="hourglass-body-shape">Hourglass Body Shape</h3>
+    <p>The hourglass has a bust and hips that are roughly equal, with a waist significantly narrower than both — the bust is no more than 1 inch bigger than the hips (and the hips no more than 3.6 inches bigger than the bust), and the waist is at least 9 inches smaller than the bust or 10 inches smaller than the hips. Only about 8% of women have a true hourglass figure, making it far rarer than most people assume. If this is your result, your proportions are already balanced — the main styling rule is to keep them visible rather than hiding them under boxy shapes. See our full <a href="/hourglass-body-shape/">hourglass body shape</a> guide for the deeper breakdown, including how it compares to top and bottom hourglass.</p>
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-hourglass-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D hourglass body shape, front and three-quarter view, with 39 in bust, 27 in waist and 40 in hips traced by an hourglass outline">
+    </figure>
 
-    <h3>Top Hourglass Body Shape <span class="btc-unique">Distinct from pear</span></h3>
+
+    <h3 id="top-hourglass-body-shape">Top Hourglass Body Shape <span class="btc-unique">Distinct from pear</span></h3>
     <p>Similar to the classic hourglass, but the bust is larger than the hips, typically by 1 to 10 inches. The waist is still clearly defined (at least 9 inches smaller than the bust), so the silhouette keeps its pinched look while the balance tilts upward. This distinction matters for necklines and top choices — if generic "hourglass tips" have never quite worked for you, this may be why. Draw attention downward with patterned or wide-leg trousers, A-line skirts in bold colors, and V-necklines that lengthen rather than broaden the upper body.</p>
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-top-hourglass-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D top hourglass body shape with 42 in bust, 30 in waist and 37 in hips, traced by an hourglass outline that is wider at the top">
+    </figure>
 
-    <h3>Bottom Hourglass Body Shape <span class="btc-unique">Distinct from pear</span></h3>
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-top-hourglass-3d-styling.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D styling comparison for a top hourglass shape — avoid: high neck with a tight pencil skirt; choose: V-neck top with an A-line skirt">
+    </figure>
+
+
+    <h3 id="bottom-hourglass-body-shape">Bottom Hourglass Body Shape <span class="btc-unique">Distinct from pear</span></h3>
     <p>The mirror image of the top hourglass: hips are 3.6 to 10 inches larger than the bust, but the waist stays clearly defined, at least 9 inches smaller than the hips. Four-shape systems usually collapse this into "pear" — the real difference is waist definition: pear shapes have a softer waist, bottom hourglass shapes have a strongly cinched one. Balance your proportions by adding volume to the upper body — boat necklines, puff sleeves and structured blazers work beautifully, paired with A-line or fit-and-flare skirts.</p>
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-bottom-hourglass-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D bottom hourglass body shape with 34 in bust, 28 in waist and 42 in hips, traced by an hourglass outline that is wider at the bottom">
+    </figure>
 
-    <h3>Pear (Triangle) Body Shape</h3>
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-bottom-hourglass-3d-styling.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D styling comparison for a bottom hourglass shape — avoid: tight bodycon dress; choose: boat-neck fit-and-flare dress with puff sleeves">
+    </figure>
+
+
+    <h3 id="pear-triangle-body-shape">Pear (Triangle) Body Shape</h3>
     <p>Also called the triangle or bell shape, sometimes searched as "glute shape" or "butt shape." Hips are noticeably wider than the bust, typically by 3.6 inches or more, with a waist that is present but not dramatically defined (less than 9 inches smaller than the hips). Fullness concentrates in the hips, thighs and bottom. <strong>Best outfits:</strong> A-line skirts, bootcut jeans, wrap tops, off-shoulder necklines and bold prints on top. <strong>Avoid:</strong> very tight skirts that add bulk below, and pale or nude bottoms that draw attention to the hips. Our full <a href="/pear-body-shape/">pear body shape</a> guide covers formal, casual and swimwear picks in more depth.</p>
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-pear-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D pear body shape with 36 in bust, 35 in waist and 43 in hips, traced by a pear outline">
+    </figure>
+
 
     <h3>Is Pear the Same as "Spoon" Body Shape?</h3>
-    <p>Some calculators list "spoon" as its own category, distinct from pear. The pattern they're describing is a pear shape with a pronounced high-hip shelf — where the high hip (measured about 7 inches below the waist) is significantly larger than the waist itself, rather than tapering gradually into the hip. In practice this is a variant of pear rather than a separate silhouette: the styling advice is the same (draw attention upward, balance with A-line or straight-leg bottoms), but a wrap top or peplum that sits right at the high-hip line can look more flattering than one that ends higher up, since it works with the shelf instead of cutting across it. If your result above mentions a "shelf pattern," this is what it's referring to.</p>
+    <p>Some calculators list "spoon" as its own category, distinct from pear. The pattern they're describing is a pear shape with a pronounced high-hip shelf — where the high hip (measured about 3 to 4 inches below the waist) is significantly larger than the waist itself, rather than tapering gradually into the hip. In practice this is a variant of pear rather than a separate silhouette: the styling advice is the same (draw attention upward, balance with A-line or straight-leg bottoms), but a wrap top or peplum that sits right at the high-hip line can look more flattering than one that ends higher up, since it works with the shelf instead of cutting across it. If your result above mentions a "shelf pattern," this is what it's referring to.</p>
 
-    <h3>Apple Body Shape</h3>
+    <h3 id="apple-body-shape">Apple Body Shape</h3>
     <p>The apple shape carries fullness through the middle: bust and hips stay fairly close in size, but the waist doesn't taper much between them, with weight often sitting around the belly, chest and upper back. <strong>Apple isn't a weight category</strong> — a slim person can be apple-shaped and a larger person can be an hourglass; it's about proportion, not size. Create the illusion of a waist with wrap dresses, empire-waist styles and V-necks. Avoid wide belts cinched at the natural waist — they sit on the fullest point rather than defining it. See our full <a href="/apple-body-shape/">apple body shape</a> guide for the exact formula and how it differs from rectangle.</p>
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-apple-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D apple body shape with 40 in bust, 41 in waist and 41 in hips, traced by an apple outline">
+    </figure>
 
-    <h3>Inverted Triangle Body Shape</h3>
+
+    <h3 id="inverted-triangle-body-shape">Inverted Triangle Body Shape</h3>
     <p>The opposite of the pear: shoulders and bust are more than 3.6 inches wider than the hips, and the waist-to-bust difference is under 9 inches. Common among naturally broad-shouldered women and those who train the upper body heavily — swimmers often develop this silhouette. Add visual volume below the waist with A-line and flared skirts, wide-leg trousers and bootcut jeans; deep V-necks work better than boat necks, which emphasise shoulder width further. Our full <a href="/inverted-triangle-body-shape/">inverted triangle body shape</a> guide covers a waist-to-hip ratio quirk specific to this shape.</p>
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-inverted-triangle-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D inverted triangle body shape with 41 in bust, 33 in waist and 35 in hips, traced by a downward-pointing triangle">
+    </figure>
 
-    <h3>Rectangle (Banana/Straight) Body Shape</h3>
+
+    <h3 id="rectangle-banana-straight-body-shape">Rectangle (Banana/Straight) Body Shape</h3>
     <p>The most common shape, roughly 46% of women according to NC State research. Bust, waist and hips are all similar — less than 3.6 inches between bust and hips, and less than 9 inches between the waist and either. Create the curves and definition the proportions don't naturally provide: peplum tops, ruffled skirts, belted styles and layering all work well, and bootcut or flared jeans add width at the hem for a more balanced proportion.</p>
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-rectangle-3d-profile.webp" width="1200" height="820" loading="lazy" decoding="async" alt="3D rectangle body shape with 35 in bust, 31 in waist and 36 in hips, traced by a straight rectangle outline">
+    </figure>
+
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-rectangle-3d-styling.webp" width="1200" height="1000" loading="lazy" decoding="async" alt="3D styling comparison for a rectangle shape — avoid: straight shift dress; choose: belted shirt dress">
+    </figure>
+
   </section>
 
   <section class="btc-sec" id="btc-style">
     <h2>How to Dress for Your Body Type — Style Tips for Every Shape</h2>
     <p>Style rules are tools, not rules. The point of dressing for your body type is not to meet an external standard — it is to understand your proportions so you can pick clothes that make you feel the way you want to feel. Every shape has looks that feel effortless, and the same proportional logic carries into every context: formal, casual, and special occasions.</p>
 
-    <h3>What to Wear for Formal Occasions by Body Shape</h3>
+    <figure class="btc-fig">
+      <img src="/assets/images/3d-guide/female-body-shapes-outfits-3d.webp" width="1600" height="920" loading="lazy" decoding="async" alt="Seven 3D figures, one per body shape, each wearing a go-to outfit: wrap dress for hourglass, V-neck and A-line skirt for top hourglass, boat-neck fit-and-flare for bottom hourglass, structured top and wide-leg trousers for pear, empire-waist dress for apple, V-neck and full skirt for inverted triangle, peplum top and bootcut trousers for rectangle">
+      <figcaption class="btc-figcap">Same idea, seven bodies: each figure wears the one outfit that does the most for its proportions. The tables below break it down by occasion.</figcaption>
+    </figure>
+
+
+    <h3 id="dress-what-to-wear-for-formal-occasions-by-body-shape">What to Wear for Formal Occasions by Body Shape</h3>
     <div class="btc-tbl-wrap">
       <table>
         <thead><tr><th scope="col">Shape</th><th scope="col">Formal go-to</th></tr></thead>
@@ -589,7 +661,7 @@ description: Use this free body type calculator to find your female body shape u
     </div>
     <p>Accessories apply to every shape: a well-placed belt can transform almost any outfit, and statement earrings or necklaces draw the eye toward the face.</p>
 
-    <h3>What to Wear for Casual Occasions by Body Shape</h3>
+    <h3 id="dress-what-to-wear-for-casual-occasions-by-body-shape">What to Wear for Casual Occasions by Body Shape</h3>
     <div class="btc-tbl-wrap">
       <table>
         <thead><tr><th scope="col">Shape</th><th scope="col">Casual go-to</th></tr></thead>
@@ -608,7 +680,7 @@ description: Use this free body type calculator to find your female body shape u
       <li><strong>Footwear:</strong> a pointed toe or block heel elongates the leg for most shapes, while ankle-strap styles visually shorten it.</li>
     </ul>
 
-    <h3>What to Wear for Special Occasions by Body Shape</h3>
+    <h3 id="dress-what-to-wear-for-special-occasions-by-body-shape">What to Wear for Special Occasions by Body Shape</h3>
     <div class="btc-tbl-wrap">
       <table>
         <thead><tr><th scope="col">Shape</th><th scope="col">Special-occasion go-to</th></tr></thead>
@@ -727,7 +799,7 @@ description: Use this free body type calculator to find your female body shape u
     </div></details>
 
     <details class="btc-faq"><summary>What is high hip measurement and why is it included?</summary><div class="btc-faq-body">
-      <p>The high hip is measured approximately 7 inches below your natural waist, at the upper part of your hip bone — above the fullest part of your buttocks. It doesn't change your shape category on its own, but it feeds the High Hip–Waist ratio shown in your result, which helps flag a pronounced "shelf" pattern that a plain bust/waist/hip reading can miss.</p>
+      <p>The high hip is measured approximately 3 to 4 inches (8–10 cm) below your natural waist, at the upper part of your hip bone — above the fullest part of your buttocks. It doesn't change your shape category on its own, but it feeds the High Hip–Waist ratio shown in your result, which helps flag a pronounced "shelf" pattern that a plain bust/waist/hip reading can miss.</p>
     </div></details>
 
     <details class="btc-faq"><summary>Is hourglass really the "ideal" body shape?</summary><div class="btc-faq-body">
@@ -912,13 +984,65 @@ function calculate(){
  else el.insight.classList.remove("btc-show");
 
  el.res.classList.add("btc-show");
+ var cmf=unit==="cm"?1:2.54;
+ render3d({bust:b*cmf,waist:w*cmf,hh:hasHH?hh*cmf:0,hips:h*cmf,htCm:hasHt?htCm:0,wtKg:hasWt?wtKg:0});
  requestAnimationFrame(function(){
   for(var i=0;i<4;i++)bars[i].style.width=(i===3&&!hasHH)?"0%":(Math.min(r[i]/caps[i]*100,100)+"%");
   el.res.scrollIntoView({behavior:"smooth",block:"nearest"});
  });
 }
 
+
+/* ---- live 3D body from the user's own measurements (loads the visualizer engine on demand) ---- */
+var bvPromise=null,last3d=null;
+function loadEngine(){
+ if(window.BVCore)return Promise.resolve(window.BVCore);
+ if(bvPromise)return bvPromise;
+ bvPromise=new Promise(function(res,rej){
+  var sc=document.createElement("script");sc.src="/assets/js/body-visualizer.js";sc.async=true;
+  sc.onload=function(){window.BVCore?res(window.BVCore):rej()};sc.onerror=rej;document.head.appendChild(sc);
+ });
+ return bvPromise;
+}
+function render3d(o){
+ var fig=$("btc-3d"),cv=$("btc-3d-canvas");if(!fig||!cv)return;
+ loadEngine().then(function(C){
+  var H=o.htCm>=120&&o.htCm<=230?o.htCm:165;
+  var W=o.wtKg>0?o.wtKg:22*Math.pow(o.hips/(96*Math.pow(H/165,0.6)),2.5)*Math.pow(H/100,2);
+  var r=C.rangeFor("weight",{height:H});W=Math.min(r[1],Math.max(r[0],W));
+  var b=C.makeBody("f",H,W);
+  b.bust=o.bust;b.waist=o.waist;b.hips=o.hips;C.sanitize(b);
+  if(o.hh>0)b.highhip=o.hh;
+  var m=C.buildModel(b),L=m.levels;
+  var cw=cv.width,ch=cv.height,y0=Math.max(0,m.yCrotch*0.52),y1=H+3,sc=(ch-36)/(y1-y0),gy=26+y1*sc;
+  var off=document.createElement("canvas");off.width=cw;off.height=ch;
+  var ox=off.getContext("2d"),img=ox.createImageData(cw,ch);
+  var narrow=(cv.getBoundingClientRect().width||fig.parentNode.clientWidth||600)<520;
+  var xF=narrow?cw*0.62:cw*0.40,x3=cw*0.80,col=[221,199,158];
+  if(!narrow)C.rasterize(img.data,cw,ch,m,{scale:sc,cxPx:x3,groundPx:gy,theta:0.62,color:col,alpha:0.62});
+  C.rasterize(img.data,cw,ch,m,{scale:sc,cxPx:xF,groundPx:gy,theta:0,color:col});
+  ox.putImageData(img,0,0);
+  var ctx=cv.getContext("2d");ctx.clearRect(0,0,cw,ch);ctx.drawImage(off,0,0);
+  var f=unit==="cm"?1:1/2.54,u=unit;
+  var lines=[["Bust",L.bust,o.bust,"#f0d48a"],["Waist",L.waist,o.waist,"#f0d48a"]];
+  if(o.hh>0)lines.push(["High hip",L.highhip,o.hh,"#7fd6c8"]);
+  lines.push(["Hips",L.hips,o.hips,"#f0d48a"]);
+  ctx.font="bold "+(narrow?44:26)+"px -apple-system,Segoe UI,Roboto,Arial,sans-serif";ctx.textBaseline="middle";
+  for(var i=0;i<lines.length;i++){
+   var ln=lines[i],yy=gy-ln[1]*sc,e=C.extentsAt(m,ln[1],0);if(!e)continue;
+   var xa=xF+e[0]*sc-10,xb=xF+e[1]*sc+10;
+   ctx.strokeStyle=ln[3];ctx.lineWidth=narrow?3.4:2.4;ctx.setLineDash([9,7]);ctx.beginPath();ctx.moveTo(xa,yy);ctx.lineTo(xb,yy);ctx.stroke();ctx.setLineDash([]);
+   ctx.beginPath();ctx.moveTo(xa,yy-8);ctx.lineTo(xa,yy+8);ctx.moveTo(xb,yy-8);ctx.lineTo(xb,yy+8);ctx.stroke();
+   ctx.fillStyle=ln[3];ctx.textAlign="right";ctx.fillText(ln[0]+" "+fmt(ln[2]*f)+" "+u,xa-12,yy);
+  }
+  var a=[H,W,o.bust,o.waist,o.hips,"","","","",""].map(function(v){return v===""?"":Math.round(v*10)/10});
+  $("btc-3d-link").href="/body-visualizer/#v=1&sx=f&u="+(unit==="cm"?"m":"i")+"&a="+a.join(",");
+  fig.hidden=false;last3d=cv;
+ }).catch(function(){fig.hidden=true;last3d=null});
+}
+
 function reset(){
+var f3=$("btc-3d");if(f3)f3.hidden=true;last3d=null;
  el.res.classList.remove("btc-show");
  el.insight.classList.remove("btc-show");
  el.err.classList.remove("btc-show");
@@ -1085,6 +1209,8 @@ function downloadImageStory(){
   ctx.textAlign="right";ctx.fillStyle="#f0e8d8";ctx.font="bold 22px Georgia, serif";ctx.fillText(rValues[j],960,yy2);
  }
 
+ var yEnd=ry+50+rValues.length*46;
+ if(last3d){var bh=Math.min(1780-yEnd,620),bw=bh*last3d.width/last3d.height;if(bh>220)ctx.drawImage(last3d,540-bw/2,yEnd+10,bw,bh)}
  ctx.textAlign="center";ctx.fillStyle="#555";ctx.font="20px sans-serif";
  ctx.fillText(location.hostname||"Body Type Calculator",540,1840);
 

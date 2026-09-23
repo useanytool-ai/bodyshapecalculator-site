@@ -1,0 +1,17 @@
+<svg viewBox="0 0 640 322" width="640" height="322" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Keep the Tape Snug, Not Tight: avoid pulled tight, compressing skin, aim for snug with room for one finger">
+  <rect x="0.5" y="0.5" width="639" height="321" rx="18" fill="#1b1b1b" stroke="#2a2a2a"/>
+  <text x="28" y="36" font-family="Georgia,'Times New Roman',serif" font-size="19" font-weight="700" fill="#f5efe0">Keep the Tape Snug, Not Tight</text>
+  <line x1="320.0" y1="54" x2="320.0" y2="302" stroke="#2a2a2a" stroke-width="1"/>
+  <svg x="70.0" y="80" width="180" height="180" viewBox="0 0 200 160"><g color="#8a8a8a"><path d="M 62 20 L 56 90 L 70 140 L 130 140 L 144 90 L 138 20" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".35"/><ellipse cx="100" cy="70" rx="34" ry="7" fill="none" stroke="currentColor" stroke-width="3"/><path d="M 54 70 l 10 -5 M 54 70 l 10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M 146 70 l -10 -5 M 146 70 l -10 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></g></svg>
+  <svg x="390.0" y="80" width="180" height="180" viewBox="0 0 200 160"><g color="#e8c97a"><path d="M 62 20 L 56 90 L 70 140 L 130 140 L 144 90 L 138 20" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".35"/><ellipse cx="100" cy="70" rx="42" ry="9" fill="none" stroke="currentColor" stroke-width="3"/><path d="M 94 70 a 6 9 0 0 0 12 0" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".85"/><text x="100" y="58" text-anchor="middle" font-size="10" fill="currentColor" opacity=".85">1 finger</text></g></svg>
+  <g font-family="-apple-system,Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing=".5">
+    <rect x="118.0" y="58" width="84" height="24" rx="12" fill="none" stroke="#9a8f7c" stroke-width="1.3"/>
+    <text x="160.0" y="74" text-anchor="middle" fill="#9a8f7c">✕ DON’T</text>
+    <rect x="442.0" y="58" width="76" height="24" rx="12" fill="#c9a84c"/>
+    <text x="480.0" y="74" text-anchor="middle" fill="#0f0d08">✓ DO</text>
+  </g>
+  <text x="160.0" y="274" text-anchor="middle" font-family="-apple-system,Segoe UI,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#8a8a8a">Pulled tight, compressing skin</text>
+  <text x="480.0" y="274" text-anchor="middle" font-family="-apple-system,Segoe UI,Arial,sans-serif" font-size="13.5" font-weight="600" fill="#e8c97a">Snug with room for one finger</text>
+  <text x="160.0" y="294" text-anchor="middle" font-family="-apple-system,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#8a8a8a">Reads smaller than your real</text><text x="160.0" y="311" text-anchor="middle" font-family="-apple-system,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#8a8a8a">measurement</text>
+  <text x="480.0" y="294" text-anchor="middle" font-family="-apple-system,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#c9c2b2">Gives your true, repeatable</text><text x="480.0" y="311" text-anchor="middle" font-family="-apple-system,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#c9c2b2">number</text>
+</svg>
